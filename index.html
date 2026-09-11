@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#09090b" />
+    <title>NEXSOLVE | Enterprise Landslide & Hazard Intelligence Platform</title>
+    <meta name="description" content="Enterprise real-time landslide risk monitoring, early warning, and disaster readiness platform for North East India." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- Leaflet.js GIS Mapping Library -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <!-- Chart.js Data Visualization Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Top Enterprise Navigation Header Bar -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <a class="brand" href="#overview-step" aria-label="NexSolve Home">
+          <span class="brand-mark">N</span>
+          <span class="brand-title">NEXSOLVE</span>
+        </a>
+      </div>
+
+      <!-- Top Center Interactive Navigation Bar (Aceternity NavbarMenu) -->
+      <nav class="topbar-menu-nav" aria-label="Main Navigation">
+        <a class="top-nav-link active" href="#overview-step" data-category="overview">DASHBOARD</a>
+
+        <div class="dropdown" data-category="analyze">
+          <button class="top-nav-link dropdown-toggle" type="button">ANALYZE ▾</button>
+          <div class="dropdown-menu aceternity-menu">
+            <a href="#map-step" class="dropdown-product-item dropdown-menu-item">
+              <div class="product-icon-box">⌖</div>
+              <div class="product-info">
+                <h4>Interactive GIS Map</h4>
+                <p>Esri World Dark Gray Engine terrain & hazard layers</p>
+              </div>
+            </a>
+            <a href="#xai-step" class="dropdown-product-item dropdown-menu-item">
+              <div class="product-icon-box">⚡</div>
+              <div class="product-info">
+                <h4>Explainable AI (XAI) Engine</h4>
+                <p>Factor weight decomposition & live downpour simulator</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="dropdown" data-category="intelligence">
+          <button class="top-nav-link dropdown-toggle" type="button">INTELLIGENCE ▾</button>
+          <div class="dropdown-menu aceternity-menu">
+            <a href="#forecast-step" class="dropdown-product-item dropdown-menu-item">
+              <div class="product-icon-box">📈</div>
+              <div class="product-info">
+                <h4>72h Predictive Forecast</h4>
+                <p>Antecedent rainfall timeline & risk index matrix</p>
+              </div>
+            </a>
+            <a href="#field-step" class="dropdown-product-item dropdown-menu-item">
+              <div class="product-icon-box">▣</div>
+              <div class="product-info">
+                <h4>Computer Vision Scanner</h4>
+                <p>AI vision defect scanning for tension cracks & rockfalls</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="dropdown" data-category="threat">
+          <button class="top-nav-link dropdown-toggle" type="button">THREAT INTEL ▾</button>
+          <div class="dropdown-menu aceternity-menu">
+            <a href="#alerts-step" class="dropdown-product-item dropdown-menu-item">
+              <div class="product-icon-box">◉</div>
+              <div class="product-info">
+                <h4>Priority Early Warnings</h4>
+                <p>Real-time emergency telemetry broadcast feed</p>
+              </div>
+            </a>
+            <a href="#response-step" class="dropdown-product-item dropdown-menu-item">
+              <div class="product-icon-box">🚨</div>
+              <div class="product-info">
+                <h4>Emergency Response Matrix</h4>
+                <p>Multilingual voice alert audio broadcast engine</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="dropdown" data-category="system">
+          <button class="top-nav-link dropdown-toggle" type="button">SYSTEM ▾</button>
+          <div class="dropdown-menu aceternity-menu">
+            <a href="#roads-step" class="dropdown-product-item dropdown-menu-item">
+              <div class="product-icon-box">🛣</div>
+              <div class="product-info">
+                <h4>Highway Road Corridors</h4>
+                <p>Arterial route monitoring & blockage alerts</p>
+              </div>
+            </a>
+            <a href="#" id="dropInspectQueue" class="dropdown-product-item dropdown-menu-item">
+              <div class="product-icon-box">📥</div>
+              <div class="product-info">
+                <h4>PWA Offline Queue</h4>
+                <p>Localstorage report synchronization manager</p>
+              </div>
+            </a>
+            <a href="#" id="dropRefreshModel" class="dropdown-product-item dropdown-menu-item">
+              <div class="product-icon-box">↻</div>
+              <div class="product-info">
+                <h4>Recalculate AI Risk Model</h4>
+                <p>Trigger instant AI factor re-weighting</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="topbar-right">
+        <div class="location-picker">
+          <select id="regionSelect" aria-label="Select monitoring region">
+            <option value="ner">All North Eastern Region (NER)</option>
+            <option value="mizoram">Mizoram (Champhai, Aizawl, Lunglei)</option>
+            <option value="manipur">Manipur (Senapati, Imphal, Ukhrul)</option>
+            <option value="meghalaya">Meghalaya (Shillong, Cherrapunji)</option>
+            <option value="assam">Assam (Cachar, Dima Hasao, Guwahati)</option>
+            <option value="arunachal">Arunachal Pradesh (Itanagar, Tawang)</option>
+            <option value="nagaland">Nagaland (Kohima, Mokokchung)</option>
+            <option value="tripura">Tripura (Agartala, Dhalai)</option>
+            <option value="sikkim">Sikkim (Gangtok, North Sikkim)</option>
+          </select>
+        </div>
+
+        <div class="system-status-indicator" aria-live="polite">
+          <span class="status-dot pulse" id="networkPulse"></span>
+          <span id="networkStatus">SYSTEM READY</span>
+          <button id="offlineToggle" class="offline-btn" title="Toggle PWA offline queue mode">Simulate Offline</button>
+        </div>
+
+        <button class="icon-button theme-toggle" id="themeToggle" type="button" aria-label="Toggle color theme" title="Toggle color theme">
+          <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3v2.5M12 18.5V21M4.93 4.93l1.77 1.77M17.3 17.3l1.77 1.77M3 12h2.5M18.5 12H21M4.93 19.07l1.77-1.77M17.3 6.7l1.77-1.77"/>
+            <circle cx="12" cy="12" r="4.1"/>
+          </svg>
+        </button>
+
+        <button class="icon-button" id="refreshRisk" title="Trigger AI Risk Refresh" aria-label="Refresh AI risk model">↻</button>
+      </div>
+    </header>
+
+    <button class="workflow-fab" id="workflowFab" type="button" aria-expanded="false" aria-controls="workflowSidebar" aria-label="Open workflow drawer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M4 7h16M4 12h16M4 17h16"/>
+      </svg>
+      <span>WORKFLOW</span>
+    </button>
+
+    <div class="workflow-backdrop" id="workflowBackdrop" aria-hidden="true"></div>
+
+    <!-- Main Workspace Two-Column Container -->
+    <div class="app-layout" id="appLayout">
+      <aside class="workflow-sidebar" id="workflowSidebar" aria-label="Workflow steps" aria-hidden="true">
+        <div class="sidebar-top-bar">
+          <span class="sidebar-header">WORKFLOW</span>
+          <button id="toggleSidebar" class="sidebar-toggle-btn" type="button" aria-label="Close workflow drawer" title="Close workflow drawer">
+            <span class="toggle-icon">×</span>
+          </button>
+        </div>
+
+        <nav class="workflow-nav" aria-label="Workflow Steps">
+          <div class="sidebar-category-tag">INPUT</div>
+          <a href="#overview-step" class="workflow-item active" data-step="01">
+            <span class="step-num">01</span>
+            <div class="step-text">
+              <strong>Input</strong>
+              <small>Import network traffic</small>
+            </div>
+          </a>
+
+          <div class="sidebar-category-tag mt-10">ANALYSIS</div>
+          <a href="#map-step" class="workflow-item" data-step="02">
+            <span class="step-num">02</span>
+            <div class="step-text">
+              <strong>Analysis</strong>
+              <small>Traffic analysis</small>
+            </div>
+          </a>
+
+          <a href="#xai-step" class="workflow-item" data-step="03">
+            <span class="step-num">03</span>
+            <div class="step-text">
+              <strong>Current state</strong>
+              <small>Observed network state</small>
+            </div>
+          </a>
+
+          <div class="sidebar-category-tag mt-10">ASSESSMENT</div>
+          <a href="#forecast-step" class="workflow-item" data-step="04">
+            <span class="step-num">04</span>
+            <div class="step-text">
+              <strong>Assessment</strong>
+              <small>Current attack assessment</small>
+            </div>
+          </a>
+
+          <a href="#field-step" class="workflow-item" data-step="05">
+            <span class="step-num">05</span>
+            <div class="step-text">
+              <strong>Forecast</strong>
+              <small>Attack forecast</small>
+            </div>
+          </a>
+
+          <div class="sidebar-category-tag mt-10">PROGRESSION</div>
+          <a href="#alerts-step" class="workflow-item" data-step="06">
+            <span class="step-num">06</span>
+            <div class="step-text">
+              <strong>Progression</strong>
+              <small>Attack progression</small>
+            </div>
+          </a>
+
+          <a href="#response-step" class="workflow-item" data-step="07">
+            <span class="step-num">07</span>
+            <div class="step-text">
+              <strong>MITRE</strong>
+              <small>ATT&amp;CK mapping</small>
+            </div>
+          </a>
+
+          <div class="sidebar-category-tag mt-10">EXPLAIN</div>
+          <a href="#roads-step" class="workflow-item" data-step="08">
+            <span class="step-num">08</span>
+            <div class="step-text">
+              <strong>Explanation</strong>
+              <small>Why this forecast?</small>
+            </div>
+          </a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="queue-status">
+            <span>Offline Queue:</span>
+            <strong id="queueCount">0 reports</strong>
+          </div>
+          <button class="secondary-button width-100" id="inspectQueueBtn" type="button">Inspect Queue</button>
+
+          <div class="sidebar-profile-card">
+            <img src="https://assets.aceternity.com/manu.png" alt="Commander Avatar" class="profile-avatar" />
+            <div class="profile-text">
+              <strong class="profile-name">Cmdr. M. Arora</strong>
+              <small class="profile-role">NDRF Command HQ</small>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Right Content Canvas Container -->
+      <main class="content-workspace">
+        <!-- 01 / OVERVIEW SECTION (DASHBOARD) -->
+        <section id="overview-step" class="workspace-section">
+          <div class="section-kicker">01 / OVERVIEW</div>
+          <h1 class="serif-title">Predict Landslides.<br><em>Save Lives &amp; Roads.</em></h1>
+          <p class="hero-subtext">Enterprise real-time GIS monitoring &amp; hazard forecasting platform for the 8 North Eastern States of India.</p>
+
+          <div class="action-bar-row">
+            <button class="primary-button" id="createReport">＋ Log Field Incident (CV Scanner)</button>
+            <button class="secondary-button" id="heroRiskButton">Explore Live GIS Map ↓</button>
+          </div>
+
+          <!-- Risk Metrics Overview Grid -->
+          <div class="card-box mt-30">
+            <div class="box-kicker">HAZARD METRICS SUMMARY</div>
+            
+            <div class="stat-grid">
+              <article class="stat-card critical">
+                <div class="stat-icon">⚠️</div>
+                <div>
+                  <span>Critical Risk Zones</span>
+                  <strong id="criticalCount">03</strong>
+                  <small id="criticalNote">Champhai, Senapati, East Sikkim</small>
+                </div>
+              </article>
+              
+              <article class="stat-card warning">
+                <div class="stat-icon">◒</div>
+                <div>
+                  <span>High Risk Zones</span>
+                  <strong id="highCount">12</strong>
+                  <small id="highNote">Across 6 steep terrain districts</small>
+                </div>
+              </article>
+
+              <article class="stat-card neutral">
+                <div class="stat-icon">🌧️</div>
+                <div>
+                  <span>Avg 24h Rainfall</span>
+                  <strong><span id="rainfallValue">138</span> <em>mm</em></strong>
+                  <small id="rainfallNote">+48% above trigger limit</small>
+                </div>
+              </article>
+
+              <article class="stat-card neutral">
+                <div class="stat-icon">🛣️</div>
+                <div>
+                  <span>Road Corridors Under Watch</span>
+                  <strong id="roadCount">08</strong>
+                  <small id="roadNote">2 blocked (NH-306, NH-2)</small>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- 02 / GIS MAP SECTION (ANALYZE) -->
+        <section id="map-step" class="workspace-section mt-50">
+          <div class="section-kicker">02 / GIS INTELLIGENCE</div>
+          <h2 class="serif-title">North Eastern Region (NER) Hazard Map</h2>
+          <p class="hero-subtext">Real-time Leaflet GIS canvas powered by Esri World Dark Gray Engine.</p>
+
+          <div class="card-box">
+            <div class="box-header-row">
+              <div class="box-kicker">TERRAIN &amp; CORRIDOR MAP</div>
+              <div class="map-controls" id="layerSelector">
+                <button class="active" data-layer="all">🎯 All Layers</button>
+                <button data-layer="risk">⚠️ Risk Heatmap</button>
+                <button data-layer="rainfall">🌧️ Rainfall Radar</button>
+                <button data-layer="roads">🛣️ Road Corridors</button>
+                <button data-layer="shelters">🏥 Relief Shelters</button>
+                <button data-layer="sar">📡 SAR Vectors</button>
+              </div>
+            </div>
+
+            <!-- Leaflet GIS Map Canvas -->
+            <div id="leafletMap" class="leaflet-map-canvas" aria-label="Interactive Leaflet GIS map"></div>
+
+            <div class="map-footer-bar">
+              <div class="map-legend-items">
+                <span><i class="dot red"></i> Critical (&gt; 80)</span>
+                <span><i class="dot cyan"></i> High (60-80)</span>
+                <span><i class="dot violet"></i> Moderate (40-60)</span>
+                <span><i class="dot green"></i> Low (&lt; 40)</span>
+                <span><i class="dot road-blocked"></i> Blocked Highway</span>
+                <span><i class="dot shelter"></i> Relief Shelter</span>
+              </div>
+              <div class="map-note" id="mapNote">Esri Dark Gray Engine · Live Operational Feed</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 03 / XAI ENGINE SECTION (ANALYZE) -->
+        <section id="xai-step" class="workspace-section mt-50">
+          <div class="section-kicker">03 / EXPLAINABLE AI ENGINE</div>
+          <h2 class="serif-title" id="xaiTitle">Landslide Risk Breakdown: Champhai District, Mizoram</h2>
+
+          <div class="card-box">
+            <div class="box-header-row">
+              <div class="box-kicker">FACTOR DECOMPOSITION MATRIX</div>
+              <div class="xai-score-badge">
+                <span>PREDICTED RISK SCORE</span>
+                <strong id="xaiScoreVal">92 / 100</strong>
+              </div>
+            </div>
+
+            <div class="xai-grid">
+              <div class="xai-factor">
+                <div class="xai-factor-head">
+                  <strong>🌧️ Rainfall Intensity &amp; Accumulation</strong>
+                  <span class="weight-tag">Weight 40%</span>
+                </div>
+                <p id="xaiRainDesc">146mm in 24h (3-day Antecedent Index: 284mm)</p>
+                <div class="progress-bar-bg"><span class="progress-bar-fill red" id="xaiRainBar" style="width: 92%"></span></div>
+                <small class="impact-high">Critical Trigger Impact</small>
+              </div>
+
+              <div class="xai-factor">
+                <div class="xai-factor-head">
+                  <strong>💧 Soil Moisture Saturation</strong>
+                  <span class="weight-tag">Weight 25%</span>
+                </div>
+                <p id="xaiSoilDesc">Volumetric Water Content: 88% (Exceeds Limit)</p>
+                <div class="progress-bar-bg"><span class="progress-bar-fill cyan" id="xaiSoilBar" style="width: 85%"></span></div>
+                <small class="impact-high">Pore Water Pressure High</small>
+              </div>
+
+              <div class="xai-factor">
+                <div class="xai-factor-head">
+                  <strong>⛰️ Terrain Slope &amp; DEM Cut Angle</strong>
+                  <span class="weight-tag">Weight 20%</span>
+                </div>
+                <p id="xaiSlopeDesc">Slope Angle: 42° (Unplanned Highway Cut)</p>
+                <div class="progress-bar-bg"><span class="progress-bar-fill cyan" id="xaiSlopeBar" style="width: 76%"></span></div>
+                <small class="impact-med">High Shear Stress</small>
+              </div>
+
+              <div class="xai-factor">
+                <div class="xai-factor-head">
+                  <strong>📜 GSI Historical Inventory</strong>
+                  <span class="weight-tag">Weight 15%</span>
+                </div>
+                <p id="xaiHistDesc">14 previous slide events recorded in 5km radius</p>
+                <div class="progress-bar-bg"><span class="progress-bar-fill green" id="xaiHistBar" style="width: 62%"></span></div>
+                <small class="impact-low">Geological Susceptibility Zone</small>
+              </div>
+            </div>
+
+            <div class="xai-simulation-bar">
+              <span class="sim-label">⚡ AI Interactive Simulator:</span>
+              <button class="sim-btn" id="simHeavyRain">+50mm Downpour</button>
+              <button class="sim-btn" id="simClearSky">☀️ Dry Recovery</button>
+              <button class="sim-btn" id="simQuake">🫨 Seismic Tremor</button>
+              <span class="sim-reset" id="simReset">Reset Model</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 04 / 72H FORECAST SECTION (INTELLIGENCE) -->
+        <section id="forecast-step" class="workspace-section mt-50">
+          <div class="section-kicker">04 / 72H FORECAST</div>
+          <h2 class="serif-title">Predictive Analytics &amp; Risk Projection</h2>
+
+          <div class="card-box">
+            <div class="box-header-row">
+              <div class="box-kicker">TIME PROJECTION CONTROL</div>
+              <strong id="forecastTimeLabel">Current Time (0h)</strong>
+            </div>
+
+            <div class="slider-container">
+              <input type="range" id="forecastSlider" min="0" max="72" step="12" value="0" class="time-range-slider" />
+              <div class="slider-ticks">
+                <span>Now (0h)</span>
+                <span>+12 Hours</span>
+                <span>+24 Hours</span>
+                <span>+36 Hours</span>
+                <span>+48 Hours</span>
+                <span>+72 Hours</span>
+              </div>
+            </div>
+
+            <div class="analytics-charts-grid">
+              <div class="chart-box">
+                <h3>Antecedent Rainfall vs Hazard Threshold (mm)</h3>
+                <div class="chart-wrapper"><canvas id="rainfallChart"></canvas></div>
+              </div>
+              <div class="chart-box">
+                <h3>Landslide Risk Index by State (NER Matrix)</h3>
+                <div class="chart-wrapper"><canvas id="stateRiskChart"></canvas></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 05 / FIELD INTEL SECTION (INTELLIGENCE) -->
+        <section id="field-step" class="workspace-section mt-50">
+          <div class="section-kicker">05 / FIELD INTELLIGENCE</div>
+          <h2 class="serif-title">Crowdsourced Incident Feed &amp; AI Verification</h2>
+
+          <div class="card-box">
+            <div class="box-kicker">VERIFIED GROUND REPORTS</div>
+            <div id="reportList" class="report-list">
+              <!-- Rendered by app.js -->
+            </div>
+          </div>
+        </section>
+
+        <!-- 06 / ALERTS SECTION (THREAT INTEL) -->
+        <section id="alerts-step" class="workspace-section mt-50">
+          <div class="section-kicker">06 / THREAT INTEL</div>
+          <h2 class="serif-title">Active Priority Alerts</h2>
+
+          <div class="card-box">
+            <div class="box-kicker">EARLY WARNING BROADCAST LIST</div>
+            <div class="alert-list" id="alertListContainer">
+              <!-- Rendered by app.js -->
+            </div>
+          </div>
+        </section>
+
+        <!-- 07 / RESPONSE PLAN SECTION (THREAT INTEL) -->
+        <section id="response-step" class="workspace-section mt-50">
+          <div class="section-kicker">07 / RESPONSE MATRIX</div>
+          <h2 class="serif-title">Champhai Emergency Response Action</h2>
+
+          <div class="card-box">
+            <div class="response-content">
+              <div class="recommend-icon">🚨</div>
+              <div>
+                <h3>Pre-position NDRF / SDRF Battalion Unit</h3>
+                <p>Champhai-Aizawl Axis · 3,800 villagers &amp; 140 road vehicles in high hazard zone.</p>
+                
+                <div class="response-actions-row">
+                  <button class="primary-button" id="dispatchButton">📢 Broadcast Multilingual Audio Early Warning</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 08 / ROAD CORRIDORS SECTION (SYSTEM) -->
+        <section id="roads-step" class="workspace-section mt-50">
+          <div class="section-kicker">08 / ROAD CORRIDORS</div>
+          <h2 class="serif-title">Priority Arterial Highway Corridors</h2>
+
+          <div class="card-box">
+            <div class="box-kicker">INFRASTRUCTURE MONITORING</div>
+            <div class="road-grid" id="roadCorridorsGrid">
+              <!-- Rendered by app.js -->
+            </div>
+          </div>
+        </section>
+
+        <footer>
+          <p><strong>NEXSOLVE</strong> — Enterprise Landslide &amp; Hazard Intelligence Platform.</p>
+          <p>Integrated with IMD Weather Radar API, NASA LHASA 2.0 framework, ISRO Cartosat DEMs, and GSI Landslide Inventory.</p>
+        </footer>
+      </main>
+    </div>
+
+    <!-- Modals -->
+    <dialog id="reportDialog">
+      <form method="dialog" class="report-form" id="fieldReportForm">
+        <button class="close" type="button" id="closeReportDialog" aria-label="Close">×</button>
+        <div class="box-kicker">GROUND INTELLIGENCE CAPTURE</div>
+        <h2>Log Geo-Tagged Field Incident</h2>
+        <p>Upload field observation with automated AI Computer Vision defect classification.</p>
+
+        <label>
+          Incident Type
+          <select id="incidentType" required>
+            <option value="Slope tension crack">Slope Tension Crack / Fissure</option>
+            <option value="Road blockage / Rockfall">Highway Road Blockage / Rockfall</option>
+            <option value="Slope movement / Soil creep">Active Slope Movement / Soil Creep</option>
+            <option value="Debris flow / Flash mudslide">Debris Flow / Flash Mudslide</option>
+            <option value="Culvert / Drainage failure">Culvert Clogging / Drainage Erosion</option>
+          </select>
+        </label>
+
+        <label>
+          Location &amp; Coordinates
+          <div class="location-input-wrap">
+            <input id="incidentLocation" placeholder="e.g. NH-306, KM 42, Champhai (23.47°N, 93.32°E)" required />
+            <button type="button" id="fetchGpsBtn" class="gps-btn" title="Auto-detect GPS">📍 Auto GPS</button>
+          </div>
+        </label>
+
+        <label>
+          Photo Evidence (AI Computer Vision Analysis)
+          <select id="sampleImageSelect">
+            <option value="crack1">📷 Sample 1: Hillside Tension Crack (Deep Fissure)</option>
+            <option value="blockage1">📷 Sample 2: NH-2 Massive Rockfall Debris</option>
+            <option value="mudslide1">📷 Sample 3: Mudslide &amp; Tree Uproot</option>
+            <option value="custom">📁 Custom File Upload...</option>
+          </select>
+        </label>
+
+        <div class="cv-preview-card" id="cvPreviewCard">
+          <div class="cv-img-wrapper" id="cvImgWrapper">
+            <div class="cv-scan-line" id="cvScanLine"></div>
+            <img id="cvPreviewImg" src="" alt="Incident Preview" class="cv-img" />
+            <div class="cv-bounding-box" id="cvBoundingBox">
+              <span class="box-tag" id="cvBoxTag">Tension Crack 96.4%</span>
+            </div>
+          </div>
+          <div class="cv-analysis-output" id="cvAnalysisOutput">
+            <strong>🤖 AI Computer Vision Output:</strong>
+            <span id="cvConfidence">Classifying hazard image...</span>
+          </div>
+        </div>
+
+        <label>
+          Field Observations &amp; Notes
+          <textarea id="incidentDetails" placeholder="Specify crack width, slope movement speed, or trapped vehicles..."></textarea>
+        </label>
+
+        <button type="submit" class="primary-button width-100 mt-10">Submit Field Report &amp; Trigger AI Audit</button>
+      </form>
+    </dialog>
+
+    <dialog id="responseDialog">
+      <form method="dialog" class="report-form" id="responseForm">
+        <button class="close" type="button" id="closeResponseDialog" aria-label="Close">×</button>
+        <div class="box-kicker">EARLY WARNING BROADCAST ENGINE</div>
+        <h2>Champhai District Emergency Protocol</h2>
+
+        <label>
+          Broadcast Language (8 Regional Languages)
+          <select id="alertLanguage">
+            <option value="english">English (Default)</option>
+            <option value="hindi">Hindi (हिन्दी)</option>
+            <option value="mizo">Mizo (Mizo ṭawng)</option>
+            <option value="assamese">Assamese (অসমীয়া)</option>
+            <option value="meitei">Meitei / Manipuri (মৈতৈলোন্)</option>
+            <option value="khasi">Khasi (Ka Ktien Khasi)</option>
+            <option value="bengali">Bengali (বাংলা)</option>
+            <option value="nagamese">Nagamese (Nagamese)</option>
+          </select>
+        </label>
+
+        <div class="alert-preview-box">
+          <div id="alertPreview" class="alert-text-preview">
+            <strong>🚨 EMERGENCY WARNING:</strong> Heavy continuous rainfall may trigger catastrophic landslides in Champhai district within 6 hours. Move to designated relief shelters immediately and avoid hill cut roads.
+          </div>
+          <div class="tts-row">
+            <button type="button" id="speakTTSBtn" class="tts-btn">🔊 Listen Voice Warning (Audio TTS)</button>
+            <span id="ttsStatus" class="tts-status">Ready to speak</span>
+          </div>
+        </div>
+
+        <button type="submit" class="primary-button width-100 mt-15">🚀 Activate Warning &amp; Broadcast Alert</button>
+      </form>
+    </dialog>
+
+    <dialog id="queueDialog">
+      <div class="report-form">
+        <button class="close" type="button" id="closeQueueDialog" aria-label="Close">×</button>
+        <div class="box-kicker">PWA OFFLINE STORAGE MANAGER</div>
+        <h2>Queued Offline Field Reports</h2>
+
+        <div id="queueItemList" class="queue-list-container">
+          <!-- Rendered in app.js -->
+        </div>
+
+        <div class="queue-actions">
+          <button type="button" id="clearQueueBtn" class="secondary-button">Clear Queue</button>
+          <button type="button" id="syncQueueNowBtn" class="primary-button">⚡ Sync Queue Now</button>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- Toast Notification Popup -->
+    <div class="toast" id="toast">Response plan created for Champhai district.</div>
+
+    <!-- Application Script -->
+    <script src="app.js"></script>
+  </body>
+</html>

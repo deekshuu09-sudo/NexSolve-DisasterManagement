@@ -1,0 +1,33 @@
+
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Node build/dependency output
+node_modules/
+dist/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# OS/editor files
+.DS_Store
+.idea/
+.vscode/*.log
+# Large datasets
+data/
+backend/data/
+
+# Large files
+*.pdf
+*.zip
+*.nc
+*.tif
+*.tiff
+*.h5
+*.hdf
