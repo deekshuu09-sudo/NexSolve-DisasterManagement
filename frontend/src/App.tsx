@@ -699,9 +699,13 @@ function App() {
             </div>
 
             <small className="kicker">01 / OPERATIONAL SITUATION ROOM</small>
-            <h1>Landslide Risk Intelligence.<br /><em>Faster Decisions. Safer Communities.</em></h1>
-            <p className="lede">GIS-based landslide risk intelligence and decision-support platform for the 8 North Eastern States of India (131 Official Survey of India Districts).</p>
-            <button className="primary-button" onClick={() => { setReportOpen(true); setReportResult(null) }}>＋ Log Field Incident</button>
+            <h1 className="hero-title">LANDSLIDE RISK INTELLIGENCE</h1>
+            <p className="hero-subtitle">Faster decisions. Safer communities.</p>
+            <div className="hero-bar" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
+              <p className="lede" style={{ margin: 0, flex: '1 1 500px' }}>GIS-based landslide risk intelligence and decision-support platform for the 8 North Eastern States of India (131 Official Survey of India Districts).</p>
+              <button className="primary-button" style={{ minHeight: '38px', padding: '0 14px', fontSize: '0.82rem', whiteSpace: 'nowrap' }} onClick={() => { setReportOpen(true); setReportResult(null) }}>＋ Log Field Incident</button>
+            </div>
+
 
             {/* TOP SITUATION SUMMARY BAR */}
             <div className="panel metrics-panel" style={{ marginTop: '1.25rem' }}>
