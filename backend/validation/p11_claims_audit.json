@@ -1,0 +1,93 @@
+{
+  "audit_version": "1.0.0",
+  "evaluated_at": "2026-09-12T12:09:00Z",
+  "project_name": "NexSolve Disaster Management System",
+  "phase": "P11 - Final SIH Readiness & Claims Audit",
+  "audit_verdict": "P11-PASS-WITH-LIMITATIONS",
+  "claims": [
+    {
+      "claim": "Geographic Scope",
+      "status": "PASS",
+      "evidence": "131 official districts across 8 Northeastern States (Arunachal Pradesh, Assam, Manipur, Meghalaya, Mizoram, Nagaland, Sikkim, Tripura).",
+      "safe_presentation_wording": "NexSolve covers the 8 Northeastern States of India within a 131-district official administrative framework.",
+      "unsafe_wording": "NexSolve provides real-time sensor coverage for all villages across India."
+    },
+    {
+      "claim": "Administrative Boundaries",
+      "status": "PASS",
+      "evidence": "Survey of India (ABDB LGD Integrated) official GeoJSON boundaries (ner_states_soi.geojson and ner_districts_soi.geojson).",
+      "safe_presentation_wording": "Official Survey of India boundaries form the core administrative spatial framework.",
+      "unsafe_wording": "Boundaries are downloaded from OpenStreetMap or arbitrary GitHub repos."
+    },
+    {
+      "claim": "Terrain Data Provenance",
+      "status": "PASS",
+      "evidence": "Acquired from USGS / AWS Open Data Elevation Archive (NASADEM 1 Arc-Second 30m SRTM DEM); processed in district_terrain_summary.json.",
+      "safe_presentation_wording": "Terrain elevation data was acquired through the USGS/AWS Open Data Elevation Archive and processed to derive elevation, slope, aspect, and curvature features.",
+      "unsafe_wording": "Direct live NASA Earthdata stream."
+    },
+    {
+      "claim": "GSI Inventory Events",
+      "status": "PASS",
+      "evidence": "10,492 historical Geological Survey of India (GSI) landslide inventory records integrated.",
+      "safe_presentation_wording": "Historical baseline incorporates 10,492 GSI landslide inventory records.",
+      "unsafe_wording": "100% complete real-time landslide inventory."
+    },
+    {
+      "claim": "Production ML Model",
+      "status": "PASS",
+      "evidence": "Promoted Candidate A Random Forest (candidate_a_rf_v1 v1.1.0, SHA: 1acad34e85b53df0cb68e5e81cd81d68066c4173792e65a51288b35557ba0f72).",
+      "safe_presentation_wording": "Powered by a promoted Random Forest classifier evaluated on temporal holdout dataset.",
+      "unsafe_wording": "Deep Neural Network / LLM predicting exact landslide timing."
+    },
+    {
+      "claim": "Production Feature Contract",
+      "status": "PASS",
+      "evidence": "Exactly 7 features (latitude, longitude, rainfall_1d, rainfall_3d, rainfall_7d, month_sin, month_cos). Zero leakage.",
+      "safe_presentation_wording": "Model operates on a strict 7-feature contract comprising spatial coordinates, multi-day rainfall accumulation, and seasonality.",
+      "unsafe_wording": "Model uses 50 real-time satellite features."
+    },
+    {
+      "claim": "Model Performance & Validation",
+      "status": "PASS",
+      "evidence": "Temporal holdout evaluation: ROC-AUC 0.9206, PR-AUC 0.9328, F1 0.8258, Brier 0.119, ECE 0.059-0.062. Earlier 0.9902 leak was identified and eliminated.",
+      "safe_presentation_wording": "Evaluated on temporally separated holdout data achieving ~0.9206 ROC-AUC and ~0.9328 PR-AUC. Earlier 0.99+ estimates were identified as temporally contaminated and discarded.",
+      "unsafe_wording": "99.9% deterministic prediction accuracy."
+    },
+    {
+      "claim": "P6 Decision Thresholds",
+      "status": "PASS",
+      "evidence": "Frozen at 0.35 (Yellow), 0.50 (Orange), 0.75 (Red) in risk_policy.json.",
+      "safe_presentation_wording": "Prototype decision thresholds establish internal decision-support levels.",
+      "unsafe_wording": "NDMA / SDMA officially approved thresholds."
+    },
+    {
+      "claim": "Exposure & Vulnerability Coverage",
+      "status": "PASS WITH LIMITATION",
+      "evidence": "16 districts have scored vulnerability profiles (8 COMPUTED, 8 PARTIAL); 115 districts remain INSUFFICIENT_DATA with score null.",
+      "safe_presentation_wording": "Scored vulnerability profiles are currently available for 16 districts with open dataset indicators; missing data is transparently flagged as INSUFFICIENT DATA.",
+      "unsafe_wording": "Complete exposure metrics for all 131 districts."
+    },
+    {
+      "claim": "Live Weather Feed",
+      "status": "PASS",
+      "evidence": "Open-Meteo precipitation feed API with fallback handling. Stale weather downgrades confidence.",
+      "safe_presentation_wording": "Real-time rainfall feed powered by regional weather station APIs with data quality tracking.",
+      "unsafe_wording": "Proprietary Doppler radar network."
+    },
+    {
+      "claim": "Deployment Status",
+      "status": "PASS WITH LIMITATION",
+      "evidence": "Containerized deployment configuration prepared (Dockerfile, docker-compose.yml, GET /api/ready). Public cloud deployment: NOT_VERIFIED.",
+      "safe_presentation_wording": "Containerized deployment configuration is prepared and tested via production-like readiness probes.",
+      "unsafe_wording": "Deployed live on AWS/Azure for government operations."
+    },
+    {
+      "claim": "Warning Authority & Human Role",
+      "status": "PASS",
+      "evidence": "is_official_warning = false hardcoded. 4-point human verification checklist rendered in UI.",
+      "safe_presentation_wording": "NexSolve is an internal decision-support tool. Official public warning authority remains strictly with authorized government authorities (SDMA/NDMA).",
+      "unsafe_wording": "Automatically issues public evacuation alerts."
+    }
+  ]
+}

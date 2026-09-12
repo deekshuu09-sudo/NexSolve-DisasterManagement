@@ -1,0 +1,39 @@
+{
+  "report_version": "1.0.0",
+  "generated_at": "2026-09-12T10:18:10Z",
+  "total_soi_districts": 131,
+  "spatial_reference": "backend/data/geojson/ner_districts_soi.geojson",
+  "domain_coverage": {
+    "demographic": {
+      "dataset": "Census of India 2011 PCA",
+      "covered_districts": 16,
+      "coverage_pct": 12.21
+    },
+    "vulnerability": {
+      "dataset": "NITI Aayog MPI (2023) & BMTPC Vulnerability Atlas (2023)",
+      "covered_districts": 16,
+      "coverage_pct": 12.21
+    },
+    "healthcare": {
+      "dataset": "MoHFW Health Facility Registry (HFR 2024)",
+      "covered_districts": 8,
+      "coverage_pct": 6.11
+    },
+    "education": {
+      "dataset": "UDISE+ School Registry (2024)",
+      "covered_districts": 16,
+      "coverage_pct": 12.21
+    },
+    "transport": {
+      "dataset": "MoRTH National Highway Network GIS (2024)",
+      "covered_districts": 8,
+      "coverage_pct": 6.11
+    },
+    "built_environment": {
+      "dataset": "ISRO Bhuvan LULC WMS Stream",
+      "covered_districts": 131,
+      "coverage_pct": 100.0,
+      "note": "WMS active; vector extract unacquired due to NRSC portal authorization required."
+    }
+  }
+}

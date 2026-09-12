@@ -1,0 +1,208 @@
+{
+  "review_gate_decision": "GO_FOR_PROMOTION_REVIEW",
+  "final_verdict": "GO",
+  "production_model": {
+    "artifact_path": "backend/model/landslide_model.pkl",
+    "sha256": "d8546b0f78372c02196c6858f88cc3d5af4b54379f5e14b0003d5cb54c950eb1",
+    "status": "UNCHANGED"
+  },
+  "candidate_under_review": {
+    "id": "Candidate_A_RF_Leakage_Free",
+    "artifact_path": "backend/model/experimental/candidate_a_rf_v1.pkl",
+    "sha256": "1acad34e85b53df0cb68e5e81cd81d68066c4173792e65a51288b35557ba0f72",
+    "feature_set": [
+      "latitude",
+      "longitude",
+      "rainfall_1d",
+      "rainfall_3d",
+      "rainfall_7d",
+      "month_sin",
+      "month_cos"
+    ],
+    "training_cutoff": "date <= 2023-12-31"
+  },
+  "locked_holdout_metrics_t50": {
+    "roc_auc": 0.9197,
+    "pr_auc": 0.9332,
+    "precision": 0.83,
+    "recall": 0.8192,
+    "f1_score": 0.8246,
+    "specificity": 0.8322,
+    "accuracy": 0.8257,
+    "false_positive_rate": 0.1678,
+    "false_negative_rate": 0.1808,
+    "brier_score": 0.1195,
+    "expected_calibration_error": 0.0624,
+    "confusion_matrix": {
+      "true_negatives": 709,
+      "false_positives": 143,
+      "false_negatives": 154,
+      "true_positives": 698
+    }
+  },
+  "locked_holdout_metrics_t35": {
+    "roc_auc": 0.9197,
+    "pr_auc": 0.9332,
+    "precision": 0.7457,
+    "recall": 0.919,
+    "f1_score": 0.8233,
+    "specificity": 0.6866,
+    "accuracy": 0.8028,
+    "false_positive_rate": 0.3134,
+    "false_negative_rate": 0.081,
+    "brier_score": 0.1195,
+    "expected_calibration_error": 0.0624,
+    "confusion_matrix": {
+      "true_negatives": 585,
+      "false_positives": 267,
+      "false_negatives": 69,
+      "true_positives": 783
+    }
+  },
+  "state_coverage": {
+    "total_states": 8,
+    "evaluated_validated_states": 5,
+    "insufficient_or_zero_support_states": 3,
+    "breakdown": [
+      {
+        "state_id": "arunachal_pradesh",
+        "total_samples": 2,
+        "positive_count": 1,
+        "control_count": 1,
+        "status": "INSUFFICIENT_SUPPORT",
+        "roc_auc": null,
+        "f1_score": 1.0
+      },
+      {
+        "state_id": "assam",
+        "total_samples": 28,
+        "positive_count": 14,
+        "control_count": 14,
+        "status": "VALIDATED_EVALUATED",
+        "roc_auc": 0.7908,
+        "f1_score": 0.64
+      },
+      {
+        "state_id": "manipur",
+        "total_samples": 178,
+        "positive_count": 89,
+        "control_count": 89,
+        "status": "VALIDATED_EVALUATED",
+        "roc_auc": 0.7403,
+        "f1_score": 0.2703
+      },
+      {
+        "state_id": "meghalaya",
+        "total_samples": 136,
+        "positive_count": 68,
+        "control_count": 68,
+        "status": "VALIDATED_EVALUATED",
+        "roc_auc": 0.9152,
+        "f1_score": 0.855
+      },
+      {
+        "state_id": "mizoram",
+        "total_samples": 1290,
+        "positive_count": 645,
+        "control_count": 645,
+        "status": "VALIDATED_EVALUATED",
+        "roc_auc": 0.9588,
+        "f1_score": 0.8747
+      },
+      {
+        "state_id": "nagaland",
+        "total_samples": 62,
+        "positive_count": 31,
+        "control_count": 31,
+        "status": "VALIDATED_EVALUATED",
+        "roc_auc": 0.9136,
+        "f1_score": 0.7692
+      },
+      {
+        "state_id": "sikkim",
+        "total_samples": 8,
+        "positive_count": 4,
+        "control_count": 4,
+        "status": "INSUFFICIENT_SUPPORT",
+        "roc_auc": null,
+        "f1_score": 0.2857
+      },
+      {
+        "state_id": "tripura",
+        "total_samples": 0,
+        "positive_count": 0,
+        "control_count": 0,
+        "status": "NO_TEST_SAMPLES",
+        "roc_auc": null,
+        "f1_score": null
+      }
+    ]
+  },
+  "district_coverage": {
+    "total_official_districts": 131,
+    "evaluated_fused_districts": 54,
+    "unrepresented_districts": 77
+  },
+  "claims_audit": [
+    {
+      "claim": "NexSolve predicts landslides",
+      "status": "UNSAFE",
+      "reason": "Model estimates empirical risk scores, not deterministic physical predictions."
+    },
+    {
+      "claim": "NexSolve estimates landslide risk",
+      "status": "SAFE",
+      "reason": "Accurate characterization of model output probabilities."
+    },
+    {
+      "claim": "NexSolve provides 72-hour risk forecasting",
+      "status": "SAFE",
+      "reason": "Uses 1-day, 3-day, and 7-day antecedent rainfall inputs."
+    },
+    {
+      "claim": "NexSolve is validated across all 8 Northeast states",
+      "status": "UNSAFE",
+      "reason": "Model is validated with historical test samples across 5 states; 3 states have insufficient/zero test samples."
+    },
+    {
+      "claim": "NexSolve is validated across 131 districts",
+      "status": "UNSAFE",
+      "reason": "Model is evaluated across 54 districts; 77 districts have zero historical fused evaluation samples."
+    },
+    {
+      "claim": "The model provides government-grade warnings",
+      "status": "UNSAFE",
+      "reason": "System is a decision-support research prototype; thresholds are non-official prototype decision bands."
+    },
+    {
+      "claim": "The model automatically triggers evacuation",
+      "status": "UNSAFE",
+      "reason": "Evacuation orders remain strictly under official government authority."
+    },
+    {
+      "claim": "The system supports decision-making for disaster authorities",
+      "status": "SAFE",
+      "reason": "Designed as a decision-support prototype for intelligence."
+    },
+    {
+      "claim": "The model uses official administrative boundaries",
+      "status": "SAFE",
+      "reason": "Uses official Survey of India boundary GeoJSONs."
+    },
+    {
+      "claim": "The model uses official GSI landslide inventory",
+      "status": "SAFE",
+      "reason": "Spatially linked to official GSI 10,492 landslide inventory points."
+    },
+    {
+      "claim": "The model uses IMD rainfall data",
+      "status": "SAFE",
+      "reason": "Consumes gridded IMD rainfall data."
+    },
+    {
+      "claim": "The system is an early-warning decision-support prototype",
+      "status": "SAFE",
+      "reason": "Accurate characterization of system scope."
+    }
+  ]
+}

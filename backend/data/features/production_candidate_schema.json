@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NexSolve Production & Candidate ML Feature Schemas",
+  "description": "Defines production 7-feature schema, approved experimental candidate feature set, and excluded features.",
+  "production_rf_schema": {
+    "model_path": "backend/model/landslide_model.pkl",
+    "model_sha256": "d8546b0f78372c02196c6858f88cc3d5af4b54379f5e14b0003d5cb54c950eb1",
+    "feature_count": 7,
+    "feature_order": [
+      "latitude",
+      "longitude",
+      "rainfall_1d",
+      "rainfall_3d",
+      "rainfall_7d",
+      "month_sin",
+      "month_cos"
+    ]
+  },
+  "experimental_candidate_features": [
+    {
+      "feature_name": "elevation_m",
+      "dtype": "float64",
+      "source": "OBSERVED",
+      "provenance": "NASA NASADEM / SRTM1 30m via USGS / AWS Open Data Skadi Archive",
+      "experimental_candidate": true
+    },
+    {
+      "feature_name": "slope_deg",
+      "dtype": "float64",
+      "source": "DERIVED",
+      "provenance": "3x3 Sobel filter on NASADEM 30m grid",
+      "experimental_candidate": true
+    },
+    {
+      "feature_name": "aspect_deg",
+      "dtype": "float64",
+      "source": "DERIVED",
+      "provenance": "Compass direction from Sobel gradient on NASADEM 30m (-1.0 = flat terrain sentinel)",
+      "experimental_candidate": true
+    },
+    {
+      "feature_name": "curvature",
+      "dtype": "float64",
+      "source": "DERIVED",
+      "provenance": "5-point discrete Laplacian profile curvature on NASADEM 30m",
+      "experimental_candidate": true
+    },
+    {
+      "feature_name": "terrain_quality",
+      "dtype": "string",
+      "source": "DERIVED",
+      "provenance": "DEM tile validity tier (valid / nodata / unavailable)",
+      "experimental_candidate": true
+    },
+    {
+      "feature_name": "district_mean_slope",
+      "dtype": "float64",
+      "source": "DERIVED",
+      "provenance": "Mean slope across valid DEM samples inside official Survey of India district boundary",
+      "experimental_candidate": true
+    },
+    {
+      "feature_name": "district_p90_slope",
+      "dtype": "float64",
+      "source": "DERIVED",
+      "provenance": "90th percentile slope inside official Survey of India district boundary",
+      "experimental_candidate": true
+    },
+    {
+      "feature_name": "historical_event_count",
+      "dtype": "int64",
+      "source": "DERIVED",
+      "provenance": "Temporally-filtered GSI inventory event count (event_year <= prediction_year, target excluded)",
+      "experimental_candidate": true
+    },
+    {
+      "feature_name": "event_density_per_sqkm",
+      "dtype": "float64",
+      "source": "DERIVED",
+      "provenance": "Temporally-filtered GSI event density per sqkm in official district",
+      "experimental_candidate": true
+    }
+  ],
+  "excluded_features": [
+    {
+      "feature_name": "distance_to_nearest_event_km",
+      "status": "EXCLUDED",
+      "reason": "ZERO_VARIANCE_DUE_TO_SAMPLING_DESIGN",
+      "production_candidate": false,
+      "experimental_candidate": false,
+      "explanation": "Temporal contrast sampling selects control samples at identical location coordinates as historical positive events, rendering distance to nearest inventory event constant (0.0 km)."
+    },
+    {
+      "feature_name": "soilSat",
+      "status": "EXCLUDED",
+      "reason": "SIMULATED_UI_PROXY_NOT_OBSERVED",
+      "production_candidate": false,
+      "experimental_candidate": false,
+      "explanation": "Simulated soil moisture proxy used strictly in frontend/backend district UI fallbacks; prohibited from ML candidate set."
+    }
+  ]
+}

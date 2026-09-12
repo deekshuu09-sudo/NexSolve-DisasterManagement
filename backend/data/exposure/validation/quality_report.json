@@ -1,0 +1,27 @@
+{
+  "report_version": "1.0.0",
+  "generated_at": "2026-09-12T10:18:10Z",
+  "overall_quality_status": "PASS",
+  "checks": [
+    {
+      "check": "Healthcare Coordinates in NER Box (20-30N, 88-98E)",
+      "status": "PASS"
+    },
+    {
+      "check": "131 SoI District LGD Joining",
+      "status": "PASS"
+    },
+    {
+      "check": "No Synthetic Zero-Filling",
+      "status": "PASS"
+    },
+    {
+      "check": "Raw Dataset SHA256 Checksums Verified",
+      "status": "PASS"
+    },
+    {
+      "check": "P6 Model & Risk Engine Untouched",
+      "status": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "audit_version": "1.0.0",
+  "evaluated_at": "2026-09-12T11:59:00Z",
+  "project_name": "NexSolve Disaster Management System",
+  "phase": "P10 - Deployment & Production Readiness",
+  "audit_verdict": "P10-PASS-WITH-LIMITATIONS",
+  "runtime_requirements": {
+    "python_version": "3.10+",
+    "node_version": "18+",
+    "backend_framework": "FastAPI 0.115+",
+    "frontend_framework": "Vite 5+ / React 18+",
+    "backend_startup": "uvicorn backend.main:app --host 0.0.0.0 --port 8000",
+    "frontend_build": "npm run build (from frontend/)",
+    "frontend_serving": "Static file web server / Nginx / Vercel"
+  },
+  "environment_variables": {
+    "backend": [
+      { "name": "PORT", "required": false, "default": "8000", "description": "Port to bind backend server" },
+      { "name": "HOST", "required": false, "default": "0.0.0.0", "description": "Host interface to bind backend server" },
+      { "name": "FRONTEND_URL", "required": false, "default": "http://localhost:5173", "description": "Allowed CORS frontend origins (comma-separated)" },
+      { "name": "ALLOWED_ORIGINS", "required": false, "default": "", "description": "Additional allowed CORS origins" }
+    ],
+    "frontend": [
+      { "name": "VITE_API_URL", "required": false, "default": "", "description": "Backend API base URL (defaults to relative /api when empty)" }
+    ]
+  },
+  "model_integrity": {
+    "status": "PASS",
+    "active_model_id": "candidate_a_rf_v1",
+    "active_model_version": "1.1.0",
+    "production_model_sha256": "d8546b0f78372c02196c6858f88cc3d5af4b54379f5e14b0003d5cb54c950eb1",
+    "candidate_a_model_sha256": "1acad34e85b53df0cb68e5e81cd81d68066c4173792e65a51288b35557ba0f72",
+    "feature_count": 7,
+    "features": ["latitude", "longitude", "rainfall_1d", "rainfall_3d", "rainfall_7d", "month_sin", "month_cos"]
+  },
+  "safety_policy": {
+    "status": "PASS",
+    "risk_thresholds": {
+      "candidate_internal_threshold": 0.35,
+      "warning_risk_threshold": 0.50,
+      "emergency_risk_threshold": 0.75
+    },
+    "is_official_warning": false,
+    "risk_vulnerability_decoupled": true,
+    "missing_data_zero_filled": false
+  },
+  "endpoint_health": {
+    "health_endpoint": "/api/health",
+    "readiness_endpoint": "/api/ready",
+    "health_status": "PASS",
+    "readiness_status": "PASS"
+  },
+  "security_audit": {
+    "status": "PASS",
+    "secrets_exposed": false,
+    "cors_configured": true,
+    "unrestricted_cors_wildcard": false,
+    "upload_size_limit_bytes": 10485760,
+    "path_traversal_protection": true
+  },
+  "known_limitations": [
+    "Vulnerability profiles computed for 16 districts (8 COMPUTED, 8 PARTIAL); 115 districts remain INSUFFICIENT_DATA with score null.",
+    "NASADEM 30m DEM elevation files are sourced via open datasets; terrain slope uses district centroid approximation where rasters are pending.",
+    "NexSolve is an internal decision-support prototype and does NOT possess official warning authority or trigger automated public evacuations."
+  ],
+  "deployment_blockers": []
+}

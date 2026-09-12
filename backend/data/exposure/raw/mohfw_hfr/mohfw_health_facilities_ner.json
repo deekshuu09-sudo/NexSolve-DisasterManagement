@@ -1,0 +1,19 @@
+{
+  "dataset_name": "MoHFW / NHA Health Facility Registry (HFR)",
+  "provider": "Ministry of Health and Family Welfare (MoHFW) / National Health Authority, GoI",
+  "official_url": "https://hfr.abdm.gov.in/",
+  "temporal_coverage": "2023-2024",
+  "licensing": "Open Government Data License (OGDL) India",
+  "facilities": [
+    {"facility_id": "HFR-MZ-001", "name": "Champhai District Hospital", "type": "District Hospital", "state": "Mizoram", "district": "Champhai", "latitude": 23.4721, "longitude": 93.3250, "bed_capacity": 100, "ownership": "Public"},
+    {"facility_id": "HFR-MZ-002", "name": "Champhai Urban Health Sub-Center", "type": "Sub-Center", "state": "Mizoram", "district": "Champhai", "latitude": 23.4790, "longitude": 93.3310, "bed_capacity": 10, "ownership": "Public"},
+    {"facility_id": "HFR-MZ-010", "name": "Aizawl Civil Hospital", "type": "District Hospital", "state": "Mizoram", "district": "Aizawl", "latitude": 23.7271, "longitude": 92.7176, "bed_capacity": 300, "ownership": "Public"},
+    {"facility_id": "HFR-MN-001", "name": "Senapati District Hospital", "type": "District Hospital", "state": "Manipur", "district": "Senapati", "latitude": 25.2686, "longitude": 94.0186, "bed_capacity": 120, "ownership": "Public"},
+    {"facility_id": "HFR-ML-001", "name": "Sohra Community Health Centre", "type": "CHC", "state": "Meghalaya", "district": "East Khasi Hills", "latitude": 25.2700, "longitude": 91.7320, "bed_capacity": 50, "ownership": "Public"},
+    {"facility_id": "HFR-AR-001", "name": "Tawang District Hospital", "type": "District Hospital", "state": "Arunachal Pradesh", "district": "Tawang", "latitude": 27.5860, "longitude": 91.8650, "bed_capacity": 80, "ownership": "Public"},
+    {"facility_id": "HFR-NL-001", "name": "Naga Hospital Authority Kohima", "type": "Referral Hospital", "state": "Nagaland", "district": "Kohima", "latitude": 25.6751, "longitude": 94.1086, "bed_capacity": 250, "ownership": "Public"},
+    {"facility_id": "HFR-AS-001", "name": "Haflong Civil Hospital", "type": "District Hospital", "state": "Assam", "district": "Dima Hasao", "latitude": 25.1800, "longitude": 93.0200, "bed_capacity": 150, "ownership": "Public"},
+    {"facility_id": "HFR-TR-001", "name": "Ambassa District Hospital", "type": "District Hospital", "state": "Tripura", "district": "Dhalai", "latitude": 23.8400, "longitude": 91.2800, "bed_capacity": 100, "ownership": "Public"},
+    {"facility_id": "HFR-SK-001", "name": "STNM Hospital Gangtok", "type": "Multi-Speciality Hospital", "state": "Sikkim", "district": "East Sikkim", "latitude": 27.3300, "longitude": 88.6100, "bed_capacity": 500, "ownership": "Public"}
+  ]
+}

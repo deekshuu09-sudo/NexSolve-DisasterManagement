@@ -1,22 +1,20 @@
 """Landslide risk prediction service.
 
-Uses the trained Random Forest model when all required ML features
-are available. Falls back to the transparent baseline when they are not.
+Uses the central model loader and registry service to load the active leakage-free model
+when all required ML features are available. Falls back to the transparent baseline when they are not.
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any
+from typing import Any, Optional
 from datetime import datetime
 import math
 import pickle
 import pandas as pd
 
-# ============================================================
-# TRAINED MODEL
-# ============================================================
+from backend.services.model_loader import load_active_model
 
 MODEL_PATH = Path(__file__).parent / "landslide_model.pkl"
 
@@ -28,6 +26,9 @@ class Prediction:
     confidence: float
     factors: list[dict[str, Any]]
     model_source: str
+    model_version: str = "1.1.0"
+    model_id: str = "candidate_a_rf_v1"
+    feature_schema_version: str = "v1"
 
 
 def _clamp(
@@ -107,37 +108,32 @@ def baseline_predict(
     ]
 
     return Prediction(
-        score,
-        status,
-        62.0,
-        factors,
-        "transparent-baseline"
+        score=score,
+        status=status,
+        confidence=62.0,
+        factors=factors,
+        model_source="transparent-baseline",
+        model_version="1.0.0",
+        model_id="transparent_baseline",
+        feature_schema_version="v0"
     )
 
 
 # ============================================================
-# LOAD TRAINED MODEL
+# LOAD ACTIVE TRAINED MODEL
 # ============================================================
 
 def _load_model():
-
-    if not MODEL_PATH.exists():
-        return None
-
-    try:
-        with open(MODEL_PATH, "rb") as f:
-            package = pickle.load(f)
-
-        return package
-
-    except Exception as exc:
-        print(
-            f"Warning: unable to load trained model: {exc}"
-        )
-        return None
+    return load_active_model()
 
 
 MODEL_PACKAGE = _load_model()
+
+
+def reload_model_package():
+    global MODEL_PACKAGE
+    MODEL_PACKAGE = load_active_model()
+    return MODEL_PACKAGE
 
 
 # ============================================================
@@ -147,6 +143,10 @@ MODEL_PACKAGE = _load_model()
 def ml_predict(
     features: dict[str, float]
 ) -> Prediction | None:
+
+    global MODEL_PACKAGE
+    if MODEL_PACKAGE is None:
+        MODEL_PACKAGE = load_active_model()
 
     if MODEL_PACKAGE is None:
         return None
@@ -161,8 +161,6 @@ def ml_predict(
         "rainfall_7d",
     ]
 
-    # We need all rainfall/location values
-    # for the trained model.
     if not all(
         key in features
         and features[key] is not None
@@ -334,7 +332,10 @@ def ml_predict(
                 1
             ),
             factors=factors,
-            model_source="trained-random-forest"
+            model_source=MODEL_PACKAGE.get("model_source", "NexSolve leakage-free RF"),
+            model_version=MODEL_PACKAGE.get("model_version", "1.1.0"),
+            model_id=MODEL_PACKAGE.get("model_id", "candidate_a_rf_v1"),
+            feature_schema_version=MODEL_PACKAGE.get("feature_schema_version", "v1")
         )
 
     except Exception as exc:

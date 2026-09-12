@@ -1,0 +1,142 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "NexSolve District Exposure & Vulnerability Schema",
+  "schema_version": "1.0.0",
+  "type": "object",
+  "required": [
+    "district_id",
+    "district_name_soi",
+    "state_name",
+    "dist_lgd",
+    "status",
+    "availability",
+    "provenance"
+  ],
+  "properties": {
+    "district_id": {
+      "type": "string",
+      "description": "Canonical district identifier matching official Survey of India boundary database"
+    },
+    "district_name_soi": {
+      "type": "string",
+      "description": "Official Survey of India district name"
+    },
+    "state_name": {
+      "type": "string",
+      "description": "State name"
+    },
+    "dist_lgd": {
+      "type": ["integer", "null"],
+      "description": "Official Local Government Directory (LGD) district code"
+    },
+    "state_lgd": {
+      "type": ["integer", "null"],
+      "description": "Official Local Government Directory (LGD) state code"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["AVAILABLE", "PARTIAL", "UNAVAILABLE"],
+      "description": "Overall district exposure data availability status"
+    },
+    "demographic": {
+      "type": ["object", "null"],
+      "properties": {
+        "reference_year": { "type": "string" },
+        "total_population_2011": { "type": ["integer", "null"] },
+        "male_population": { "type": ["integer", "null"] },
+        "female_population": { "type": ["integer", "null"] },
+        "children_0_6": { "type": ["integer", "null"] },
+        "scheduled_tribe_population": { "type": ["integer", "null"] },
+        "scheduled_caste_population": { "type": ["integer", "null"] },
+        "literate_population": { "type": ["integer", "null"] },
+        "households": { "type": ["integer", "null"] }
+      }
+    },
+    "vulnerability": {
+      "type": ["object", "null"],
+      "properties": {
+        "niti_mpi_reference_year": { "type": "string" },
+        "headcount_ratio_pct": { "type": ["number", "null"] },
+        "intensity_poverty_pct": { "type": ["number", "null"] },
+        "mpi_score": { "type": ["number", "null"] },
+        "housing_deprived_pct": { "type": ["number", "null"] },
+        "sanitation_deprived_pct": { "type": ["number", "null"] },
+        "drinking_water_deprived_pct": { "type": ["number", "null"] },
+        "bmtpc_reference_year": { "type": "string" },
+        "kutcha_wall_pct": { "type": ["number", "null"] },
+        "semi_pucca_wall_pct": { "type": ["number", "null"] },
+        "pucca_wall_pct": { "type": ["number", "null"] },
+        "landslide_hazard_zone": { "type": ["string", "null"] },
+        "earthquake_zone": { "type": ["string", "null"] }
+      }
+    },
+    "transport": {
+      "type": ["object", "null"],
+      "properties": {
+        "reference_year": { "type": "string" },
+        "arterial_corridor_count": { "type": ["integer", "null"] },
+        "arterial_highways": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "arterial_highway_length_km": { "type": ["number", "null"] }
+      }
+    },
+    "healthcare": {
+      "type": ["object", "null"],
+      "properties": {
+        "reference_year": { "type": "string" },
+        "total_facilities": { "type": ["integer", "null"] },
+        "district_hospitals": { "type": ["integer", "null"] },
+        "chc_phc_subcenters": { "type": ["integer", "null"] },
+        "total_bed_capacity": { "type": ["integer", "null"] }
+      }
+    },
+    "education": {
+      "type": ["object", "null"],
+      "properties": {
+        "reference_year": { "type": "string" },
+        "total_schools": { "type": ["integer", "null"] },
+        "government_schools": { "type": ["integer", "null"] },
+        "private_schools": { "type": ["integer", "null"] },
+        "primary_schools": { "type": ["integer", "null"] },
+        "secondary_schools": { "type": ["integer", "null"] },
+        "higher_secondary_schools": { "type": ["integer", "null"] },
+        "total_enrolment": { "type": ["integer", "null"] }
+      }
+    },
+    "built_environment": {
+      "type": ["object", "null"],
+      "properties": {
+        "reference_year": { "type": "string" },
+        "source": { "type": "string" },
+        "built_up_area_sqkm": { "type": ["number", "null"] },
+        "status": { "type": "string" }
+      }
+    },
+    "availability": {
+      "type": "object",
+      "properties": {
+        "demographic": { "type": "string" },
+        "vulnerability": { "type": "string" },
+        "transport": { "type": "string" },
+        "healthcare": { "type": "string" },
+        "education": { "type": "string" },
+        "built_environment": { "type": "string" }
+      }
+    },
+    "provenance": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "domain": { "type": "string" },
+          "dataset_name": { "type": "string" },
+          "provider": { "type": "string" },
+          "reference_year": { "type": "string" },
+          "authoritative_tier": { "type": "string" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+claim,status,reason
+NexSolve predicts landslides,UNSAFE,"Model estimates empirical risk scores, not deterministic physical predictions."
+NexSolve estimates landslide risk,SAFE,Accurate characterization of model output probabilities.
+NexSolve provides 72-hour risk forecasting,SAFE,"Uses 1-day, 3-day, and 7-day antecedent rainfall inputs."
+NexSolve is validated across all 8 Northeast states,UNSAFE,Model is validated with historical test samples across 5 states; 3 states have insufficient/zero test samples.
+NexSolve is validated across 131 districts,UNSAFE,Model is evaluated across 54 districts; 77 districts have zero historical fused evaluation samples.
+The model provides government-grade warnings,UNSAFE,System is a decision-support research prototype; thresholds are non-official prototype decision bands.
+The model automatically triggers evacuation,UNSAFE,Evacuation orders remain strictly under official government authority.
+The system supports decision-making for disaster authorities,SAFE,Designed as a decision-support prototype for intelligence.
+The model uses official administrative boundaries,SAFE,Uses official Survey of India boundary GeoJSONs.
+The model uses official GSI landslide inventory,SAFE,"Spatially linked to official GSI 10,492 landslide inventory points."
+The model uses IMD rainfall data,SAFE,Consumes gridded IMD rainfall data.
+The system is an early-warning decision-support prototype,SAFE,Accurate characterization of system scope.

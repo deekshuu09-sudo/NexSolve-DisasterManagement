@@ -1,0 +1,17 @@
+{
+  "policy_version": "1.0.0-PROTOTYPE",
+  "status": "PROTOTYPE / INTERNAL",
+  "effective_date": "2026-09-12T00:00:00Z",
+  "thresholds": {
+    "candidate_internal_threshold": 0.35,
+    "default_comparison_threshold": 0.50,
+    "elevated_risk_threshold": 0.35,
+    "warning_risk_threshold": 0.50,
+    "emergency_risk_threshold": 0.75,
+    "rainfall_24h_elevated_mm": 50.0,
+    "rainfall_3d_elevated_mm": 100.0,
+    "rainfall_7d_elevated_mm": 200.0
+  },
+  "rationale": "P5.3.2 candidate threshold evaluation established 0.35 as internal optimal operating point. Probabilities >= 0.35 signal elevated watch level (YELLOW), >= 0.50 warning level (ORANGE), and >= 0.75 emergency level (RED) when supported by rainfall context.",
+  "disclaimer": "NexSolve Internal Decision Support — Thresholds are prototype internal markers and do NOT replace official government emergency alert categories."
+}

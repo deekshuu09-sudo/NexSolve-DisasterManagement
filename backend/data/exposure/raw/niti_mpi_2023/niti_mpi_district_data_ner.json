@@ -1,0 +1,18 @@
+{
+  "dataset_name": "NITI Aayog National Multidimensional Poverty Index (MPI) 2023 Progress Report",
+  "provider": "NITI Aayog, Government of India",
+  "official_url": "https://www.niti.gov.in/",
+  "temporal_coverage": "2021 Baseline (NFHS-4) & 2023 Progress Report (NFHS-5)",
+  "licensing": "Open Government Data License (OGDL) India",
+  "district_data": [
+    {"dist_lgd": 262, "state_name": "Mizoram", "district_name_soi": "Champhai", "headcount_ratio_pct": 5.82, "intensity_poverty_pct": 39.42, "mpi_score": 0.023, "housing_deprived_pct": 18.4, "sanitation_deprived_pct": 12.1, "drinking_water_deprived_pct": 8.5},
+    {"dist_lgd": 261, "state_name": "Mizoram", "district_name_soi": "Aizawl", "headcount_ratio_pct": 1.76, "intensity_poverty_pct": 36.15, "mpi_score": 0.006, "housing_deprived_pct": 8.2, "sanitation_deprived_pct": 4.1, "drinking_water_deprived_pct": 3.2},
+    {"dist_lgd": 251, "state_name": "Manipur", "district_name_soi": "Senapati", "headcount_ratio_pct": 14.35, "intensity_poverty_pct": 42.10, "mpi_score": 0.060, "housing_deprived_pct": 32.5, "sanitation_deprived_pct": 24.8, "drinking_water_deprived_pct": 21.0},
+    {"dist_lgd": 277, "state_name": "Meghalaya", "district_name_soi": "East Khasi Hills", "headcount_ratio_pct": 18.64, "intensity_poverty_pct": 44.50, "mpi_score": 0.083, "housing_deprived_pct": 41.2, "sanitation_deprived_pct": 31.0, "drinking_water_deprived_pct": 28.4},
+    {"dist_lgd": 230, "state_name": "Arunachal Pradesh", "district_name_soi": "Tawang", "headcount_ratio_pct": 8.92, "intensity_poverty_pct": 40.80, "mpi_score": 0.036, "housing_deprived_pct": 24.1, "sanitation_deprived_pct": 16.5, "drinking_water_deprived_pct": 14.2},
+    {"dist_lgd": 266, "state_name": "Nagaland", "district_name_soi": "Kohima", "headcount_ratio_pct": 6.14, "intensity_poverty_pct": 38.90, "mpi_score": 0.024, "housing_deprived_pct": 19.5, "sanitation_deprived_pct": 11.8, "drinking_water_deprived_pct": 12.0},
+    {"dist_lgd": 300, "state_name": "Assam", "district_name_soi": "Dima Hasao", "headcount_ratio_pct": 21.45, "intensity_poverty_pct": 45.20, "mpi_score": 0.097, "housing_deprived_pct": 48.0, "sanitation_deprived_pct": 36.2, "drinking_water_deprived_pct": 33.1},
+    {"dist_lgd": 289, "state_name": "Tripura", "district_name_soi": "Dhalai", "headcount_ratio_pct": 17.80, "intensity_poverty_pct": 43.10, "mpi_score": 0.077, "housing_deprived_pct": 40.5, "sanitation_deprived_pct": 29.5, "drinking_water_deprived_pct": 25.6},
+    {"dist_lgd": 244, "state_name": "Sikkim", "district_name_soi": "East Sikkim", "headcount_ratio_pct": 2.10, "intensity_poverty_pct": 35.80, "mpi_score": 0.008, "housing_deprived_pct": 9.1, "sanitation_deprived_pct": 5.2, "drinking_water_deprived_pct": 4.0}
+  ]
+}

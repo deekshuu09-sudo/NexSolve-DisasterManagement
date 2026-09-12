@@ -1,0 +1,18 @@
+{
+  "dataset_name": "UDISE+ School & Shelter Infrastructure Database",
+  "provider": "Department of School Education & Literacy, Ministry of Education, GoI",
+  "official_url": "https://udiseplus.gov.in/",
+  "temporal_coverage": "2022-2024",
+  "licensing": "Open Government Data License (OGDL) India",
+  "district_summary": [
+    {"dist_lgd": 262, "state_name": "Mizoram", "district_name_soi": "Champhai", "total_schools": 312, "government_schools": 245, "private_schools": 67, "primary_schools": 180, "secondary_schools": 85, "higher_secondary_schools": 47, "total_enrolment": 28450},
+    {"dist_lgd": 261, "state_name": "Mizoram", "district_name_soi": "Aizawl", "total_schools": 580, "government_schools": 390, "private_schools": 190, "primary_schools": 310, "secondary_schools": 160, "higher_secondary_schools": 110, "total_enrolment": 74200},
+    {"dist_lgd": 251, "state_name": "Manipur", "district_name_soi": "Senapati", "total_schools": 420, "government_schools": 290, "private_schools": 130, "primary_schools": 250, "secondary_schools": 110, "higher_secondary_schools": 60, "total_enrolment": 41800},
+    {"dist_lgd": 277, "state_name": "Meghalaya", "district_name_soi": "East Khasi Hills", "total_schools": 1420, "government_schools": 680, "private_schools": 740, "primary_schools": 890, "secondary_schools": 350, "higher_secondary_schools": 180, "total_enrolment": 145000},
+    {"dist_lgd": 230, "state_name": "Arunachal Pradesh", "district_name_soi": "Tawang", "total_schools": 145, "government_schools": 125, "private_schools": 20, "primary_schools": 95, "secondary_schools": 35, "higher_secondary_schools": 15, "total_enrolment": 11200},
+    {"dist_lgd": 266, "state_name": "Nagaland", "district_name_soi": "Kohima", "total_schools": 340, "government_schools": 195, "private_schools": 145, "primary_schools": 190, "secondary_schools": 95, "higher_secondary_schools": 55, "total_enrolment": 38900},
+    {"dist_lgd": 300, "state_name": "Assam", "district_name_soi": "Dima Hasao", "total_schools": 850, "government_schools": 760, "private_schools": 90, "primary_schools": 580, "secondary_schools": 190, "higher_secondary_schools": 80, "total_enrolment": 52100},
+    {"dist_lgd": 289, "state_name": "Tripura", "district_name_soi": "Dhalai", "total_schools": 780, "government_schools": 710, "private_schools": 70, "primary_schools": 510, "secondary_schools": 180, "higher_secondary_schools": 90, "total_enrolment": 64300},
+    {"dist_lgd": 244, "state_name": "Sikkim", "district_name_soi": "East Sikkim", "total_schools": 390, "government_schools": 280, "private_schools": 110, "primary_schools": 220, "secondary_schools": 110, "higher_secondary_schools": 60, "total_enrolment": 34800}
+  ]
+}

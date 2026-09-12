@@ -1,0 +1,16 @@
+{
+  "dataset_name": "MoRTH / NHAI National Highway GIS Network Registry",
+  "provider": "Ministry of Road Transport and Highways (MoRTH) / NHAI / GIS Cell",
+  "official_url": "https://morth.nic.in/",
+  "temporal_coverage": "2023-2024",
+  "licensing": "Open Government Data License (OGDL) India",
+  "highways": [
+    {"highway_no": "NH-306", "name": "Silchar – Aizawl Arterial Corridor", "length_km": 142.5, "states_traversed": ["Assam", "Mizoram"], "key_districts": ["Champhai", "Aizawl"], "carriageway": "2-Lane Mountain Highway", "agency": "NHIDCL / BRO"},
+    {"highway_no": "NH-2", "name": "Dimapur – Kohima – Imphal Hwy", "length_km": 215.0, "states_traversed": ["Nagaland", "Manipur"], "key_districts": ["Kohima", "Senapati"], "carriageway": "2-Lane / 4-Lane Expansion", "agency": "NHIDCL"},
+    {"highway_no": "NH-6", "name": "Guwahati – Shillong – Jowai Corridor", "length_km": 185.0, "states_traversed": ["Assam", "Meghalaya"], "key_districts": ["East Khasi Hills"], "carriageway": "4-Lane Expressway / 2-Lane", "agency": "NHAI / State PWD"},
+    {"highway_no": "NH-10", "name": "Siliguri – Gangtok Axis", "length_km": 114.0, "states_traversed": ["West Bengal", "Sikkim"], "key_districts": ["East Sikkim"], "carriageway": "2-Lane Mountain Highway", "agency": "BRO"},
+    {"highway_no": "NH-229", "name": "Tawang – Bomdila Trans-Arunachal Hwy", "length_km": 310.0, "states_traversed": ["Arunachal Pradesh"], "key_districts": ["Tawang"], "carriageway": "2-Lane Mountain Highway", "agency": "BRO / NHIDCL"},
+    {"highway_no": "NH-27", "name": "East-West Corridor Haflong Axis", "length_km": 160.0, "states_traversed": ["Assam"], "key_districts": ["Dima Hasao"], "carriageway": "4-Lane Expressway", "agency": "NHAI"},
+    {"highway_no": "NH-8", "name": "Agartala – Ambassa Tripura Highway", "length_km": 198.0, "states_traversed": ["Tripura"], "key_districts": ["Dhalai"], "carriageway": "2-Lane Highway", "agency": "NHIDCL"}
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "diagnostic_only": true,
+  "operational_locations": [
+    {
+      "operational_name": "Champhai District",
+      "official_district": "Champhai",
+      "state": "Mizoram",
+      "lgd_code": "284",
+      "exposure_record_found": true,
+      "api_exposure_status": 200,
+      "api_vulnerability_status": 200,
+      "available_domains": [
+        "demographic",
+        "vulnerability",
+        "healthcare",
+        "education",
+        "transport"
+      ],
+      "missing_domains": [],
+      "p7c_score": 33.09,
+      "p7c_status": "FULL",
+      "root_cause": "Data acquired and valid in backend. Issue traced to frontend Watchlist table status string fallback."
+    },
+    {
+      "operational_name": "Aizawl Capital Corridor",
+      "official_district": "Aizawl",
+      "state": "Mizoram",
+      "lgd_code": "283",
+      "exposure_record_found": true,
+      "api_exposure_status": 200,
+      "api_vulnerability_status": 200,
+      "available_domains": [
+        "demographic",
+        "vulnerability",
+        "healthcare",
+        "education",
+        "transport"
+      ],
+      "missing_domains": [],
+      "p7c_score": 6.96,
+      "p7c_status": "FULL",
+      "root_cause": "Data acquired and valid in backend. Issue traced to frontend Watchlist table status string fallback."
+    },
+    {
+      "operational_name": "Senapati NH-2 Corridor",
+      "official_district": "Senapati",
+      "state": "Manipur",
+      "lgd_code": "272",
+      "exposure_record_found": true,
+      "api_exposure_status": 200,
+      "api_vulnerability_status": 200,
+      "available_domains": [
+        "demographic",
+        "vulnerability",
+        "healthcare",
+        "education",
+        "transport"
+      ],
+      "missing_domains": [],
+      "p7c_score": 60.98,
+      "p7c_status": "FULL",
+      "root_cause": "Data acquired and valid in backend. Issue traced to frontend Watchlist table status string fallback."
+    },
+    {
+      "operational_name": "Sohra / Cherrapunji Plateau",
+      "official_district": "East Khasi Hills",
+      "state": "Meghalaya",
+      "lgd_code": "298",
+      "exposure_record_found": true,
+      "api_exposure_status": 200,
+      "api_vulnerability_status": 200,
+      "available_domains": [
+        "demographic",
+        "vulnerability",
+        "healthcare",
+        "education",
+        "transport"
+      ],
+      "missing_domains": [],
+      "p7c_score": 65.55,
+      "p7c_status": "FULL",
+      "root_cause": "Data acquired and valid in backend. Issue traced to frontend Watchlist table status string fallback."
+    },
+    {
+      "operational_name": "Tawang High Pass",
+      "official_district": "Tawang",
+      "state": "Arunachal Pradesh",
+      "lgd_code": "245",
+      "exposure_record_found": true,
+      "api_exposure_status": 200,
+      "api_vulnerability_status": 200,
+      "available_domains": [
+        "demographic",
+        "vulnerability",
+        "healthcare",
+        "education",
+        "transport"
+      ],
+      "missing_domains": [],
+      "p7c_score": 61.83,
+      "p7c_status": "FULL",
+      "root_cause": "Data acquired and valid in backend. Issue traced to frontend Watchlist table status string fallback."
+    },
+    {
+      "operational_name": "Kohima Bypass Corridor",
+      "official_district": "Kohima",
+      "state": "Nagaland",
+      "lgd_code": "270",
+      "exposure_record_found": true,
+      "api_exposure_status": 200,
+      "api_vulnerability_status": 200,
+      "available_domains": [
+        "demographic",
+        "vulnerability",
+        "healthcare",
+        "education",
+        "transport"
+      ],
+      "missing_domains": [],
+      "p7c_score": 28.62,
+      "p7c_status": "FULL",
+      "root_cause": "Data acquired and valid in backend. Issue traced to frontend Watchlist table status string fallback."
+    },
+    {
+      "operational_name": "Dima Hasao Hill Axis",
+      "official_district": "Dima Hasao",
+      "state": "Assam",
+      "lgd_code": "315",
+      "exposure_record_found": true,
+      "api_exposure_status": 200,
+      "api_vulnerability_status": 200,
+      "available_domains": [
+        "demographic",
+        "vulnerability",
+        "healthcare",
+        "education",
+        "transport"
+      ],
+      "missing_domains": [],
+      "p7c_score": 67.38,
+      "p7c_status": "FULL",
+      "root_cause": "Data acquired and valid in backend. Issue traced to frontend Watchlist table status string fallback."
+    },
+    {
+      "operational_name": "Dhalai Pass Corridor",
+      "official_district": "Dhalai",
+      "state": "Tripura",
+      "lgd_code": "291",
+      "exposure_record_found": true,
+      "api_exposure_status": 200,
+      "api_vulnerability_status": 200,
+      "available_domains": [
+        "demographic",
+        "vulnerability",
+        "healthcare",
+        "education",
+        "transport"
+      ],
+      "missing_domains": [],
+      "p7c_score": 65.93,
+      "p7c_status": "FULL",
+      "root_cause": "Data acquired and valid in backend. Issue traced to frontend Watchlist table status string fallback."
+    },
+    {
+      "operational_name": "Gangtok / East Sikkim",
+      "official_district": "Gangtok",
+      "state": "Sikkim",
+      "lgd_code": "244",
+      "exposure_record_found": true,
+      "api_exposure_status": 200,
+      "api_vulnerability_status": 200,
+      "available_domains": [
+        "demographic",
+        "vulnerability",
+        "education"
+      ],
+      "missing_domains": [
+        "healthcare",
+        "transport"
+      ],
+      "p7c_score": 5.38,
+      "p7c_status": "PARTIAL",
+      "root_cause": "Data acquired and valid in backend. Issue traced to frontend Watchlist table status string fallback."
+    }
+  ]
+}

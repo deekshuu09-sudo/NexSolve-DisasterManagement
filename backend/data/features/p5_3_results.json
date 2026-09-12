@@ -1,0 +1,812 @@
+[
+  {
+    "candidate_id": "Candidate_A_RF_Leakage_Free",
+    "label": "RF-LEAKAGE-FREE-BASELINE",
+    "feature_count": 7,
+    "validation_strategy": "Chronological_Holdout_2024_2025",
+    "train_samples": 490,
+    "test_samples": 1704,
+    "metrics": {
+      "roc_auc": 0.9197,
+      "pr_auc": 0.9332,
+      "precision": 0.83,
+      "recall": 0.8192,
+      "f1_score": 0.8246,
+      "specificity": 0.8322,
+      "accuracy": 0.8257,
+      "false_positive_rate": 0.1678,
+      "false_negative_rate": 0.1808,
+      "brier_score": 0.1195,
+      "expected_calibration_error": 0.0624,
+      "confusion_matrix": {
+        "true_negatives": 709,
+        "false_positives": 143,
+        "false_negatives": 154,
+        "true_positives": 698
+      }
+    }
+  },
+  {
+    "candidate_id": "Candidate_A_RF_Leakage_Free",
+    "label": "RF-LEAKAGE-FREE-BASELINE",
+    "feature_count": 7,
+    "validation_strategy": "Rolling_Temporal_Fold_1_Pre2024",
+    "train_samples": 266,
+    "test_samples": 80,
+    "metrics": {
+      "roc_auc": 0.8981,
+      "pr_auc": 0.9014,
+      "precision": 0.8293,
+      "recall": 0.85,
+      "f1_score": 0.8395,
+      "specificity": 0.825,
+      "accuracy": 0.8375,
+      "false_positive_rate": 0.175,
+      "false_negative_rate": 0.15,
+      "brier_score": 0.1343,
+      "expected_calibration_error": 0.0994,
+      "confusion_matrix": {
+        "true_negatives": 33,
+        "false_positives": 7,
+        "false_negatives": 6,
+        "true_positives": 34
+      }
+    }
+  },
+  {
+    "candidate_id": "Candidate_A_RF_Leakage_Free",
+    "label": "RF-LEAKAGE-FREE-BASELINE",
+    "feature_count": 7,
+    "validation_strategy": "Rolling_Temporal_Fold_2_Pre2024",
+    "train_samples": 346,
+    "test_samples": 144,
+    "metrics": {
+      "roc_auc": 0.7505,
+      "pr_auc": 0.7981,
+      "precision": 0.8372,
+      "recall": 0.5,
+      "f1_score": 0.6261,
+      "specificity": 0.9028,
+      "accuracy": 0.7014,
+      "false_positive_rate": 0.0972,
+      "false_negative_rate": 0.5,
+      "brier_score": 0.2139,
+      "expected_calibration_error": 0.1457,
+      "confusion_matrix": {
+        "true_negatives": 65,
+        "false_positives": 7,
+        "false_negatives": 36,
+        "true_positives": 36
+      }
+    }
+  },
+  {
+    "candidate_id": "Candidate_A_RF_Leakage_Free",
+    "label": "RF-LEAKAGE-FREE-BASELINE",
+    "feature_count": 7,
+    "validation_strategy": "Location_Group_5Fold_CV",
+    "train_samples": 1755,
+    "test_samples": 2194,
+    "metrics": {
+      "roc_auc": 0.9644,
+      "pr_auc": 0.9669,
+      "precision": 0.9173,
+      "recall": 0.8897,
+      "f1_score": 0.9033,
+      "specificity": 0.9198,
+      "accuracy": 0.9047,
+      "false_positive_rate": 0.0802,
+      "false_negative_rate": 0.1103,
+      "brier_score": 0.0722,
+      "expected_calibration_error": 0.0252,
+      "confusion_matrix": {
+        "true_negatives": 1009,
+        "false_positives": 88,
+        "false_negatives": 121,
+        "true_positives": 976
+      }
+    }
+  },
+  {
+    "candidate_id": "Candidate_A_RF_Leakage_Free",
+    "label": "RF-LEAKAGE-FREE-BASELINE",
+    "feature_count": 7,
+    "validation_strategy": "District_Group_5Fold_CV",
+    "train_samples": 1755,
+    "test_samples": 2194,
+    "metrics": {
+      "roc_auc": 0.9347,
+      "pr_auc": 0.9403,
+      "precision": 0.8888,
+      "recall": 0.8013,
+      "f1_score": 0.8428,
+      "specificity": 0.8997,
+      "accuracy": 0.8505,
+      "false_positive_rate": 0.1003,
+      "false_negative_rate": 0.1987,
+      "brier_score": 0.1022,
+      "expected_calibration_error": 0.0276,
+      "confusion_matrix": {
+        "true_negatives": 987,
+        "false_positives": 110,
+        "false_negatives": 218,
+        "true_positives": 879
+      }
+    }
+  },
+  {
+    "candidate_id": "Candidate_A_RF_Leakage_Free",
+    "label": "RF-LEAKAGE-FREE-BASELINE",
+    "feature_count": 7,
+    "validation_strategy": "State_Group_5Fold_CV",
+    "train_samples": 1755,
+    "test_samples": 2194,
+    "metrics": {
+      "roc_auc": 0.9214,
+      "pr_auc": 0.9294,
+      "precision": 0.8294,
+      "recall": 0.8377,
+      "f1_score": 0.8336,
+      "specificity": 0.8277,
+      "accuracy": 0.8327,
+      "false_positive_rate": 0.1723,
+      "false_negative_rate": 0.1623,
+      "brier_score": 0.1129,
+      "expected_calibration_error": 0.0329,
+      "confusion_matrix": {
+        "true_negatives": 908,
+        "false_positives": 189,
+        "false_negatives": 178,
+        "true_positives": 919
+      }
+    }
+  },
+  {
+    "candidate_id": "Candidate_B_RF_Terrain",
+    "label": "RF-TERRAIN-ENHANCED",
+    "feature_count": 13,
+    "validation_strategy": "Chronological_Holdout_2024_2025",
+    "train_samples": 490,
+    "test_samples": 1704,
+    "metrics": {
+      "roc_auc": 0.9123,
+      "pr_auc": 0.9204,
+      "precision": 0.831,
+      "recall": 0.8192,
+      "f1_score": 0.8251,
+      "specificity": 0.8333,
+      "accuracy": 0.8263,
+      "false_positive_rate": 0.1667,
+      "false_negative_rate": 0.1808,
+      "brier_score": 0.1228,
+      "expected_calibration_error": 0.0613,
+      "confusion_matrix": {
+        "true_negatives": 710,
+        "false_positives": 142,
+        "false_negatives": 154,
+        "true_positives": 698
+      }
+    }
+  },
+  {
+    "candidate_id": "Candidate_B_RF_Terrain",
+    "label": "RF-TERRAIN-ENHANCED",
+    "feature_count": 13,
+    "validation_strategy": "Rolling_Temporal_Fold_1_Pre2024",
+    "train_samples": 266,
+    "test_samples": 80,
+    "metrics": {
+      "roc_auc": 0.905,
+      "pr_auc": 0.8958,
+      "precision": 0.814,
+      "recall": 0.875,
+      "f1_score": 0.8434,
+      "specificity": 0.8,
+      "accuracy": 0.8375,
+      "false_positive_rate": 0.2,
+      "false_negative_rate": 0.125,
+      "brier_score": 0.1287,
+      "expected_calibration_error": 0.089,
+      "confusion_matrix": {
+        "true_negatives": 32,
+        "false_positives": 8,
+        "false_negatives": 5,
+        "true_positives": 35
+      }
+    }
+  },
+  {
+    "candidate_id": "Candidate_B_RF_Terrain",
+    "label": "RF-TERRAIN-ENHANCED",
+    "feature_count": 13,
+    "validation_strategy": "Rolling_Temporal_Fold_2_Pre2024",
+    "train_samples": 346,
+    "test_samples": 144,
+    "metrics": {
+      "roc_auc": 0.7818,
+      "pr_auc": 0.8225,
+      "precision": 0.8222,
+      "recall": 0.5139,
+      "f1_score": 0.6325,
+      "specificity": 0.8889,
+      "accuracy": 0.7014,
+      "false_positive_rate": 0.1111,
+      "false_negative_rate": 0.4861,
+      "brier_score": 0.194,
+      "expected_calibration_error": 0.1217,
+      "confusion_matrix": {
+        "true_negatives": 64,
+        "false_positives": 8,
+        "false_negatives": 35,
+        "true_positives": 37
+      }
+    }
+  },
+  {
+    "candidate_id": "Candidate_B_RF_Terrain",
+    "label": "RF-TERRAIN-ENHANCED",
+    "feature_count": 13,
+    "validation_strategy": "Location_Group_5Fold_CV",
+    "train_samples": 1755,
+    "test_samples": 2194,
+    "metrics": {
+      "roc_auc": 0.9608,
+      "pr_auc": 0.963,
+      "precision": 0.9156,
+      "recall": 0.8797,
+      "f1_score": 0.8973,
+      "specificity": 0.9189,
+      "accuracy": 0.8993,
+      "false_positive_rate": 0.0811,
+      "false_negative_rate": 0.1203,
+      "brier_score": 0.0773,
+      "expected_calibration_error": 0.0351,
+      "confusion_matrix": {
+        "true_negatives": 1008,
+        "false_positives": 89,
+        "false_negatives": 132,
+        "true_positives": 965
+      }
+    }
+  },
+  {
+    "candidate_id": "Candidate_B_RF_Terrain",
+    "label": "RF-TERRAIN-ENHANCED",
+    "feature_count": 13,
+    "validation_strategy": "District_Group_5Fold_CV",
+    "train_samples": 1755,
+    "test_samples": 2194,
+    "metrics": {
+      "roc_auc": 0.9329,
+      "pr_auc": 0.9398,
+      "precision": 0.8856,
+      "recall": 0.7976,
+      "f1_score": 0.8393,
+      "specificity": 0.897,
+      "accuracy": 0.8473,
+      "false_positive_rate": 0.103,
+      "false_negative_rate": 0.2024,
+      "brier_score": 0.1038,
+      "expected_calibration_error": 0.034,
+      "confusion_matrix": {
+        "true_negatives": 984,
+        "false_positives": 113,
+        "false_negatives": 222,
+        "true_positives": 875
+      }
+    }
+  },
+  {
+    "candidate_id": "Candidate_B_RF_Terrain",
+    "label": "RF-TERRAIN-ENHANCED",
+    "feature_count": 13,
+    "validation_strategy": "State_Group_5Fold_CV",
+    "train_samples": 1755,
+    "test_samples": 2194,
+    "metrics": {
+      "roc_auc": 0.9127,
+      "pr_auc": 0.913,
+      "precision": 0.7986,
+      "recall": 0.8277,
+      "f1_score": 0.8129,
+      "specificity": 0.7912,
+      "accuracy": 0.8095,
+      "false_positive_rate": 0.2088,
+      "false_negative_rate": 0.1723,
+      "brier_score": 0.1198,
+      "expected_calibration_error": 0.0502,
+      "confusion_matrix": {
+        "true_negatives": 868,
+        "false_positives": 229,
+        "false_negatives": 189,
+        "true_positives": 908
+      }
+    }
+  },
+  {
+    "candidate_id": "Candidate_C_RF_Inventory",
+    "label": "RF-TERRAIN-INVENTORY-ENHANCED",
+    "feature_count": 15,
+    "validation_strategy": "Chronological_Holdout_2024_2025",
+    "train_samples": 490,
+    "test_samples": 1704,
+    "metrics": {
+      "roc_auc": 0.8938,
+      "pr_auc": 0.8965,
+      "precision": 0.8175,
+      "recall": 0.8204,
+      "f1_score": 0.819,
+      "specificity": 0.8169,
+      "accuracy": 0.8187,
+      "false_positive_rate": 0.1831,
+      "false_negative_rate": 0.1796,
+      "brier_score": 0.1332,
+      "expected_calibration_error": 0.0914,
+      "confusion_matrix": {
+        "true_negatives": 696,
+        "false_positives": 156,
+        "false_negatives": 153,
+        "true_positives": 699
+      }
+    }
+  },
+  {
+    "candidate_id": "Candidate_C_RF_Inventory",
+    "label": "RF-TERRAIN-INVENTORY-ENHANCED",
+    "feature_count": 15,
+    "validation_strategy": "Rolling_Temporal_Fold_1_Pre2024",
+    "train_samples": 266,
+    "test_samples": 80,
+    "metrics": {
+      "roc_auc": 0.9131,
+      "pr_auc": 0.9265,
+      "precision": 0.814,
+      "recall": 0.875,
+      "f1_score": 0.8434,
+      "specificity": 0.8,
+      "accuracy": 0.8375,
+      "false_positive_rate": 0.2,
+      "false_negative_rate": 0.125,
+      "brier_score": 0.1279,
+      "expected_calibration_error": 0.0978,
+      "confusion_matrix": {
+        "true_negatives": 32,
+        "false_positives": 8,
+        "false_negatives": 5,
+        "true_positives": 35
+      }
+    }
+  },
+  {
+    "candidate_id": "Candidate_C_RF_Inventory",
+    "label": "RF-TERRAIN-INVENTORY-ENHANCED",
+    "feature_count": 15,
+    "validation_strategy": "Rolling_Temporal_Fold_2_Pre2024",
+    "train_samples": 346,
+    "test_samples": 144,
+    "metrics": {
+      "roc_auc": 0.7695,
+      "pr_auc": 0.8178,
+      "precision": 0.8,
+      "recall": 0.5556,
+      "f1_score": 0.6557,
+      "specificity": 0.8611,
+      "accuracy": 0.7083,
+      "false_positive_rate": 0.1389,
+      "false_negative_rate": 0.4444,
+      "brier_score": 0.196,
+      "expected_calibration_error": 0.1005,
+      "confusion_matrix": {
+        "true_negatives": 62,
+        "false_positives": 10,
+        "false_negatives": 32,
+        "true_positives": 40
+      }
+    }
+  },
+  {
+    "candidate_id": "Candidate_C_RF_Inventory",
+    "label": "RF-TERRAIN-INVENTORY-ENHANCED",
+    "feature_count": 15,
+    "validation_strategy": "Location_Group_5Fold_CV",
+    "train_samples": 1755,
+    "test_samples": 2194,
+    "metrics": {
+      "roc_auc": 0.9647,
+      "pr_auc": 0.9677,
+      "precision": 0.9155,
+      "recall": 0.8988,
+      "f1_score": 0.9071,
+      "specificity": 0.917,
+      "accuracy": 0.9079,
+      "false_positive_rate": 0.083,
+      "false_negative_rate": 0.1012,
+      "brier_score": 0.0735,
+      "expected_calibration_error": 0.0403,
+      "confusion_matrix": {
+        "true_negatives": 1006,
+        "false_positives": 91,
+        "false_negatives": 111,
+        "true_positives": 986
+      }
+    }
+  },
+  {
+    "candidate_id": "Candidate_C_RF_Inventory",
+    "label": "RF-TERRAIN-INVENTORY-ENHANCED",
+    "feature_count": 15,
+    "validation_strategy": "District_Group_5Fold_CV",
+    "train_samples": 1755,
+    "test_samples": 2194,
+    "metrics": {
+      "roc_auc": 0.91,
+      "pr_auc": 0.8977,
+      "precision": 0.8937,
+      "recall": 0.7894,
+      "f1_score": 0.8383,
+      "specificity": 0.9061,
+      "accuracy": 0.8478,
+      "false_positive_rate": 0.0939,
+      "false_negative_rate": 0.2106,
+      "brier_score": 0.1343,
+      "expected_calibration_error": 0.0957,
+      "confusion_matrix": {
+        "true_negatives": 994,
+        "false_positives": 103,
+        "false_negatives": 231,
+        "true_positives": 866
+      }
+    }
+  },
+  {
+    "candidate_id": "Candidate_C_RF_Inventory",
+    "label": "RF-TERRAIN-INVENTORY-ENHANCED",
+    "feature_count": 15,
+    "validation_strategy": "State_Group_5Fold_CV",
+    "train_samples": 1755,
+    "test_samples": 2194,
+    "metrics": {
+      "roc_auc": 0.9082,
+      "pr_auc": 0.9115,
+      "precision": 0.8057,
+      "recall": 0.8049,
+      "f1_score": 0.8053,
+      "specificity": 0.8058,
+      "accuracy": 0.8054,
+      "false_positive_rate": 0.1942,
+      "false_negative_rate": 0.1951,
+      "brier_score": 0.1255,
+      "expected_calibration_error": 0.0712,
+      "confusion_matrix": {
+        "true_negatives": 884,
+        "false_positives": 213,
+        "false_negatives": 214,
+        "true_positives": 883
+      }
+    }
+  },
+  {
+    "candidate_id": "Candidate_D_HistGB_Prod",
+    "label": "HistGB-LEAKAGE-FREE-BASELINE",
+    "feature_count": 7,
+    "validation_strategy": "Chronological_Holdout_2024_2025",
+    "train_samples": 490,
+    "test_samples": 1704,
+    "metrics": {
+      "roc_auc": 0.9013,
+      "pr_auc": 0.9208,
+      "precision": 0.7613,
+      "recall": 0.8533,
+      "f1_score": 0.8046,
+      "specificity": 0.7324,
+      "accuracy": 0.7928,
+      "false_positive_rate": 0.2676,
+      "false_negative_rate": 0.1467,
+      "brier_score": 0.1472,
+      "expected_calibration_error": 0.0999,
+      "confusion_matrix": {
+        "true_negatives": 624,
+        "false_positives": 228,
+        "false_negatives": 125,
+        "true_positives": 727
+      }
+    }
+  },
+  {
+    "candidate_id": "Candidate_D_HistGB_Prod",
+    "label": "HistGB-LEAKAGE-FREE-BASELINE",
+    "feature_count": 7,
+    "validation_strategy": "Rolling_Temporal_Fold_1_Pre2024",
+    "train_samples": 266,
+    "test_samples": 80,
+    "metrics": {
+      "roc_auc": 0.8663,
+      "pr_auc": 0.8685,
+      "precision": 0.8049,
+      "recall": 0.825,
+      "f1_score": 0.8148,
+      "specificity": 0.8,
+      "accuracy": 0.8125,
+      "false_positive_rate": 0.2,
+      "false_negative_rate": 0.175,
+      "brier_score": 0.1567,
+      "expected_calibration_error": 0.1412,
+      "confusion_matrix": {
+        "true_negatives": 32,
+        "false_positives": 8,
+        "false_negatives": 7,
+        "true_positives": 33
+      }
+    }
+  },
+  {
+    "candidate_id": "Candidate_D_HistGB_Prod",
+    "label": "HistGB-LEAKAGE-FREE-BASELINE",
+    "feature_count": 7,
+    "validation_strategy": "Rolling_Temporal_Fold_2_Pre2024",
+    "train_samples": 346,
+    "test_samples": 144,
+    "metrics": {
+      "roc_auc": 0.7542,
+      "pr_auc": 0.7951,
+      "precision": 0.7547,
+      "recall": 0.5556,
+      "f1_score": 0.64,
+      "specificity": 0.8194,
+      "accuracy": 0.6875,
+      "false_positive_rate": 0.1806,
+      "false_negative_rate": 0.4444,
+      "brier_score": 0.2306,
+      "expected_calibration_error": 0.1785,
+      "confusion_matrix": {
+        "true_negatives": 59,
+        "false_positives": 13,
+        "false_negatives": 32,
+        "true_positives": 40
+      }
+    }
+  },
+  {
+    "candidate_id": "Candidate_D_HistGB_Prod",
+    "label": "HistGB-LEAKAGE-FREE-BASELINE",
+    "feature_count": 7,
+    "validation_strategy": "Location_Group_5Fold_CV",
+    "train_samples": 1755,
+    "test_samples": 2194,
+    "metrics": {
+      "roc_auc": 0.9595,
+      "pr_auc": 0.9614,
+      "precision": 0.9018,
+      "recall": 0.8961,
+      "f1_score": 0.8989,
+      "specificity": 0.9025,
+      "accuracy": 0.8993,
+      "false_positive_rate": 0.0975,
+      "false_negative_rate": 0.1039,
+      "brier_score": 0.0766,
+      "expected_calibration_error": 0.0383,
+      "confusion_matrix": {
+        "true_negatives": 990,
+        "false_positives": 107,
+        "false_negatives": 114,
+        "true_positives": 983
+      }
+    }
+  },
+  {
+    "candidate_id": "Candidate_D_HistGB_Prod",
+    "label": "HistGB-LEAKAGE-FREE-BASELINE",
+    "feature_count": 7,
+    "validation_strategy": "District_Group_5Fold_CV",
+    "train_samples": 1755,
+    "test_samples": 2194,
+    "metrics": {
+      "roc_auc": 0.9225,
+      "pr_auc": 0.9312,
+      "precision": 0.8315,
+      "recall": 0.8277,
+      "f1_score": 0.8296,
+      "specificity": 0.8323,
+      "accuracy": 0.83,
+      "false_positive_rate": 0.1677,
+      "false_negative_rate": 0.1723,
+      "brier_score": 0.121,
+      "expected_calibration_error": 0.0774,
+      "confusion_matrix": {
+        "true_negatives": 913,
+        "false_positives": 184,
+        "false_negatives": 189,
+        "true_positives": 908
+      }
+    }
+  },
+  {
+    "candidate_id": "Candidate_D_HistGB_Prod",
+    "label": "HistGB-LEAKAGE-FREE-BASELINE",
+    "feature_count": 7,
+    "validation_strategy": "State_Group_5Fold_CV",
+    "train_samples": 1755,
+    "test_samples": 2194,
+    "metrics": {
+      "roc_auc": 0.9113,
+      "pr_auc": 0.9214,
+      "precision": 0.8127,
+      "recall": 0.8387,
+      "f1_score": 0.8255,
+      "specificity": 0.8067,
+      "accuracy": 0.8227,
+      "false_positive_rate": 0.1933,
+      "false_negative_rate": 0.1613,
+      "brier_score": 0.134,
+      "expected_calibration_error": 0.0907,
+      "confusion_matrix": {
+        "true_negatives": 885,
+        "false_positives": 212,
+        "false_negatives": 177,
+        "true_positives": 920
+      }
+    }
+  },
+  {
+    "candidate_id": "Diagnostic_RF_NoGeo",
+    "label": "RF-NO-GEO-DIAGNOSTIC",
+    "feature_count": 5,
+    "validation_strategy": "Chronological_Holdout_2024_2025",
+    "train_samples": 490,
+    "test_samples": 1704,
+    "metrics": {
+      "roc_auc": 0.9236,
+      "pr_auc": 0.9328,
+      "precision": 0.8219,
+      "recall": 0.8122,
+      "f1_score": 0.817,
+      "specificity": 0.8239,
+      "accuracy": 0.8181,
+      "false_positive_rate": 0.1761,
+      "false_negative_rate": 0.1878,
+      "brier_score": 0.1154,
+      "expected_calibration_error": 0.0446,
+      "confusion_matrix": {
+        "true_negatives": 702,
+        "false_positives": 150,
+        "false_negatives": 160,
+        "true_positives": 692
+      }
+    }
+  },
+  {
+    "candidate_id": "Diagnostic_RF_NoGeo",
+    "label": "RF-NO-GEO-DIAGNOSTIC",
+    "feature_count": 5,
+    "validation_strategy": "Rolling_Temporal_Fold_1_Pre2024",
+    "train_samples": 266,
+    "test_samples": 80,
+    "metrics": {
+      "roc_auc": 0.86,
+      "pr_auc": 0.8296,
+      "precision": 0.8095,
+      "recall": 0.85,
+      "f1_score": 0.8293,
+      "specificity": 0.8,
+      "accuracy": 0.825,
+      "false_positive_rate": 0.2,
+      "false_negative_rate": 0.15,
+      "brier_score": 0.1512,
+      "expected_calibration_error": 0.1478,
+      "confusion_matrix": {
+        "true_negatives": 32,
+        "false_positives": 8,
+        "false_negatives": 6,
+        "true_positives": 34
+      }
+    }
+  },
+  {
+    "candidate_id": "Diagnostic_RF_NoGeo",
+    "label": "RF-NO-GEO-DIAGNOSTIC",
+    "feature_count": 5,
+    "validation_strategy": "Rolling_Temporal_Fold_2_Pre2024",
+    "train_samples": 346,
+    "test_samples": 144,
+    "metrics": {
+      "roc_auc": 0.7463,
+      "pr_auc": 0.7938,
+      "precision": 0.7547,
+      "recall": 0.5556,
+      "f1_score": 0.64,
+      "specificity": 0.8194,
+      "accuracy": 0.6875,
+      "false_positive_rate": 0.1806,
+      "false_negative_rate": 0.4444,
+      "brier_score": 0.2186,
+      "expected_calibration_error": 0.1393,
+      "confusion_matrix": {
+        "true_negatives": 59,
+        "false_positives": 13,
+        "false_negatives": 32,
+        "true_positives": 40
+      }
+    }
+  },
+  {
+    "candidate_id": "Diagnostic_RF_NoGeo",
+    "label": "RF-NO-GEO-DIAGNOSTIC",
+    "feature_count": 5,
+    "validation_strategy": "Location_Group_5Fold_CV",
+    "train_samples": 1755,
+    "test_samples": 2194,
+    "metrics": {
+      "roc_auc": 0.95,
+      "pr_auc": 0.9544,
+      "precision": 0.8776,
+      "recall": 0.8624,
+      "f1_score": 0.8699,
+      "specificity": 0.8797,
+      "accuracy": 0.871,
+      "false_positive_rate": 0.1203,
+      "false_negative_rate": 0.1376,
+      "brier_score": 0.0881,
+      "expected_calibration_error": 0.0131,
+      "confusion_matrix": {
+        "true_negatives": 965,
+        "false_positives": 132,
+        "false_negatives": 151,
+        "true_positives": 946
+      }
+    }
+  },
+  {
+    "candidate_id": "Diagnostic_RF_NoGeo",
+    "label": "RF-NO-GEO-DIAGNOSTIC",
+    "feature_count": 5,
+    "validation_strategy": "District_Group_5Fold_CV",
+    "train_samples": 1755,
+    "test_samples": 2194,
+    "metrics": {
+      "roc_auc": 0.9104,
+      "pr_auc": 0.9165,
+      "precision": 0.8587,
+      "recall": 0.7366,
+      "f1_score": 0.7929,
+      "specificity": 0.8788,
+      "accuracy": 0.8077,
+      "false_positive_rate": 0.1212,
+      "false_negative_rate": 0.2634,
+      "brier_score": 0.1221,
+      "expected_calibration_error": 0.0501,
+      "confusion_matrix": {
+        "true_negatives": 964,
+        "false_positives": 133,
+        "false_negatives": 289,
+        "true_positives": 808
+      }
+    }
+  },
+  {
+    "candidate_id": "Diagnostic_RF_NoGeo",
+    "label": "RF-NO-GEO-DIAGNOSTIC",
+    "feature_count": 5,
+    "validation_strategy": "State_Group_5Fold_CV",
+    "train_samples": 1755,
+    "test_samples": 2194,
+    "metrics": {
+      "roc_auc": 0.9015,
+      "pr_auc": 0.9111,
+      "precision": 0.8226,
+      "recall": 0.7566,
+      "f1_score": 0.7882,
+      "specificity": 0.8368,
+      "accuracy": 0.7967,
+      "false_positive_rate": 0.1632,
+      "false_negative_rate": 0.2434,
+      "brier_score": 0.1294,
+      "expected_calibration_error": 0.056,
+      "confusion_matrix": {
+        "true_negatives": 918,
+        "false_positives": 179,
+        "false_negatives": 267,
+        "true_positives": 830
+      }
+    }
+  }
+]

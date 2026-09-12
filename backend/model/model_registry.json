@@ -1,0 +1,55 @@
+{
+  "active_model_id": "candidate_a_rf_v1",
+  "active_model_version": "1.1.0",
+  "feature_schema_version": "v1",
+  "models": [
+    {
+      "model_id": "candidate_a_rf_v1",
+      "version": "1.1.0",
+      "label": "RF-LEAKAGE-FREE-BASELINE",
+      "model_type": "RandomForestClassifier",
+      "model_source": "NexSolve leakage-free RF",
+      "feature_set": [
+        "latitude",
+        "longitude",
+        "rainfall_1d",
+        "rainfall_3d",
+        "rainfall_7d",
+        "month_sin",
+        "month_cos"
+      ],
+      "feature_schema_version": "v1",
+      "artifact_path": "backend/model/experimental/candidate_a_rf_v1.pkl",
+      "sha256": "1acad34e85b53df0cb68e5e81cd81d68066c4173792e65a51288b35557ba0f72",
+      "training_cutoff": "date <= 2023-12-31",
+      "validation_protocol": "Pre2024_OOF_and_Locked_Holdout",
+      "holdout_roc_auc": 0.9206,
+      "status": "ACTIVE",
+      "promotion_date": "2026-09-11T21:55:00Z",
+      "rollback_target": "previous_production_model_v0"
+    },
+    {
+      "model_id": "previous_production_model_v0",
+      "version": "1.0.0",
+      "label": "RF-PROD-LEGACY-BASELINE",
+      "model_type": "RandomForestClassifier",
+      "model_source": "NexSolve legacy RF baseline",
+      "feature_set": [
+        "latitude",
+        "longitude",
+        "rainfall_1d",
+        "rainfall_3d",
+        "rainfall_7d",
+        "month_sin",
+        "month_cos"
+      ],
+      "feature_schema_version": "v1",
+      "artifact_path": "backend/model/archive/landslide_model_v_current.pkl",
+      "sha256": "d8546b0f78372c02196c6858f88cc3d5af4b54379f5e14b0003d5cb54c950eb1",
+      "training_cutoff": "2025-05-31",
+      "validation_protocol": "Legacy_Chronological_80_20",
+      "status": "ROLLBACK",
+      "promotion_date": "2026-09-01T00:00:00Z"
+    }
+  ]
+}

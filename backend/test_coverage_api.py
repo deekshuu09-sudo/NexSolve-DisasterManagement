@@ -14,7 +14,8 @@ class TestCanonicalCoverageAPI(unittest.TestCase):
         self.assertTrue(data["success"])
         self.assertTrue(data["coverage_configured"])
         self.assertEqual(data["total_states"], 8)
-        self.assertFalse(data["boundary_data_available"])
+        self.assertTrue(data["boundary_data_available"])
+        self.assertEqual(data["total_districts"], 131)
 
         expected_state_ids = {
             "arunachal_pradesh", "assam", "manipur", "meghalaya",
@@ -24,9 +25,9 @@ class TestCanonicalCoverageAPI(unittest.TestCase):
         self.assertEqual(actual_state_ids, expected_state_ids)
 
         for state in data["states"]:
-            self.assertFalse(state["boundary_available"])
-            self.assertIsNone(state["geometry"])
-            self.assertEqual(state["boundary_source"], "Survey of India (Pending Integration)")
+            self.assertTrue(state["boundary_available"])
+            self.assertIsNotNone(state["geometry"])
+            self.assertEqual(state["boundary_source"], "Survey of India Official Administrative Boundary Database (ABDB)")
 
     def test_get_districts_exposes_operational_point_type(self):
         response = self.client.get("/api/districts")
@@ -40,7 +41,9 @@ class TestCanonicalCoverageAPI(unittest.TestCase):
             self.assertIn("state_id", d)
             self.assertIn("point_type", d)
             self.assertIn("boundary_available", d)
-            self.assertFalse(d["boundary_available"])
+            self.assertTrue(d["boundary_available"])
+            self.assertIsNotNone(d["geometry"])
+            self.assertIn("dist_lgd", d)
 
 if __name__ == "__main__":
     unittest.main()

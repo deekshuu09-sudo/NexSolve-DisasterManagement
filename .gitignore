@@ -21,13 +21,28 @@ dist/
 .vscode/*.log
 # Large datasets
 data/
-backend/data/
+backend/data/DEM/
+backend/data/landslides/
+backend/data/rainfall/
+backend/data/training/
+
+# Track essential backend spatial & exposure data
+!backend/data/
+!backend/data/geojson/
+!backend/data/exposure/
+!backend/data/config/
+!backend/data/features/
 
 # Large files
 *.pdf
 *.zip
+*.rar
 *.nc
 *.tif
 *.tiff
 *.h5
 *.hdf
+
+# Temporary local artifacts
+current_captcha.png
+temp_soi_validation/

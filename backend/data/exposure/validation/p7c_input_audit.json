@@ -1,0 +1,96 @@
+{
+  "audit_title": "NexSolve P7C Exposure & Vulnerability Input Audit",
+  "generated_at": "2026-09-12T10:31:40Z",
+  "spatial_framework": "Official Survey of India (SoI) Administrative Boundaries (8 NER States, 131 Districts)",
+  "audit_summary": {
+    "total_input_datasets_audited": 6,
+    "total_soi_districts_evaluated": 131,
+    "soi_boundary_path": "backend/data/geojson/ner_districts_soi.geojson"
+  },
+  "datasets": [
+    {
+      "dataset_id": "exp_vuln_niti_mpi_2023",
+      "name": "NITI Aayog National Multidimensional Poverty Index (MPI)",
+      "provider": "NITI Aayog, Government of India",
+      "reference_year": "2023 Progress Report (NFHS-5: 2019-2021)",
+      "geographic_level": "District Level",
+      "district_coverage_count": 16,
+      "district_coverage_percentage": 12.21,
+      "states_covered": ["Arunachal Pradesh", "Assam", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Sikkim", "Tripura"],
+      "availability": "AVAILABLE",
+      "usable_indicators": ["headcount_ratio_pct", "intensity_poverty_pct", "mpi_score", "housing_deprived_pct", "sanitation_deprived_pct", "drinking_water_deprived_pct"],
+      "unusable_indicators": ["annual_monetary_income"],
+      "limitations": "Reflects NFHS-5 sample survey period; 16 focus districts have full disaggregated sub-indicators; state averages cover remaining districts."
+    },
+    {
+      "dataset_id": "exp_vuln_bmtpc_atlas_2023",
+      "name": "BMTPC Vulnerability Atlas of India",
+      "provider": "Building Materials & Technology Promotion Council (BMTPC), MoHUA, GoI",
+      "reference_year": "2019-2023",
+      "geographic_level": "District Level",
+      "district_coverage_count": 16,
+      "district_coverage_percentage": 12.21,
+      "states_covered": ["Arunachal Pradesh", "Assam", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Sikkim", "Tripura"],
+      "availability": "AVAILABLE",
+      "usable_indicators": ["kutcha_wall_pct", "semi_pucca_wall_pct", "pucca_wall_pct", "landslide_hazard_zone", "earthquake_zone"],
+      "unusable_indicators": ["building_byelaw_compliance_rate"],
+      "limitations": "Housing construction materials are aggregated at district scale."
+    },
+    {
+      "dataset_id": "exp_infra_mohfw_hfr",
+      "name": "MoHFW / NHA Health Facility Registry (HFR)",
+      "provider": "Ministry of Health and Family Welfare (MoHFW) / NHA, GoI",
+      "reference_year": "2023-2024",
+      "geographic_level": "Facility Point / District Aggregation",
+      "district_coverage_count": 8,
+      "district_coverage_percentage": 6.11,
+      "states_covered": ["Mizoram", "Manipur", "Meghalaya", "Arunachal Pradesh", "Nagaland", "Assam", "Tripura", "Sikkim"],
+      "availability": "AVAILABLE",
+      "usable_indicators": ["total_facilities", "district_hospitals", "chc_phc_subcenters", "total_bed_capacity"],
+      "unusable_indicators": ["icu_ventilator_count"],
+      "limitations": "Covers registered district civil hospitals & primary health centers; sub-center coverage varies in remote hill blocks."
+    },
+    {
+      "dataset_id": "exp_infra_udise_plus",
+      "name": "UDISE+ School & Shelter Infrastructure Database",
+      "provider": "Department of School Education & Literacy, Ministry of Education, GoI",
+      "reference_year": "2022-2024",
+      "geographic_level": "District / School Level",
+      "district_coverage_count": 16,
+      "district_coverage_percentage": 12.21,
+      "states_covered": ["Arunachal Pradesh", "Assam", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Sikkim", "Tripura"],
+      "availability": "AVAILABLE",
+      "usable_indicators": ["total_schools", "government_schools", "private_schools", "primary_schools", "secondary_schools", "higher_secondary_schools", "total_enrolment"],
+      "unusable_indicators": ["emergency_generator_capacity"],
+      "limitations": "Schools are potential emergency shelter infrastructure; not officially designated evacuation centers."
+    },
+    {
+      "dataset_id": "exp_road_morth_nhai_gis",
+      "name": "MoRTH / NHAI National Highway GIS Network Registry",
+      "provider": "Ministry of Road Transport and Highways (MoRTH) / NHAI, GoI",
+      "reference_year": "2023-2024",
+      "geographic_level": "Vector Line / Highway Alignment",
+      "district_coverage_count": 8,
+      "district_coverage_percentage": 6.11,
+      "states_covered": ["Assam", "Mizoram", "Nagaland", "Manipur", "Meghalaya", "Sikkim", "Arunachal Pradesh", "Tripura"],
+      "availability": "AVAILABLE",
+      "usable_indicators": ["arterial_corridor_count", "arterial_highways", "arterial_highway_length_km"],
+      "unusable_indicators": ["realtime_traffic_volume"],
+      "limitations": "Covers National Highway arterial network; state highways and BRO border roads require supplemental layers."
+    },
+    {
+      "dataset_id": "exp_pop_census_2011",
+      "name": "Census of India 2011 Primary Census Abstract (PCA)",
+      "provider": "Office of the Registrar General & Census Commissioner, India (ORGI), GoI",
+      "reference_year": "2011",
+      "geographic_level": "District Level",
+      "district_coverage_count": 16,
+      "district_coverage_percentage": 12.21,
+      "states_covered": ["Arunachal Pradesh", "Assam", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Sikkim", "Tripura"],
+      "availability": "AVAILABLE",
+      "usable_indicators": ["total_population_2011", "male_population", "female_population", "children_0_6", "scheduled_tribe_population", "scheduled_caste_population", "literate_population", "households"],
+      "unusable_indicators": ["2026_realtime_population"],
+      "limitations": "Reference year is 2011; decennial census 2021 was delayed. Population numbers reflect 2011 baseline."
+    }
+  ]
+}

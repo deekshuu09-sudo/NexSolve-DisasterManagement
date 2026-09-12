@@ -1,0 +1,165 @@
+[
+  {
+    "model_id": "Candidate_A_RF_Leakage_Free",
+    "label": "RF-LEAKAGE-FREE-BASELINE",
+    "model_type": "RandomForestClassifier",
+    "feature_set": [
+      "latitude",
+      "longitude",
+      "rainfall_1d",
+      "rainfall_3d",
+      "rainfall_7d",
+      "month_sin",
+      "month_cos"
+    ],
+    "training_cutoff": "date <= 2023-12-31",
+    "validation_protocol": "Chronological_Holdout_and_GroupKFold",
+    "hyperparameters": {
+      "n_estimators": 300,
+      "max_depth": 12,
+      "min_samples_split": 5,
+      "min_samples_leaf": 2,
+      "class_weight": "balanced",
+      "random_state": 42
+    },
+    "artifact_path": "backend/model/experimental/candidate_a_rf_leakage_free.pkl",
+    "artifact_sha256": "d835ffc857cd82df61998afeb2ea58d61862973a1d9cf8e0497da25ad354d9c8",
+    "status": "READY_FOR_PROMOTION_REVIEW",
+    "promotion_decision": "CANDIDATE-READY-FOR-PROMOTION-REVIEW",
+    "chronological_roc_auc": 0.9206,
+    "location_cv_roc_auc": 0.9644,
+    "district_cv_roc_auc": 0.9347
+  },
+  {
+    "model_id": "Candidate_B_RF_Terrain",
+    "label": "RF-TERRAIN-ENHANCED",
+    "model_type": "RandomForestClassifier",
+    "feature_set": [
+      "latitude",
+      "longitude",
+      "rainfall_1d",
+      "rainfall_3d",
+      "rainfall_7d",
+      "month_sin",
+      "month_cos",
+      "elevation_m",
+      "slope_deg",
+      "aspect_deg",
+      "curvature",
+      "district_mean_slope",
+      "district_p90_slope"
+    ],
+    "training_cutoff": "date <= 2023-12-31",
+    "validation_protocol": "Chronological_Holdout_and_GroupKFold",
+    "hyperparameters": {
+      "n_estimators": 300,
+      "max_depth": 12,
+      "min_samples_split": 5,
+      "min_samples_leaf": 2,
+      "class_weight": "balanced",
+      "random_state": 42
+    },
+    "artifact_path": "backend/model/experimental/candidate_b_rf_terrain.pkl",
+    "artifact_sha256": "a4c6f2b0f0bbf81976bf035995b320c1fe17a7d50cfc4b66f49e0251fc206850",
+    "status": "EXPERIMENTAL",
+    "promotion_decision": "NOT_PROMOTED",
+    "chronological_roc_auc": 0.9148,
+    "location_cv_roc_auc": 0.9608,
+    "district_cv_roc_auc": 0.9329
+  },
+  {
+    "model_id": "Candidate_C_RF_Inventory",
+    "label": "RF-TERRAIN-INVENTORY-ENHANCED",
+    "model_type": "RandomForestClassifier",
+    "feature_set": [
+      "latitude",
+      "longitude",
+      "rainfall_1d",
+      "rainfall_3d",
+      "rainfall_7d",
+      "month_sin",
+      "month_cos",
+      "elevation_m",
+      "slope_deg",
+      "aspect_deg",
+      "curvature",
+      "district_mean_slope",
+      "district_p90_slope",
+      "historical_event_count",
+      "event_density_per_sqkm"
+    ],
+    "training_cutoff": "date <= 2023-12-31",
+    "validation_protocol": "Chronological_Holdout_and_GroupKFold",
+    "hyperparameters": {
+      "n_estimators": 300,
+      "max_depth": 12,
+      "min_samples_split": 5,
+      "min_samples_leaf": 2,
+      "class_weight": "balanced",
+      "random_state": 42
+    },
+    "artifact_path": "backend/model/experimental/candidate_c_rf_inventory.pkl",
+    "artifact_sha256": "48350c80d1497e6482c7cbef78c129475ea80fbda00dbcc3a637edf8eacede27",
+    "status": "EXPERIMENTAL",
+    "promotion_decision": "NOT_PROMOTED",
+    "chronological_roc_auc": 0.8912,
+    "location_cv_roc_auc": 0.9647,
+    "district_cv_roc_auc": 0.91
+  },
+  {
+    "model_id": "Candidate_D_HistGB_Prod",
+    "label": "HistGB-LEAKAGE-FREE-BASELINE",
+    "model_type": "HistGradientBoostingClassifier",
+    "feature_set": [
+      "latitude",
+      "longitude",
+      "rainfall_1d",
+      "rainfall_3d",
+      "rainfall_7d",
+      "month_sin",
+      "month_cos"
+    ],
+    "training_cutoff": "date <= 2023-12-31",
+    "validation_protocol": "Chronological_Holdout_and_GroupKFold",
+    "hyperparameters": {
+      "max_iter": 100,
+      "random_state": 42
+    },
+    "artifact_path": "backend/model/experimental/candidate_d_histgb_baseline.pkl",
+    "artifact_sha256": "8a35016be620a814adb018d6e656a6aab0c837ff439e947081d723941515353d",
+    "status": "EXPERIMENTAL",
+    "promotion_decision": "NOT_PROMOTED",
+    "chronological_roc_auc": 0.9013,
+    "location_cv_roc_auc": 0.9595,
+    "district_cv_roc_auc": 0.9225
+  },
+  {
+    "model_id": "Diagnostic_RF_NoGeo",
+    "label": "RF-NO-GEO-DIAGNOSTIC",
+    "model_type": "RandomForestClassifier",
+    "feature_set": [
+      "rainfall_1d",
+      "rainfall_3d",
+      "rainfall_7d",
+      "month_sin",
+      "month_cos"
+    ],
+    "training_cutoff": "date <= 2023-12-31",
+    "validation_protocol": "Chronological_Holdout_and_GroupKFold",
+    "hyperparameters": {
+      "n_estimators": 300,
+      "max_depth": 12,
+      "min_samples_split": 5,
+      "min_samples_leaf": 2,
+      "class_weight": "balanced",
+      "random_state": 42
+    },
+    "artifact_path": "backend/model/experimental/diagnostic_rf_nogeo.pkl",
+    "artifact_sha256": "88e993c15da636bbaf2930e8d57360137d65124983bbedf1355107dca0a945c7",
+    "status": "EXPERIMENTAL",
+    "promotion_decision": "NOT_PROMOTED",
+    "chronological_roc_auc": 0.9239,
+    "location_cv_roc_auc": 0.95,
+    "district_cv_roc_auc": 0.9104
+  }
+]

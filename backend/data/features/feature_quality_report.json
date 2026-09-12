@@ -1,0 +1,64 @@
+{
+  "dataset_name": "NexSolve P4 Feature-Fused Landslide Risk Dataset",
+  "total_rows": 2194,
+  "columns_count": 26,
+  "columns": [
+    "sample_id",
+    "latitude",
+    "longitude",
+    "date",
+    "landslide",
+    "state_id",
+    "state_name",
+    "state_lgd",
+    "district_id",
+    "district_name",
+    "dist_lgd",
+    "elevation_m",
+    "slope_deg",
+    "aspect_deg",
+    "curvature",
+    "terrain_quality",
+    "district_mean_slope",
+    "district_p90_slope",
+    "rainfall_1d",
+    "rainfall_3d",
+    "rainfall_7d",
+    "month_sin",
+    "month_cos",
+    "historical_event_count",
+    "event_density_per_sqkm",
+    "distance_to_nearest_event_km"
+  ],
+  "class_distribution": {
+    "landslide_positive": 1097,
+    "landslide_negative_control": 1097
+  },
+  "spatial_boundary_assignment": {
+    "assigned_to_soi_district": 2194,
+    "outside_soi_district": 0
+  },
+  "terrain_completeness": {
+    "valid_elevation_count": 2194,
+    "valid_slope_count": 2194,
+    "elevation_nulls": 0,
+    "elevation_range_m": [
+      18.0,
+      2976.0
+    ],
+    "slope_range_deg": [
+      0.74,
+      56.1
+    ]
+  },
+  "rainfall_consistency": {
+    "1d_gt_3d_count": 0,
+    "3d_gt_7d_count": 0,
+    "consistency_pass": true
+  },
+  "leakage_checks": {
+    "temporal_leakage_violations": 0,
+    "target_in_predictor_features": false,
+    "production_ml_model_hash_preserved": true
+  }
+}

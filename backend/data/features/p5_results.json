@@ -1,0 +1,704 @@
+[
+  {
+    "model_id": "Production_RF_Baseline",
+    "model_class": "Loaded_RandomForestClassifier",
+    "feature_set": "Model_A_Production_Baseline",
+    "feature_count": 7,
+    "validation_strategy": "Chronological_Holdout",
+    "train_samples": 490,
+    "test_samples": 1704,
+    "metrics": {
+      "roc_auc": 0.9902,
+      "pr_auc": 0.9902,
+      "precision": 0.9566,
+      "recall": 0.9319,
+      "f1_score": 0.9441,
+      "brier_score": 0.0437,
+      "expected_calibration_error": 0.0507,
+      "confusion_matrix": {
+        "true_negatives": 816,
+        "false_positives": 36,
+        "false_negatives": 58,
+        "true_positives": 794
+      },
+      "positive_count": 852,
+      "control_count": 852,
+      "total_samples": 1704
+    }
+  },
+  {
+    "model_id": "Production_RF_Baseline",
+    "model_class": "Loaded_RandomForestClassifier",
+    "feature_set": "Model_A_Production_Baseline",
+    "feature_count": 7,
+    "validation_strategy": "Location_Group_5Fold_CV",
+    "train_samples": 1755,
+    "test_samples": 2194,
+    "metrics": {
+      "roc_auc": 0.9909,
+      "pr_auc": 0.9907,
+      "precision": 0.9606,
+      "recall": 0.9325,
+      "f1_score": 0.9463,
+      "brier_score": 0.0444,
+      "expected_calibration_error": 0.0631,
+      "confusion_matrix": {
+        "true_negatives": 1055,
+        "false_positives": 42,
+        "false_negatives": 74,
+        "true_positives": 1023
+      },
+      "positive_count": 1097,
+      "control_count": 1097,
+      "total_samples": 2194
+    }
+  },
+  {
+    "model_id": "Exp_RandomForestClassifier",
+    "model_class": "RandomForestClassifier",
+    "feature_set": "Model_A_Production_Baseline",
+    "feature_count": 7,
+    "validation_strategy": "Chronological_Holdout",
+    "train_samples": 490,
+    "test_samples": 1704,
+    "metrics": {
+      "roc_auc": 0.9122,
+      "pr_auc": 0.9256,
+      "precision": 0.823,
+      "recall": 0.8075,
+      "f1_score": 0.8152,
+      "brier_score": 0.1243,
+      "expected_calibration_error": 0.0586,
+      "confusion_matrix": {
+        "true_negatives": 704,
+        "false_positives": 148,
+        "false_negatives": 164,
+        "true_positives": 688
+      },
+      "positive_count": 852,
+      "control_count": 852,
+      "total_samples": 1704
+    }
+  },
+  {
+    "model_id": "Exp_RandomForestClassifier",
+    "model_class": "RandomForestClassifier",
+    "feature_set": "Model_A_Production_Baseline",
+    "feature_count": 7,
+    "validation_strategy": "Location_Group_5Fold_CV",
+    "train_samples": 1755,
+    "test_samples": 2194,
+    "metrics": {
+      "roc_auc": 0.9643,
+      "pr_auc": 0.9667,
+      "precision": 0.9132,
+      "recall": 0.8915,
+      "f1_score": 0.9022,
+      "brier_score": 0.0716,
+      "expected_calibration_error": 0.0312,
+      "confusion_matrix": {
+        "true_negatives": 1004,
+        "false_positives": 93,
+        "false_negatives": 119,
+        "true_positives": 978
+      },
+      "positive_count": 1097,
+      "control_count": 1097,
+      "total_samples": 2194
+    }
+  },
+  {
+    "model_id": "Exp_RandomForestClassifier",
+    "model_class": "RandomForestClassifier",
+    "feature_set": "Model_A_Production_Baseline",
+    "feature_count": 7,
+    "validation_strategy": "District_Group_5Fold_CV",
+    "train_samples": 1755,
+    "test_samples": 2194,
+    "metrics": {
+      "roc_auc": 0.9354,
+      "pr_auc": 0.9402,
+      "precision": 0.8916,
+      "recall": 0.7876,
+      "f1_score": 0.8364,
+      "brier_score": 0.1017,
+      "expected_calibration_error": 0.0312,
+      "confusion_matrix": {
+        "true_negatives": 992,
+        "false_positives": 105,
+        "false_negatives": 233,
+        "true_positives": 864
+      },
+      "positive_count": 1097,
+      "control_count": 1097,
+      "total_samples": 2194
+    }
+  },
+  {
+    "model_id": "Exp_RandomForestClassifier",
+    "model_class": "RandomForestClassifier",
+    "feature_set": "Model_A_Production_Baseline",
+    "feature_count": 7,
+    "validation_strategy": "Event_Aware_5Fold_CV",
+    "train_samples": 1755,
+    "test_samples": 2194,
+    "metrics": {
+      "roc_auc": 0.9643,
+      "pr_auc": 0.9667,
+      "precision": 0.9132,
+      "recall": 0.8915,
+      "f1_score": 0.9022,
+      "brier_score": 0.0716,
+      "expected_calibration_error": 0.0312,
+      "confusion_matrix": {
+        "true_negatives": 1004,
+        "false_positives": 93,
+        "false_negatives": 119,
+        "true_positives": 978
+      },
+      "positive_count": 1097,
+      "control_count": 1097,
+      "total_samples": 2194
+    }
+  },
+  {
+    "model_id": "Exp_HistGradientBoostingClassifier",
+    "model_class": "HistGradientBoostingClassifier",
+    "feature_set": "Model_A_Production_Baseline",
+    "feature_count": 7,
+    "validation_strategy": "Chronological_Holdout",
+    "train_samples": 490,
+    "test_samples": 1704,
+    "metrics": {
+      "roc_auc": 0.9013,
+      "pr_auc": 0.9208,
+      "precision": 0.7613,
+      "recall": 0.8533,
+      "f1_score": 0.8046,
+      "brier_score": 0.1472,
+      "expected_calibration_error": 0.0999,
+      "confusion_matrix": {
+        "true_negatives": 624,
+        "false_positives": 228,
+        "false_negatives": 125,
+        "true_positives": 727
+      },
+      "positive_count": 852,
+      "control_count": 852,
+      "total_samples": 1704
+    }
+  },
+  {
+    "model_id": "Exp_HistGradientBoostingClassifier",
+    "model_class": "HistGradientBoostingClassifier",
+    "feature_set": "Model_A_Production_Baseline",
+    "feature_count": 7,
+    "validation_strategy": "Location_Group_5Fold_CV",
+    "train_samples": 1755,
+    "test_samples": 2194,
+    "metrics": {
+      "roc_auc": 0.9595,
+      "pr_auc": 0.9614,
+      "precision": 0.9018,
+      "recall": 0.8961,
+      "f1_score": 0.8989,
+      "brier_score": 0.0766,
+      "expected_calibration_error": 0.0383,
+      "confusion_matrix": {
+        "true_negatives": 990,
+        "false_positives": 107,
+        "false_negatives": 114,
+        "true_positives": 983
+      },
+      "positive_count": 1097,
+      "control_count": 1097,
+      "total_samples": 2194
+    }
+  },
+  {
+    "model_id": "Exp_HistGradientBoostingClassifier",
+    "model_class": "HistGradientBoostingClassifier",
+    "feature_set": "Model_A_Production_Baseline",
+    "feature_count": 7,
+    "validation_strategy": "District_Group_5Fold_CV",
+    "train_samples": 1755,
+    "test_samples": 2194,
+    "metrics": {
+      "roc_auc": 0.9225,
+      "pr_auc": 0.9312,
+      "precision": 0.8315,
+      "recall": 0.8277,
+      "f1_score": 0.8296,
+      "brier_score": 0.121,
+      "expected_calibration_error": 0.0774,
+      "confusion_matrix": {
+        "true_negatives": 913,
+        "false_positives": 184,
+        "false_negatives": 189,
+        "true_positives": 908
+      },
+      "positive_count": 1097,
+      "control_count": 1097,
+      "total_samples": 2194
+    }
+  },
+  {
+    "model_id": "Exp_HistGradientBoostingClassifier",
+    "model_class": "HistGradientBoostingClassifier",
+    "feature_set": "Model_A_Production_Baseline",
+    "feature_count": 7,
+    "validation_strategy": "Event_Aware_5Fold_CV",
+    "train_samples": 1755,
+    "test_samples": 2194,
+    "metrics": {
+      "roc_auc": 0.9595,
+      "pr_auc": 0.9614,
+      "precision": 0.9018,
+      "recall": 0.8961,
+      "f1_score": 0.8989,
+      "brier_score": 0.0766,
+      "expected_calibration_error": 0.0383,
+      "confusion_matrix": {
+        "true_negatives": 990,
+        "false_positives": 107,
+        "false_negatives": 114,
+        "true_positives": 983
+      },
+      "positive_count": 1097,
+      "control_count": 1097,
+      "total_samples": 2194
+    }
+  },
+  {
+    "model_id": "Exp_RandomForestClassifier",
+    "model_class": "RandomForestClassifier",
+    "feature_set": "Model_B_Terrain_Enhanced",
+    "feature_count": 13,
+    "validation_strategy": "Chronological_Holdout",
+    "train_samples": 490,
+    "test_samples": 1704,
+    "metrics": {
+      "roc_auc": 0.9066,
+      "pr_auc": 0.9176,
+      "precision": 0.8367,
+      "recall": 0.8181,
+      "f1_score": 0.8273,
+      "brier_score": 0.124,
+      "expected_calibration_error": 0.0518,
+      "confusion_matrix": {
+        "true_negatives": 716,
+        "false_positives": 136,
+        "false_negatives": 155,
+        "true_positives": 697
+      },
+      "positive_count": 852,
+      "control_count": 852,
+      "total_samples": 1704
+    }
+  },
+  {
+    "model_id": "Exp_RandomForestClassifier",
+    "model_class": "RandomForestClassifier",
+    "feature_set": "Model_B_Terrain_Enhanced",
+    "feature_count": 13,
+    "validation_strategy": "Location_Group_5Fold_CV",
+    "train_samples": 1755,
+    "test_samples": 2194,
+    "metrics": {
+      "roc_auc": 0.9613,
+      "pr_auc": 0.9642,
+      "precision": 0.9123,
+      "recall": 0.8815,
+      "f1_score": 0.8966,
+      "brier_score": 0.0769,
+      "expected_calibration_error": 0.0366,
+      "confusion_matrix": {
+        "true_negatives": 1004,
+        "false_positives": 93,
+        "false_negatives": 130,
+        "true_positives": 967
+      },
+      "positive_count": 1097,
+      "control_count": 1097,
+      "total_samples": 2194
+    }
+  },
+  {
+    "model_id": "Exp_RandomForestClassifier",
+    "model_class": "RandomForestClassifier",
+    "feature_set": "Model_B_Terrain_Enhanced",
+    "feature_count": 13,
+    "validation_strategy": "District_Group_5Fold_CV",
+    "train_samples": 1755,
+    "test_samples": 2194,
+    "metrics": {
+      "roc_auc": 0.931,
+      "pr_auc": 0.9353,
+      "precision": 0.8853,
+      "recall": 0.8022,
+      "f1_score": 0.8417,
+      "brier_score": 0.1052,
+      "expected_calibration_error": 0.0298,
+      "confusion_matrix": {
+        "true_negatives": 983,
+        "false_positives": 114,
+        "false_negatives": 217,
+        "true_positives": 880
+      },
+      "positive_count": 1097,
+      "control_count": 1097,
+      "total_samples": 2194
+    }
+  },
+  {
+    "model_id": "Exp_RandomForestClassifier",
+    "model_class": "RandomForestClassifier",
+    "feature_set": "Model_B_Terrain_Enhanced",
+    "feature_count": 13,
+    "validation_strategy": "Event_Aware_5Fold_CV",
+    "train_samples": 1755,
+    "test_samples": 2194,
+    "metrics": {
+      "roc_auc": 0.9613,
+      "pr_auc": 0.9642,
+      "precision": 0.9123,
+      "recall": 0.8815,
+      "f1_score": 0.8966,
+      "brier_score": 0.0769,
+      "expected_calibration_error": 0.0366,
+      "confusion_matrix": {
+        "true_negatives": 1004,
+        "false_positives": 93,
+        "false_negatives": 130,
+        "true_positives": 967
+      },
+      "positive_count": 1097,
+      "control_count": 1097,
+      "total_samples": 2194
+    }
+  },
+  {
+    "model_id": "Exp_HistGradientBoostingClassifier",
+    "model_class": "HistGradientBoostingClassifier",
+    "feature_set": "Model_B_Terrain_Enhanced",
+    "feature_count": 13,
+    "validation_strategy": "Chronological_Holdout",
+    "train_samples": 490,
+    "test_samples": 1704,
+    "metrics": {
+      "roc_auc": 0.908,
+      "pr_auc": 0.913,
+      "precision": 0.8053,
+      "recall": 0.8638,
+      "f1_score": 0.8335,
+      "brier_score": 0.1335,
+      "expected_calibration_error": 0.0843,
+      "confusion_matrix": {
+        "true_negatives": 674,
+        "false_positives": 178,
+        "false_negatives": 116,
+        "true_positives": 736
+      },
+      "positive_count": 852,
+      "control_count": 852,
+      "total_samples": 1704
+    }
+  },
+  {
+    "model_id": "Exp_HistGradientBoostingClassifier",
+    "model_class": "HistGradientBoostingClassifier",
+    "feature_set": "Model_B_Terrain_Enhanced",
+    "feature_count": 13,
+    "validation_strategy": "Location_Group_5Fold_CV",
+    "train_samples": 1755,
+    "test_samples": 2194,
+    "metrics": {
+      "roc_auc": 0.9556,
+      "pr_auc": 0.9558,
+      "precision": 0.8954,
+      "recall": 0.8815,
+      "f1_score": 0.8884,
+      "brier_score": 0.0835,
+      "expected_calibration_error": 0.0415,
+      "confusion_matrix": {
+        "true_negatives": 984,
+        "false_positives": 113,
+        "false_negatives": 130,
+        "true_positives": 967
+      },
+      "positive_count": 1097,
+      "control_count": 1097,
+      "total_samples": 2194
+    }
+  },
+  {
+    "model_id": "Exp_HistGradientBoostingClassifier",
+    "model_class": "HistGradientBoostingClassifier",
+    "feature_set": "Model_B_Terrain_Enhanced",
+    "feature_count": 13,
+    "validation_strategy": "District_Group_5Fold_CV",
+    "train_samples": 1755,
+    "test_samples": 2194,
+    "metrics": {
+      "roc_auc": 0.9221,
+      "pr_auc": 0.9269,
+      "precision": 0.8583,
+      "recall": 0.7949,
+      "f1_score": 0.8254,
+      "brier_score": 0.1207,
+      "expected_calibration_error": 0.0753,
+      "confusion_matrix": {
+        "true_negatives": 953,
+        "false_positives": 144,
+        "false_negatives": 225,
+        "true_positives": 872
+      },
+      "positive_count": 1097,
+      "control_count": 1097,
+      "total_samples": 2194
+    }
+  },
+  {
+    "model_id": "Exp_HistGradientBoostingClassifier",
+    "model_class": "HistGradientBoostingClassifier",
+    "feature_set": "Model_B_Terrain_Enhanced",
+    "feature_count": 13,
+    "validation_strategy": "Event_Aware_5Fold_CV",
+    "train_samples": 1755,
+    "test_samples": 2194,
+    "metrics": {
+      "roc_auc": 0.9556,
+      "pr_auc": 0.9558,
+      "precision": 0.8954,
+      "recall": 0.8815,
+      "f1_score": 0.8884,
+      "brier_score": 0.0835,
+      "expected_calibration_error": 0.0415,
+      "confusion_matrix": {
+        "true_negatives": 984,
+        "false_positives": 113,
+        "false_negatives": 130,
+        "true_positives": 967
+      },
+      "positive_count": 1097,
+      "control_count": 1097,
+      "total_samples": 2194
+    }
+  },
+  {
+    "model_id": "Exp_RandomForestClassifier",
+    "model_class": "RandomForestClassifier",
+    "feature_set": "Model_C_Terrain_Historical_Inventory",
+    "feature_count": 15,
+    "validation_strategy": "Chronological_Holdout",
+    "train_samples": 490,
+    "test_samples": 1704,
+    "metrics": {
+      "roc_auc": 0.8829,
+      "pr_auc": 0.8793,
+      "precision": 0.8293,
+      "recall": 0.8099,
+      "f1_score": 0.8195,
+      "brier_score": 0.1386,
+      "expected_calibration_error": 0.0946,
+      "confusion_matrix": {
+        "true_negatives": 710,
+        "false_positives": 142,
+        "false_negatives": 162,
+        "true_positives": 690
+      },
+      "positive_count": 852,
+      "control_count": 852,
+      "total_samples": 1704
+    }
+  },
+  {
+    "model_id": "Exp_RandomForestClassifier",
+    "model_class": "RandomForestClassifier",
+    "feature_set": "Model_C_Terrain_Historical_Inventory",
+    "feature_count": 15,
+    "validation_strategy": "Location_Group_5Fold_CV",
+    "train_samples": 1755,
+    "test_samples": 2194,
+    "metrics": {
+      "roc_auc": 0.9649,
+      "pr_auc": 0.9683,
+      "precision": 0.9104,
+      "recall": 0.8988,
+      "f1_score": 0.9046,
+      "brier_score": 0.0736,
+      "expected_calibration_error": 0.0377,
+      "confusion_matrix": {
+        "true_negatives": 1000,
+        "false_positives": 97,
+        "false_negatives": 111,
+        "true_positives": 986
+      },
+      "positive_count": 1097,
+      "control_count": 1097,
+      "total_samples": 2194
+    }
+  },
+  {
+    "model_id": "Exp_RandomForestClassifier",
+    "model_class": "RandomForestClassifier",
+    "feature_set": "Model_C_Terrain_Historical_Inventory",
+    "feature_count": 15,
+    "validation_strategy": "District_Group_5Fold_CV",
+    "train_samples": 1755,
+    "test_samples": 2194,
+    "metrics": {
+      "roc_auc": 0.8953,
+      "pr_auc": 0.8815,
+      "precision": 0.8391,
+      "recall": 0.5278,
+      "f1_score": 0.648,
+      "brier_score": 0.1456,
+      "expected_calibration_error": 0.1096,
+      "confusion_matrix": {
+        "true_negatives": 986,
+        "false_positives": 111,
+        "false_negatives": 518,
+        "true_positives": 579
+      },
+      "positive_count": 1097,
+      "control_count": 1097,
+      "total_samples": 2194
+    }
+  },
+  {
+    "model_id": "Exp_RandomForestClassifier",
+    "model_class": "RandomForestClassifier",
+    "feature_set": "Model_C_Terrain_Historical_Inventory",
+    "feature_count": 15,
+    "validation_strategy": "Event_Aware_5Fold_CV",
+    "train_samples": 1755,
+    "test_samples": 2194,
+    "metrics": {
+      "roc_auc": 0.9649,
+      "pr_auc": 0.9683,
+      "precision": 0.9104,
+      "recall": 0.8988,
+      "f1_score": 0.9046,
+      "brier_score": 0.0736,
+      "expected_calibration_error": 0.0377,
+      "confusion_matrix": {
+        "true_negatives": 1000,
+        "false_positives": 97,
+        "false_negatives": 111,
+        "true_positives": 986
+      },
+      "positive_count": 1097,
+      "control_count": 1097,
+      "total_samples": 2194
+    }
+  },
+  {
+    "model_id": "Exp_HistGradientBoostingClassifier",
+    "model_class": "HistGradientBoostingClassifier",
+    "feature_set": "Model_C_Terrain_Historical_Inventory",
+    "feature_count": 15,
+    "validation_strategy": "Chronological_Holdout",
+    "train_samples": 490,
+    "test_samples": 1704,
+    "metrics": {
+      "roc_auc": 0.8915,
+      "pr_auc": 0.9023,
+      "precision": 0.7926,
+      "recall": 0.8345,
+      "f1_score": 0.813,
+      "brier_score": 0.1445,
+      "expected_calibration_error": 0.1111,
+      "confusion_matrix": {
+        "true_negatives": 666,
+        "false_positives": 186,
+        "false_negatives": 141,
+        "true_positives": 711
+      },
+      "positive_count": 852,
+      "control_count": 852,
+      "total_samples": 1704
+    }
+  },
+  {
+    "model_id": "Exp_HistGradientBoostingClassifier",
+    "model_class": "HistGradientBoostingClassifier",
+    "feature_set": "Model_C_Terrain_Historical_Inventory",
+    "feature_count": 15,
+    "validation_strategy": "Location_Group_5Fold_CV",
+    "train_samples": 1755,
+    "test_samples": 2194,
+    "metrics": {
+      "roc_auc": 0.9629,
+      "pr_auc": 0.9645,
+      "precision": 0.9015,
+      "recall": 0.9015,
+      "f1_score": 0.9015,
+      "brier_score": 0.0746,
+      "expected_calibration_error": 0.0375,
+      "confusion_matrix": {
+        "true_negatives": 989,
+        "false_positives": 108,
+        "false_negatives": 108,
+        "true_positives": 989
+      },
+      "positive_count": 1097,
+      "control_count": 1097,
+      "total_samples": 2194
+    }
+  },
+  {
+    "model_id": "Exp_HistGradientBoostingClassifier",
+    "model_class": "HistGradientBoostingClassifier",
+    "feature_set": "Model_C_Terrain_Historical_Inventory",
+    "feature_count": 15,
+    "validation_strategy": "District_Group_5Fold_CV",
+    "train_samples": 1755,
+    "test_samples": 2194,
+    "metrics": {
+      "roc_auc": 0.9025,
+      "pr_auc": 0.8911,
+      "precision": 0.857,
+      "recall": 0.7648,
+      "f1_score": 0.8083,
+      "brier_score": 0.1369,
+      "expected_calibration_error": 0.1111,
+      "confusion_matrix": {
+        "true_negatives": 957,
+        "false_positives": 140,
+        "false_negatives": 258,
+        "true_positives": 839
+      },
+      "positive_count": 1097,
+      "control_count": 1097,
+      "total_samples": 2194
+    }
+  },
+  {
+    "model_id": "Exp_HistGradientBoostingClassifier",
+    "model_class": "HistGradientBoostingClassifier",
+    "feature_set": "Model_C_Terrain_Historical_Inventory",
+    "feature_count": 15,
+    "validation_strategy": "Event_Aware_5Fold_CV",
+    "train_samples": 1755,
+    "test_samples": 2194,
+    "metrics": {
+      "roc_auc": 0.9629,
+      "pr_auc": 0.9645,
+      "precision": 0.9015,
+      "recall": 0.9015,
+      "f1_score": 0.9015,
+      "brier_score": 0.0746,
+      "expected_calibration_error": 0.0375,
+      "confusion_matrix": {
+        "true_negatives": 989,
+        "false_positives": 108,
+        "false_negatives": 108,
+        "true_positives": 989
+      },
+      "positive_count": 1097,
+      "control_count": 1097,
+      "total_samples": 2194
+    }
+  }
+]

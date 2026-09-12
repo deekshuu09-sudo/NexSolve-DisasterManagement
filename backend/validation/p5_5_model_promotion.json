@@ -1,0 +1,22 @@
+{
+  "status": "COMPLETE",
+  "promotion_status": "PROMOTED",
+  "active_model_id": "candidate_a_rf_v1",
+  "active_model_version": "1.1.0",
+  "active_model_sha256": "1acad34e85b53df0cb68e5e81cd81d68066c4173792e65a51288b35557ba0f72",
+  "previous_production_model_sha256": "d8546b0f78372c02196c6858f88cc3d5af4b54379f5e14b0003d5cb54c950eb1",
+  "rollback_status": "READY",
+  "rollback_artifact": "backend/model/archive/landslide_model_v_current.pkl",
+  "feature_contract": [
+    "latitude",
+    "longitude",
+    "rainfall_1d",
+    "rainfall_3d",
+    "rainfall_7d",
+    "month_sin",
+    "month_cos"
+  ],
+  "api_response_compatibility": "PASS",
+  "backend_tests": "PASS",
+  "frontend_build": "PASS"
+}

@@ -1,0 +1,50 @@
+{
+  "policy_version": "1.0.0-PROTOTYPE",
+  "status": "PROTOTYPE / INTERNAL DECISION SUPPORT",
+  "effective_date": "2026-09-12T00:00:00Z",
+  "domains": {
+    "housing_structural": {
+      "name": "Structural & Housing Vulnerability",
+      "weight": 0.25,
+      "primary_indicator": "kutcha_housing_pct",
+      "direction": "higher_is_higher_vulnerability",
+      "source_dataset": "BMTPC Vulnerability Atlas of India (2023)"
+    },
+    "demographic": {
+      "name": "Demographic Exposure & Social Deprivation",
+      "weight": 0.20,
+      "primary_indicator": "niti_mpi_headcount_pct",
+      "direction": "higher_is_higher_vulnerability",
+      "source_dataset": "NITI Aayog MPI (2023) / Census 2011"
+    },
+    "healthcare": {
+      "name": "Healthcare Facility Capacity & Access",
+      "weight": 0.20,
+      "primary_indicator": "hospital_bed_capacity",
+      "direction": "lower_is_higher_vulnerability",
+      "source_dataset": "MoHFW Health Facility Registry (HFR 2024)"
+    },
+    "transport": {
+      "name": "Arterial Highway Corridor Exposure",
+      "weight": 0.20,
+      "primary_indicator": "arterial_highway_length_km",
+      "direction": "higher_is_higher_exposure",
+      "source_dataset": "MoRTH National Highway Network GIS (2024)"
+    },
+    "education_shelter": {
+      "name": "Educational & Shelter Infrastructure",
+      "weight": 0.15,
+      "primary_indicator": "school_count",
+      "direction": "higher_is_higher_exposure",
+      "source_dataset": "UDISE+ School Registry (2024)"
+    }
+  },
+  "normalization_method": "min_max",
+  "missing_data_rule": "Exclude missing domains and renormalize sum across available domain weights. Never fill missing with zero.",
+  "completeness_thresholds": {
+    "computed_min_available_domains": 3,
+    "high_confidence_completeness_pct": 80.0,
+    "medium_confidence_completeness_pct": 40.0
+  },
+  "disclaimer": "NexSolve Prototype Exposure/Vulnerability Scoring Framework — Information for decision-support assessment only. Not an official government emergency alert category or prediction model."
+}

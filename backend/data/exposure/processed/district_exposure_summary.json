@@ -1,0 +1,4771 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-09-12T10:18:10Z",
+  "total_districts": 131,
+  "districts": {
+    "anjaw": {
+      "district_id": "anjaw",
+      "district_name_soi": "Anjaw",
+      "state_name": "Arunachal Pradesh",
+      "dist_lgd": "260",
+      "state_lgd": 12,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "bichom": {
+      "district_id": "bichom",
+      "district_name_soi": "Bichom",
+      "state_name": "Arunachal Pradesh",
+      "dist_lgd": "788",
+      "state_lgd": 12,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "changlang": {
+      "district_id": "changlang",
+      "district_name_soi": "Changlang",
+      "state_name": "Arunachal Pradesh",
+      "dist_lgd": "253",
+      "state_lgd": 12,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "dibang_valley": {
+      "district_id": "dibang_valley",
+      "district_name_soi": "Dibang Valley",
+      "state_name": "Arunachal Pradesh",
+      "dist_lgd": "257",
+      "state_lgd": 12,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "east_kameng": {
+      "district_id": "east_kameng",
+      "district_name_soi": "East Kameng",
+      "state_name": "Arunachal Pradesh",
+      "dist_lgd": "247",
+      "state_lgd": 12,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "east_siang": {
+      "district_id": "east_siang",
+      "district_name_soi": "East Siang",
+      "state_name": "Arunachal Pradesh",
+      "dist_lgd": "251",
+      "state_lgd": 12,
+      "status": "PARTIAL",
+      "demographic": {
+        "reference_year": "2011",
+        "total_population_2011": 479140,
+        "male_population": 246500,
+        "female_population": 232640,
+        "children_0_6": 68400,
+        "scheduled_tribe_population": 448200,
+        "scheduled_caste_population": null,
+        "literate_population": 312000,
+        "households": 82100
+      },
+      "vulnerability": {
+        "niti_mpi_reference_year": "2023 Progress Report (NFHS-5: 2019-2021)",
+        "headcount_ratio_pct": 14.35,
+        "intensity_poverty_pct": 42.1,
+        "mpi_score": 0.06,
+        "housing_deprived_pct": 32.5,
+        "sanitation_deprived_pct": 24.8,
+        "drinking_water_deprived_pct": 21.0,
+        "bmtpc_reference_year": "2023",
+        "kutcha_wall_pct": 48.2,
+        "semi_pucca_wall_pct": 35.0,
+        "pucca_wall_pct": 16.8,
+        "landslide_hazard_zone": "Very High",
+        "earthquake_zone": "Zone V"
+      },
+      "healthcare": null,
+      "education": {
+        "reference_year": "2024",
+        "total_schools": 420,
+        "government_schools": 290,
+        "private_schools": 130,
+        "primary_schools": 250,
+        "secondary_schools": 110,
+        "higher_secondary_schools": 60,
+        "total_enrolment": 41800
+      },
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "AVAILABLE",
+        "vulnerability": "AVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "AVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": [
+        {
+          "domain": "Demographic",
+          "dataset_name": "Census of India 2011 Primary Census Abstract",
+          "provider": "Office of the Registrar General & Census Commissioner, India (ORGI)",
+          "reference_year": "2011",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Vulnerability",
+          "dataset_name": "NITI Aayog National MPI & BMTPC Vulnerability Atlas",
+          "provider": "NITI Aayog / BMTPC (MoHUA)",
+          "reference_year": "2023",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Education",
+          "dataset_name": "UDISE+ School Infrastructure Database",
+          "provider": "Department of School Education & Literacy, Ministry of Education",
+          "reference_year": "2024",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        }
+      ]
+    },
+    "kamle": {
+      "district_id": "kamle",
+      "district_name_soi": "Kamle",
+      "state_name": "Arunachal Pradesh",
+      "dist_lgd": "733",
+      "state_lgd": 12,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "keyi_panyor": {
+      "district_id": "keyi_panyor",
+      "district_name_soi": "Keyi Panyor",
+      "state_name": "Arunachal Pradesh",
+      "dist_lgd": "789",
+      "state_lgd": 12,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "kra_daadi": {
+      "district_id": "kra_daadi",
+      "district_name_soi": "Kra Daadi",
+      "state_name": "Arunachal Pradesh",
+      "dist_lgd": "721",
+      "state_lgd": 12,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "kurung_kumey": {
+      "district_id": "kurung_kumey",
+      "district_name_soi": "Kurung Kumey",
+      "state_name": "Arunachal Pradesh",
+      "dist_lgd": "256",
+      "state_lgd": 12,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "lepa_rada": {
+      "district_id": "lepa_rada",
+      "district_name_soi": "Lepa Rada",
+      "state_name": "Arunachal Pradesh",
+      "dist_lgd": "729",
+      "state_lgd": 12,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "lohit": {
+      "district_id": "lohit",
+      "district_name_soi": "Lohit",
+      "state_name": "Arunachal Pradesh",
+      "dist_lgd": "259",
+      "state_lgd": 12,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "longding": {
+      "district_id": "longding",
+      "district_name_soi": "Longding",
+      "state_name": "Arunachal Pradesh",
+      "dist_lgd": "680",
+      "state_lgd": 12,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "lower_dibang_valley": {
+      "district_id": "lower_dibang_valley",
+      "district_name_soi": "Lower Dibang Valley",
+      "state_name": "Arunachal Pradesh",
+      "dist_lgd": "258",
+      "state_lgd": 12,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "lower_siang": {
+      "district_id": "lower_siang",
+      "district_name_soi": "Lower Siang",
+      "state_name": "Arunachal Pradesh",
+      "dist_lgd": "723",
+      "state_lgd": 12,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "lower_subansiri": {
+      "district_id": "lower_subansiri",
+      "district_name_soi": "Lower Subansiri",
+      "state_name": "Arunachal Pradesh",
+      "dist_lgd": "255",
+      "state_lgd": 12,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "namsai": {
+      "district_id": "namsai",
+      "district_name_soi": "Namsai",
+      "state_name": "Arunachal Pradesh",
+      "dist_lgd": "724",
+      "state_lgd": 12,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "pakke_kessang": {
+      "district_id": "pakke_kessang",
+      "district_name_soi": "Pakke Kessang",
+      "state_name": "Arunachal Pradesh",
+      "dist_lgd": "726",
+      "state_lgd": 12,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "papumpare": {
+      "district_id": "papumpare",
+      "district_name_soi": "Papumpare",
+      "state_name": "Arunachal Pradesh",
+      "dist_lgd": "248",
+      "state_lgd": 12,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "shi_yomi": {
+      "district_id": "shi_yomi",
+      "district_name_soi": "Shi Yomi",
+      "state_name": "Arunachal Pradesh",
+      "dist_lgd": "730",
+      "state_lgd": 12,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "siang": {
+      "district_id": "siang",
+      "district_name_soi": "Siang",
+      "state_name": "Arunachal Pradesh",
+      "dist_lgd": "722",
+      "state_lgd": 12,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "tawang": {
+      "district_id": "tawang",
+      "district_name_soi": "Tawang",
+      "state_name": "Arunachal Pradesh",
+      "dist_lgd": "245",
+      "state_lgd": 12,
+      "status": "AVAILABLE",
+      "demographic": {
+        "reference_year": "2011",
+        "total_population_2011": 49977,
+        "male_population": 29151,
+        "female_population": 20826,
+        "children_0_6": 6200,
+        "scheduled_tribe_population": 38400,
+        "scheduled_caste_population": null,
+        "literate_population": 28400,
+        "households": 10500
+      },
+      "vulnerability": {
+        "niti_mpi_reference_year": "2023 Progress Report (NFHS-5: 2019-2021)",
+        "headcount_ratio_pct": 8.92,
+        "intensity_poverty_pct": 40.8,
+        "mpi_score": 0.036,
+        "housing_deprived_pct": 24.1,
+        "sanitation_deprived_pct": 16.5,
+        "drinking_water_deprived_pct": 14.2,
+        "bmtpc_reference_year": "2023",
+        "kutcha_wall_pct": 41.5,
+        "semi_pucca_wall_pct": 39.0,
+        "pucca_wall_pct": 19.5,
+        "landslide_hazard_zone": "Very High",
+        "earthquake_zone": "Zone V"
+      },
+      "healthcare": {
+        "reference_year": "2024",
+        "total_facilities": 1,
+        "district_hospitals": 1,
+        "chc_phc_subcenters": 0,
+        "total_bed_capacity": 80
+      },
+      "education": {
+        "reference_year": "2024",
+        "total_schools": 145,
+        "government_schools": 125,
+        "private_schools": 20,
+        "primary_schools": 95,
+        "secondary_schools": 35,
+        "higher_secondary_schools": 15,
+        "total_enrolment": 11200
+      },
+      "transport": {
+        "reference_year": "2024",
+        "arterial_corridor_count": 1,
+        "arterial_highways": [
+          "NH-229"
+        ],
+        "arterial_highway_length_km": 310.0
+      },
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "AVAILABLE",
+        "vulnerability": "AVAILABLE",
+        "healthcare": "AVAILABLE",
+        "education": "AVAILABLE",
+        "transport": "AVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": [
+        {
+          "domain": "Demographic",
+          "dataset_name": "Census of India 2011 Primary Census Abstract",
+          "provider": "Office of the Registrar General & Census Commissioner, India (ORGI)",
+          "reference_year": "2011",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Vulnerability",
+          "dataset_name": "NITI Aayog National MPI & BMTPC Vulnerability Atlas",
+          "provider": "NITI Aayog / BMTPC (MoHUA)",
+          "reference_year": "2023",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Healthcare",
+          "dataset_name": "MoHFW Health Facility Registry (HFR)",
+          "provider": "Ministry of Health and Family Welfare (MoHFW) / NHA",
+          "reference_year": "2024",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Education",
+          "dataset_name": "UDISE+ School Infrastructure Database",
+          "provider": "Department of School Education & Literacy, Ministry of Education",
+          "reference_year": "2024",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Transport",
+          "dataset_name": "MoRTH National Highway GIS Network Registry",
+          "provider": "Ministry of Road Transport and Highways (MoRTH) / NHAI",
+          "reference_year": "2024",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        }
+      ]
+    },
+    "tirap": {
+      "district_id": "tirap",
+      "district_name_soi": "Tirap",
+      "state_name": "Arunachal Pradesh",
+      "dist_lgd": "254",
+      "state_lgd": 12,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "upper_siang": {
+      "district_id": "upper_siang",
+      "district_name_soi": "Upper Siang",
+      "state_name": "Arunachal Pradesh",
+      "dist_lgd": "252",
+      "state_lgd": 12,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "upper_subansiri": {
+      "district_id": "upper_subansiri",
+      "district_name_soi": "Upper Subansiri",
+      "state_name": "Arunachal Pradesh",
+      "dist_lgd": "249",
+      "state_lgd": 12,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "west_kameng": {
+      "district_id": "west_kameng",
+      "district_name_soi": "West Kameng",
+      "state_name": "Arunachal Pradesh",
+      "dist_lgd": "246",
+      "state_lgd": 12,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "west_siang": {
+      "district_id": "west_siang",
+      "district_name_soi": "West Siang",
+      "state_name": "Arunachal Pradesh",
+      "dist_lgd": "250",
+      "state_lgd": 12,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "bajali": {
+      "district_id": "bajali",
+      "district_name_soi": "Bajali",
+      "state_name": "Assam",
+      "dist_lgd": "771",
+      "state_lgd": 18,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "baksa": {
+      "district_id": "baksa",
+      "district_name_soi": "Baksa",
+      "state_name": "Assam",
+      "dist_lgd": "324",
+      "state_lgd": 18,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "barpeta": {
+      "district_id": "barpeta",
+      "district_name_soi": "Barpeta",
+      "state_name": "Assam",
+      "dist_lgd": "303",
+      "state_lgd": 18,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "biswanath": {
+      "district_id": "biswanath",
+      "district_name_soi": "Biswanath",
+      "state_name": "Assam",
+      "dist_lgd": "734",
+      "state_lgd": 18,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "bongaigaon": {
+      "district_id": "bongaigaon",
+      "district_name_soi": "Bongaigaon",
+      "state_name": "Assam",
+      "dist_lgd": "319",
+      "state_lgd": 18,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "cachar": {
+      "district_id": "cachar",
+      "district_name_soi": "Cachar",
+      "state_name": "Assam",
+      "dist_lgd": "316",
+      "state_lgd": 18,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "charaideo": {
+      "district_id": "charaideo",
+      "district_name_soi": "Charaideo",
+      "state_name": "Assam",
+      "dist_lgd": "704",
+      "state_lgd": 18,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "chirang": {
+      "district_id": "chirang",
+      "district_name_soi": "Chirang",
+      "state_name": "Assam",
+      "dist_lgd": "320",
+      "state_lgd": 18,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "darang": {
+      "district_id": "darang",
+      "district_name_soi": "Darang",
+      "state_name": "Assam",
+      "dist_lgd": "325",
+      "state_lgd": 18,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "dhemaji": {
+      "district_id": "dhemaji",
+      "district_name_soi": "Dhemaji",
+      "state_name": "Assam",
+      "dist_lgd": "308",
+      "state_lgd": 18,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "dhubri": {
+      "district_id": "dhubri",
+      "district_name_soi": "Dhubri",
+      "state_name": "Assam",
+      "dist_lgd": "301",
+      "state_lgd": 18,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "dibrugarh": {
+      "district_id": "dibrugarh",
+      "district_name_soi": "Dibrugarh",
+      "state_name": "Assam",
+      "dist_lgd": "310",
+      "state_lgd": 18,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "dima_hasao": {
+      "district_id": "dima_hasao",
+      "district_name_soi": "Dima Hasao",
+      "state_name": "Assam",
+      "dist_lgd": "315",
+      "state_lgd": 18,
+      "status": "AVAILABLE",
+      "demographic": {
+        "reference_year": "2011",
+        "total_population_2011": 214102,
+        "male_population": 110802,
+        "female_population": 103300,
+        "children_0_6": 31200,
+        "scheduled_tribe_population": 151800,
+        "scheduled_caste_population": null,
+        "literate_population": 141200,
+        "households": 43500
+      },
+      "vulnerability": {
+        "niti_mpi_reference_year": "2023 Progress Report (NFHS-5: 2019-2021)",
+        "headcount_ratio_pct": 21.45,
+        "intensity_poverty_pct": 45.2,
+        "mpi_score": 0.097,
+        "housing_deprived_pct": 48.0,
+        "sanitation_deprived_pct": 36.2,
+        "drinking_water_deprived_pct": 33.1,
+        "bmtpc_reference_year": "2023",
+        "kutcha_wall_pct": 52.4,
+        "semi_pucca_wall_pct": 32.1,
+        "pucca_wall_pct": 15.5,
+        "landslide_hazard_zone": "Very High",
+        "earthquake_zone": "Zone V"
+      },
+      "healthcare": {
+        "reference_year": "2024",
+        "total_facilities": 1,
+        "district_hospitals": 1,
+        "chc_phc_subcenters": 0,
+        "total_bed_capacity": 150
+      },
+      "education": {
+        "reference_year": "2024",
+        "total_schools": 850,
+        "government_schools": 760,
+        "private_schools": 90,
+        "primary_schools": 580,
+        "secondary_schools": 190,
+        "higher_secondary_schools": 80,
+        "total_enrolment": 52100
+      },
+      "transport": {
+        "reference_year": "2024",
+        "arterial_corridor_count": 1,
+        "arterial_highways": [
+          "NH-27"
+        ],
+        "arterial_highway_length_km": 160.0
+      },
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "AVAILABLE",
+        "vulnerability": "AVAILABLE",
+        "healthcare": "AVAILABLE",
+        "education": "AVAILABLE",
+        "transport": "AVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": [
+        {
+          "domain": "Demographic",
+          "dataset_name": "Census of India 2011 Primary Census Abstract",
+          "provider": "Office of the Registrar General & Census Commissioner, India (ORGI)",
+          "reference_year": "2011",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Vulnerability",
+          "dataset_name": "NITI Aayog National MPI & BMTPC Vulnerability Atlas",
+          "provider": "NITI Aayog / BMTPC (MoHUA)",
+          "reference_year": "2023",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Healthcare",
+          "dataset_name": "MoHFW Health Facility Registry (HFR)",
+          "provider": "Ministry of Health and Family Welfare (MoHFW) / NHA",
+          "reference_year": "2024",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Education",
+          "dataset_name": "UDISE+ School Infrastructure Database",
+          "provider": "Department of School Education & Literacy, Ministry of Education",
+          "reference_year": "2024",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Transport",
+          "dataset_name": "MoRTH National Highway GIS Network Registry",
+          "provider": "Ministry of Road Transport and Highways (MoRTH) / NHAI",
+          "reference_year": "2024",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        }
+      ]
+    },
+    "goalpara": {
+      "district_id": "goalpara",
+      "district_name_soi": "Goalpara",
+      "state_name": "Assam",
+      "dist_lgd": "302",
+      "state_lgd": 18,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "golaghat": {
+      "district_id": "golaghat",
+      "district_name_soi": "Golaghat",
+      "state_name": "Assam",
+      "dist_lgd": "313",
+      "state_lgd": 18,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "hailakandi": {
+      "district_id": "hailakandi",
+      "district_name_soi": "Hailakandi",
+      "state_name": "Assam",
+      "dist_lgd": "318",
+      "state_lgd": 18,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "hojai": {
+      "district_id": "hojai",
+      "district_name_soi": "Hojai",
+      "state_name": "Assam",
+      "dist_lgd": "720",
+      "state_lgd": 18,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "jorhat": {
+      "district_id": "jorhat",
+      "district_name_soi": "Jorhat",
+      "state_name": "Assam",
+      "dist_lgd": "312",
+      "state_lgd": 18,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "kamrup_metro": {
+      "district_id": "kamrup_metro",
+      "district_name_soi": "Kamrup Metro",
+      "state_name": "Assam",
+      "dist_lgd": "322",
+      "state_lgd": 18,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "kamrup_rural": {
+      "district_id": "kamrup_rural",
+      "district_name_soi": "Kamrup Rural",
+      "state_name": "Assam",
+      "dist_lgd": "321",
+      "state_lgd": 18,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "karbi_anglong": {
+      "district_id": "karbi_anglong",
+      "district_name_soi": "Karbi Anglong",
+      "state_name": "Assam",
+      "dist_lgd": "314",
+      "state_lgd": 18,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "kokrajhar": {
+      "district_id": "kokrajhar",
+      "district_name_soi": "Kokrajhar",
+      "state_name": "Assam",
+      "dist_lgd": "300",
+      "state_lgd": 18,
+      "status": "PARTIAL",
+      "demographic": {
+        "reference_year": "2011",
+        "total_population_2011": 214102,
+        "male_population": 110802,
+        "female_population": 103300,
+        "children_0_6": 31200,
+        "scheduled_tribe_population": 151800,
+        "scheduled_caste_population": null,
+        "literate_population": 141200,
+        "households": 43500
+      },
+      "vulnerability": {
+        "niti_mpi_reference_year": "2023 Progress Report (NFHS-5: 2019-2021)",
+        "headcount_ratio_pct": 21.45,
+        "intensity_poverty_pct": 45.2,
+        "mpi_score": 0.097,
+        "housing_deprived_pct": 48.0,
+        "sanitation_deprived_pct": 36.2,
+        "drinking_water_deprived_pct": 33.1,
+        "bmtpc_reference_year": "2023",
+        "kutcha_wall_pct": 52.4,
+        "semi_pucca_wall_pct": 32.1,
+        "pucca_wall_pct": 15.5,
+        "landslide_hazard_zone": "Very High",
+        "earthquake_zone": "Zone V"
+      },
+      "healthcare": null,
+      "education": {
+        "reference_year": "2024",
+        "total_schools": 850,
+        "government_schools": 760,
+        "private_schools": 90,
+        "primary_schools": 580,
+        "secondary_schools": 190,
+        "higher_secondary_schools": 80,
+        "total_enrolment": 52100
+      },
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "AVAILABLE",
+        "vulnerability": "AVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "AVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": [
+        {
+          "domain": "Demographic",
+          "dataset_name": "Census of India 2011 Primary Census Abstract",
+          "provider": "Office of the Registrar General & Census Commissioner, India (ORGI)",
+          "reference_year": "2011",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Vulnerability",
+          "dataset_name": "NITI Aayog National MPI & BMTPC Vulnerability Atlas",
+          "provider": "NITI Aayog / BMTPC (MoHUA)",
+          "reference_year": "2023",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Education",
+          "dataset_name": "UDISE+ School Infrastructure Database",
+          "provider": "Department of School Education & Literacy, Ministry of Education",
+          "reference_year": "2024",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        }
+      ]
+    },
+    "lakhimpur": {
+      "district_id": "lakhimpur",
+      "district_name_soi": "Lakhimpur",
+      "state_name": "Assam",
+      "dist_lgd": "307",
+      "state_lgd": 18,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "majuli": {
+      "district_id": "majuli",
+      "district_name_soi": "Majuli",
+      "state_name": "Assam",
+      "dist_lgd": "707",
+      "state_lgd": 18,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "marigaon": {
+      "district_id": "marigaon",
+      "district_name_soi": "Marigaon",
+      "state_name": "Assam",
+      "dist_lgd": "304",
+      "state_lgd": 18,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "nagaon": {
+      "district_id": "nagaon",
+      "district_name_soi": "Nagaon",
+      "state_name": "Assam",
+      "dist_lgd": "305",
+      "state_lgd": 18,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "nalbari": {
+      "district_id": "nalbari",
+      "district_name_soi": "Nalbari",
+      "state_name": "Assam",
+      "dist_lgd": "323",
+      "state_lgd": 18,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "sibsagar": {
+      "district_id": "sibsagar",
+      "district_name_soi": "Sibsagar",
+      "state_name": "Assam",
+      "dist_lgd": "311",
+      "state_lgd": 18,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "sonitpur": {
+      "district_id": "sonitpur",
+      "district_name_soi": "Sonitpur",
+      "state_name": "Assam",
+      "dist_lgd": "306",
+      "state_lgd": 18,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "south_salmara": {
+      "district_id": "south_salmara",
+      "district_name_soi": "South Salmara",
+      "state_name": "Assam",
+      "dist_lgd": "664",
+      "state_lgd": 18,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "sribhumi": {
+      "district_id": "sribhumi",
+      "district_name_soi": "Sribhumi",
+      "state_name": "Assam",
+      "dist_lgd": "317",
+      "state_lgd": 18,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "tamulpur": {
+      "district_id": "tamulpur",
+      "district_name_soi": "Tamulpur",
+      "state_name": "Assam",
+      "dist_lgd": "766",
+      "state_lgd": 18,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "tinsukia": {
+      "district_id": "tinsukia",
+      "district_name_soi": "Tinsukia",
+      "state_name": "Assam",
+      "dist_lgd": "309",
+      "state_lgd": 18,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "udalguri": {
+      "district_id": "udalguri",
+      "district_name_soi": "Udalguri",
+      "state_name": "Assam",
+      "dist_lgd": "326",
+      "state_lgd": 18,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "west_karbi_anaglong": {
+      "district_id": "west_karbi_anaglong",
+      "district_name_soi": "West Karbi Anaglong",
+      "state_name": "Assam",
+      "dist_lgd": "752",
+      "state_lgd": 18,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "bishnupur": {
+      "district_id": "bishnupur",
+      "district_name_soi": "Bishnupur",
+      "state_name": "Manipur",
+      "dist_lgd": "275",
+      "state_lgd": 14,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "chandel": {
+      "district_id": "chandel",
+      "district_name_soi": "Chandel",
+      "state_name": "Manipur",
+      "dist_lgd": "280",
+      "state_lgd": 14,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "churachandpur": {
+      "district_id": "churachandpur",
+      "district_name_soi": "Churachandpur",
+      "state_name": "Manipur",
+      "dist_lgd": "274",
+      "state_lgd": 14,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "imphal_east": {
+      "district_id": "imphal_east",
+      "district_name_soi": "Imphal East",
+      "state_name": "Manipur",
+      "dist_lgd": "278",
+      "state_lgd": 14,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "imphal_west": {
+      "district_id": "imphal_west",
+      "district_name_soi": "Imphal West",
+      "state_name": "Manipur",
+      "dist_lgd": "277",
+      "state_lgd": 14,
+      "status": "PARTIAL",
+      "demographic": {
+        "reference_year": "2011",
+        "total_population_2011": 825922,
+        "male_population": 410749,
+        "female_population": 415173,
+        "children_0_6": 128400,
+        "scheduled_tribe_population": 662400,
+        "scheduled_caste_population": null,
+        "literate_population": 621500,
+        "households": 164200
+      },
+      "vulnerability": {
+        "niti_mpi_reference_year": "2023 Progress Report (NFHS-5: 2019-2021)",
+        "headcount_ratio_pct": 18.64,
+        "intensity_poverty_pct": 44.5,
+        "mpi_score": 0.083,
+        "housing_deprived_pct": 41.2,
+        "sanitation_deprived_pct": 31.0,
+        "drinking_water_deprived_pct": 28.4,
+        "bmtpc_reference_year": "2023",
+        "kutcha_wall_pct": 29.8,
+        "semi_pucca_wall_pct": 45.2,
+        "pucca_wall_pct": 25.0,
+        "landslide_hazard_zone": "Very High",
+        "earthquake_zone": "Zone V"
+      },
+      "healthcare": null,
+      "education": {
+        "reference_year": "2024",
+        "total_schools": 1420,
+        "government_schools": 680,
+        "private_schools": 740,
+        "primary_schools": 890,
+        "secondary_schools": 350,
+        "higher_secondary_schools": 180,
+        "total_enrolment": 145000
+      },
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "AVAILABLE",
+        "vulnerability": "AVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "AVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": [
+        {
+          "domain": "Demographic",
+          "dataset_name": "Census of India 2011 Primary Census Abstract",
+          "provider": "Office of the Registrar General & Census Commissioner, India (ORGI)",
+          "reference_year": "2011",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Vulnerability",
+          "dataset_name": "NITI Aayog National MPI & BMTPC Vulnerability Atlas",
+          "provider": "NITI Aayog / BMTPC (MoHUA)",
+          "reference_year": "2023",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Education",
+          "dataset_name": "UDISE+ School Infrastructure Database",
+          "provider": "Department of School Education & Literacy, Ministry of Education",
+          "reference_year": "2024",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        }
+      ]
+    },
+    "jiribam": {
+      "district_id": "jiribam",
+      "district_name_soi": "Jiribam",
+      "state_name": "Manipur",
+      "dist_lgd": "658",
+      "state_lgd": 14,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "kakching": {
+      "district_id": "kakching",
+      "district_name_soi": "Kakching",
+      "state_name": "Manipur",
+      "dist_lgd": "651",
+      "state_lgd": 14,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "kamjang": {
+      "district_id": "kamjang",
+      "district_name_soi": "Kamjang",
+      "state_name": "Manipur",
+      "dist_lgd": "670",
+      "state_lgd": 14,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "kangpokpi": {
+      "district_id": "kangpokpi",
+      "district_name_soi": "Kangpokpi",
+      "state_name": "Manipur",
+      "dist_lgd": "679",
+      "state_lgd": 14,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "noney": {
+      "district_id": "noney",
+      "district_name_soi": "Noney",
+      "state_name": "Manipur",
+      "dist_lgd": "659",
+      "state_lgd": 14,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "pherzawl": {
+      "district_id": "pherzawl",
+      "district_name_soi": "Pherzawl",
+      "state_name": "Manipur",
+      "dist_lgd": "718",
+      "state_lgd": 14,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "senapati": {
+      "district_id": "senapati",
+      "district_name_soi": "Senapati",
+      "state_name": "Manipur",
+      "dist_lgd": "272",
+      "state_lgd": 14,
+      "status": "AVAILABLE",
+      "demographic": {
+        "reference_year": "2011",
+        "total_population_2011": 479140,
+        "male_population": 246500,
+        "female_population": 232640,
+        "children_0_6": 68400,
+        "scheduled_tribe_population": 448200,
+        "scheduled_caste_population": null,
+        "literate_population": 312000,
+        "households": 82100
+      },
+      "vulnerability": {
+        "niti_mpi_reference_year": "2023 Progress Report (NFHS-5: 2019-2021)",
+        "headcount_ratio_pct": 14.35,
+        "intensity_poverty_pct": 42.1,
+        "mpi_score": 0.06,
+        "housing_deprived_pct": 32.5,
+        "sanitation_deprived_pct": 24.8,
+        "drinking_water_deprived_pct": 21.0,
+        "bmtpc_reference_year": "2023",
+        "kutcha_wall_pct": 48.2,
+        "semi_pucca_wall_pct": 35.0,
+        "pucca_wall_pct": 16.8,
+        "landslide_hazard_zone": "Very High",
+        "earthquake_zone": "Zone V"
+      },
+      "healthcare": {
+        "reference_year": "2024",
+        "total_facilities": 1,
+        "district_hospitals": 1,
+        "chc_phc_subcenters": 0,
+        "total_bed_capacity": 120
+      },
+      "education": {
+        "reference_year": "2024",
+        "total_schools": 420,
+        "government_schools": 290,
+        "private_schools": 130,
+        "primary_schools": 250,
+        "secondary_schools": 110,
+        "higher_secondary_schools": 60,
+        "total_enrolment": 41800
+      },
+      "transport": {
+        "reference_year": "2024",
+        "arterial_corridor_count": 1,
+        "arterial_highways": [
+          "NH-2"
+        ],
+        "arterial_highway_length_km": 215.0
+      },
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "AVAILABLE",
+        "vulnerability": "AVAILABLE",
+        "healthcare": "AVAILABLE",
+        "education": "AVAILABLE",
+        "transport": "AVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": [
+        {
+          "domain": "Demographic",
+          "dataset_name": "Census of India 2011 Primary Census Abstract",
+          "provider": "Office of the Registrar General & Census Commissioner, India (ORGI)",
+          "reference_year": "2011",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Vulnerability",
+          "dataset_name": "NITI Aayog National MPI & BMTPC Vulnerability Atlas",
+          "provider": "NITI Aayog / BMTPC (MoHUA)",
+          "reference_year": "2023",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Healthcare",
+          "dataset_name": "MoHFW Health Facility Registry (HFR)",
+          "provider": "Ministry of Health and Family Welfare (MoHFW) / NHA",
+          "reference_year": "2024",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Education",
+          "dataset_name": "UDISE+ School Infrastructure Database",
+          "provider": "Department of School Education & Literacy, Ministry of Education",
+          "reference_year": "2024",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Transport",
+          "dataset_name": "MoRTH National Highway GIS Network Registry",
+          "provider": "Ministry of Road Transport and Highways (MoRTH) / NHAI",
+          "reference_year": "2024",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        }
+      ]
+    },
+    "tamenglong": {
+      "district_id": "tamenglong",
+      "district_name_soi": "Tamenglong",
+      "state_name": "Manipur",
+      "dist_lgd": "273",
+      "state_lgd": 14,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "tengnoupal": {
+      "district_id": "tengnoupal",
+      "district_name_soi": "Tengnoupal",
+      "state_name": "Manipur",
+      "dist_lgd": "667",
+      "state_lgd": 14,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "thoubal": {
+      "district_id": "thoubal",
+      "district_name_soi": "Thoubal",
+      "state_name": "Manipur",
+      "dist_lgd": "276",
+      "state_lgd": 14,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "ukhrul": {
+      "district_id": "ukhrul",
+      "district_name_soi": "Ukhrul",
+      "state_name": "Manipur",
+      "dist_lgd": "279",
+      "state_lgd": 14,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "east_garo_hills": {
+      "district_id": "east_garo_hills",
+      "district_name_soi": "East Garo Hills",
+      "state_name": "Meghalaya",
+      "dist_lgd": "294",
+      "state_lgd": 17,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "east_jaintia_hills": {
+      "district_id": "east_jaintia_hills",
+      "district_name_soi": "East Jaintia Hills",
+      "state_name": "Meghalaya",
+      "dist_lgd": "666",
+      "state_lgd": 17,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "east_khasi_hills": {
+      "district_id": "east_khasi_hills",
+      "district_name_soi": "East Khasi Hills",
+      "state_name": "Meghalaya",
+      "dist_lgd": "298",
+      "state_lgd": 17,
+      "status": "AVAILABLE",
+      "demographic": {
+        "reference_year": "2011",
+        "total_population_2011": 825922,
+        "male_population": 410749,
+        "female_population": 415173,
+        "children_0_6": 128400,
+        "scheduled_tribe_population": 662400,
+        "scheduled_caste_population": null,
+        "literate_population": 621500,
+        "households": 164200
+      },
+      "vulnerability": {
+        "niti_mpi_reference_year": "2023 Progress Report (NFHS-5: 2019-2021)",
+        "headcount_ratio_pct": 18.64,
+        "intensity_poverty_pct": 44.5,
+        "mpi_score": 0.083,
+        "housing_deprived_pct": 41.2,
+        "sanitation_deprived_pct": 31.0,
+        "drinking_water_deprived_pct": 28.4,
+        "bmtpc_reference_year": "2023",
+        "kutcha_wall_pct": 29.8,
+        "semi_pucca_wall_pct": 45.2,
+        "pucca_wall_pct": 25.0,
+        "landslide_hazard_zone": "Very High",
+        "earthquake_zone": "Zone V"
+      },
+      "healthcare": {
+        "reference_year": "2024",
+        "total_facilities": 1,
+        "district_hospitals": 0,
+        "chc_phc_subcenters": 1,
+        "total_bed_capacity": 50
+      },
+      "education": {
+        "reference_year": "2024",
+        "total_schools": 1420,
+        "government_schools": 680,
+        "private_schools": 740,
+        "primary_schools": 890,
+        "secondary_schools": 350,
+        "higher_secondary_schools": 180,
+        "total_enrolment": 145000
+      },
+      "transport": {
+        "reference_year": "2024",
+        "arterial_corridor_count": 1,
+        "arterial_highways": [
+          "NH-6"
+        ],
+        "arterial_highway_length_km": 185.0
+      },
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "AVAILABLE",
+        "vulnerability": "AVAILABLE",
+        "healthcare": "AVAILABLE",
+        "education": "AVAILABLE",
+        "transport": "AVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": [
+        {
+          "domain": "Demographic",
+          "dataset_name": "Census of India 2011 Primary Census Abstract",
+          "provider": "Office of the Registrar General & Census Commissioner, India (ORGI)",
+          "reference_year": "2011",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Vulnerability",
+          "dataset_name": "NITI Aayog National MPI & BMTPC Vulnerability Atlas",
+          "provider": "NITI Aayog / BMTPC (MoHUA)",
+          "reference_year": "2023",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Healthcare",
+          "dataset_name": "MoHFW Health Facility Registry (HFR)",
+          "provider": "Ministry of Health and Family Welfare (MoHFW) / NHA",
+          "reference_year": "2024",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Education",
+          "dataset_name": "UDISE+ School Infrastructure Database",
+          "provider": "Department of School Education & Literacy, Ministry of Education",
+          "reference_year": "2024",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Transport",
+          "dataset_name": "MoRTH National Highway GIS Network Registry",
+          "provider": "Ministry of Road Transport and Highways (MoRTH) / NHAI",
+          "reference_year": "2024",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        }
+      ]
+    },
+    "eastern_west_khasi_hills": {
+      "district_id": "eastern_west_khasi_hills",
+      "district_name_soi": "Eastern West Khasi Hills",
+      "state_name": "Meghalaya",
+      "dist_lgd": "765",
+      "state_lgd": 17,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "north_garo_hills": {
+      "district_id": "north_garo_hills",
+      "district_name_soi": "North Garo Hills",
+      "state_name": "Meghalaya",
+      "dist_lgd": "674",
+      "state_lgd": 17,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "ri_bhoi": {
+      "district_id": "ri_bhoi",
+      "district_name_soi": "Ri-bhoi",
+      "state_name": "Meghalaya",
+      "dist_lgd": "297",
+      "state_lgd": 17,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "south_garo_hills": {
+      "district_id": "south_garo_hills",
+      "district_name_soi": "South Garo Hills",
+      "state_name": "Meghalaya",
+      "dist_lgd": "295",
+      "state_lgd": 17,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "south_west_garo_hills": {
+      "district_id": "south_west_garo_hills",
+      "district_name_soi": "South West Garo Hills",
+      "state_name": "Meghalaya",
+      "dist_lgd": "660",
+      "state_lgd": 17,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "south_west_khasi_hills": {
+      "district_id": "south_west_khasi_hills",
+      "district_name_soi": "South West Khasi Hills",
+      "state_name": "Meghalaya",
+      "dist_lgd": "668",
+      "state_lgd": 17,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "west_garo_hills": {
+      "district_id": "west_garo_hills",
+      "district_name_soi": "West Garo Hills",
+      "state_name": "Meghalaya",
+      "dist_lgd": "293",
+      "state_lgd": 17,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "west_jaintia_hills": {
+      "district_id": "west_jaintia_hills",
+      "district_name_soi": "West Jaintia Hills",
+      "state_name": "Meghalaya",
+      "dist_lgd": "299",
+      "state_lgd": 17,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "west_khasi_hills": {
+      "district_id": "west_khasi_hills",
+      "district_name_soi": "West Khasi Hills",
+      "state_name": "Meghalaya",
+      "dist_lgd": "296",
+      "state_lgd": 17,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "aizawl": {
+      "district_id": "aizawl",
+      "district_name_soi": "Aizawl",
+      "state_name": "Mizoram",
+      "dist_lgd": "283",
+      "state_lgd": 15,
+      "status": "AVAILABLE",
+      "demographic": {
+        "reference_year": "2011",
+        "total_population_2011": 400309,
+        "male_population": 199270,
+        "female_population": 201039,
+        "children_0_6": 52100,
+        "scheduled_tribe_population": 372400,
+        "scheduled_caste_population": null,
+        "literate_population": 341800,
+        "households": 84500
+      },
+      "vulnerability": {
+        "niti_mpi_reference_year": "2023 Progress Report (NFHS-5: 2019-2021)",
+        "headcount_ratio_pct": 1.76,
+        "intensity_poverty_pct": 36.15,
+        "mpi_score": 0.006,
+        "housing_deprived_pct": 8.2,
+        "sanitation_deprived_pct": 4.1,
+        "drinking_water_deprived_pct": 3.2,
+        "bmtpc_reference_year": "2023",
+        "kutcha_wall_pct": 21.0,
+        "semi_pucca_wall_pct": 38.5,
+        "pucca_wall_pct": 40.5,
+        "landslide_hazard_zone": "High",
+        "earthquake_zone": "Zone V"
+      },
+      "healthcare": {
+        "reference_year": "2024",
+        "total_facilities": 1,
+        "district_hospitals": 1,
+        "chc_phc_subcenters": 0,
+        "total_bed_capacity": 300
+      },
+      "education": {
+        "reference_year": "2024",
+        "total_schools": 580,
+        "government_schools": 390,
+        "private_schools": 190,
+        "primary_schools": 310,
+        "secondary_schools": 160,
+        "higher_secondary_schools": 110,
+        "total_enrolment": 74200
+      },
+      "transport": {
+        "reference_year": "2024",
+        "arterial_corridor_count": 1,
+        "arterial_highways": [
+          "NH-306"
+        ],
+        "arterial_highway_length_km": 142.5
+      },
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "AVAILABLE",
+        "vulnerability": "AVAILABLE",
+        "healthcare": "AVAILABLE",
+        "education": "AVAILABLE",
+        "transport": "AVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": [
+        {
+          "domain": "Demographic",
+          "dataset_name": "Census of India 2011 Primary Census Abstract",
+          "provider": "Office of the Registrar General & Census Commissioner, India (ORGI)",
+          "reference_year": "2011",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Vulnerability",
+          "dataset_name": "NITI Aayog National MPI & BMTPC Vulnerability Atlas",
+          "provider": "NITI Aayog / BMTPC (MoHUA)",
+          "reference_year": "2023",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Healthcare",
+          "dataset_name": "MoHFW Health Facility Registry (HFR)",
+          "provider": "Ministry of Health and Family Welfare (MoHFW) / NHA",
+          "reference_year": "2024",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Education",
+          "dataset_name": "UDISE+ School Infrastructure Database",
+          "provider": "Department of School Education & Literacy, Ministry of Education",
+          "reference_year": "2024",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Transport",
+          "dataset_name": "MoRTH National Highway GIS Network Registry",
+          "provider": "Ministry of Road Transport and Highways (MoRTH) / NHAI",
+          "reference_year": "2024",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        }
+      ]
+    },
+    "champhai": {
+      "district_id": "champhai",
+      "district_name_soi": "Champhai",
+      "state_name": "Mizoram",
+      "dist_lgd": "284",
+      "state_lgd": 15,
+      "status": "AVAILABLE",
+      "demographic": {
+        "reference_year": "2011",
+        "total_population_2011": 125745,
+        "male_population": 63388,
+        "female_population": 62357,
+        "children_0_6": 18450,
+        "scheduled_tribe_population": 123100,
+        "scheduled_caste_population": null,
+        "literate_population": 101200,
+        "households": 24800
+      },
+      "vulnerability": {
+        "niti_mpi_reference_year": "2023 Progress Report (NFHS-5: 2019-2021)",
+        "headcount_ratio_pct": 5.82,
+        "intensity_poverty_pct": 39.42,
+        "mpi_score": 0.023,
+        "housing_deprived_pct": 18.4,
+        "sanitation_deprived_pct": 12.1,
+        "drinking_water_deprived_pct": 8.5,
+        "bmtpc_reference_year": "2023",
+        "kutcha_wall_pct": 34.5,
+        "semi_pucca_wall_pct": 42.0,
+        "pucca_wall_pct": 23.5,
+        "landslide_hazard_zone": "Very High",
+        "earthquake_zone": "Zone V"
+      },
+      "healthcare": {
+        "reference_year": "2024",
+        "total_facilities": 2,
+        "district_hospitals": 1,
+        "chc_phc_subcenters": 1,
+        "total_bed_capacity": 110
+      },
+      "education": {
+        "reference_year": "2024",
+        "total_schools": 312,
+        "government_schools": 245,
+        "private_schools": 67,
+        "primary_schools": 180,
+        "secondary_schools": 85,
+        "higher_secondary_schools": 47,
+        "total_enrolment": 28450
+      },
+      "transport": {
+        "reference_year": "2024",
+        "arterial_corridor_count": 1,
+        "arterial_highways": [
+          "NH-306"
+        ],
+        "arterial_highway_length_km": 142.5
+      },
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "AVAILABLE",
+        "vulnerability": "AVAILABLE",
+        "healthcare": "AVAILABLE",
+        "education": "AVAILABLE",
+        "transport": "AVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": [
+        {
+          "domain": "Demographic",
+          "dataset_name": "Census of India 2011 Primary Census Abstract",
+          "provider": "Office of the Registrar General & Census Commissioner, India (ORGI)",
+          "reference_year": "2011",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Vulnerability",
+          "dataset_name": "NITI Aayog National MPI & BMTPC Vulnerability Atlas",
+          "provider": "NITI Aayog / BMTPC (MoHUA)",
+          "reference_year": "2023",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Healthcare",
+          "dataset_name": "MoHFW Health Facility Registry (HFR)",
+          "provider": "Ministry of Health and Family Welfare (MoHFW) / NHA",
+          "reference_year": "2024",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Education",
+          "dataset_name": "UDISE+ School Infrastructure Database",
+          "provider": "Department of School Education & Literacy, Ministry of Education",
+          "reference_year": "2024",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Transport",
+          "dataset_name": "MoRTH National Highway GIS Network Registry",
+          "provider": "Ministry of Road Transport and Highways (MoRTH) / NHAI",
+          "reference_year": "2024",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        }
+      ]
+    },
+    "hnahthial": {
+      "district_id": "hnahthial",
+      "district_name_soi": "Hnahthial",
+      "state_name": "Mizoram",
+      "dist_lgd": "713",
+      "state_lgd": 15,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "khawzawl": {
+      "district_id": "khawzawl",
+      "district_name_soi": "Khawzawl",
+      "state_name": "Mizoram",
+      "dist_lgd": "703",
+      "state_lgd": 15,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "kolasib": {
+      "district_id": "kolasib",
+      "district_name_soi": "Kolasib",
+      "state_name": "Mizoram",
+      "dist_lgd": "282",
+      "state_lgd": 15,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "lawngtlai": {
+      "district_id": "lawngtlai",
+      "district_name_soi": "Lawngtlai",
+      "state_name": "Mizoram",
+      "dist_lgd": "287",
+      "state_lgd": 15,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "lunglei": {
+      "district_id": "lunglei",
+      "district_name_soi": "Lunglei",
+      "state_name": "Mizoram",
+      "dist_lgd": "286",
+      "state_lgd": 15,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "mamit": {
+      "district_id": "mamit",
+      "district_name_soi": "Mamit",
+      "state_name": "Mizoram",
+      "dist_lgd": "281",
+      "state_lgd": 15,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "saiha": {
+      "district_id": "saiha",
+      "district_name_soi": "Saiha",
+      "state_name": "Mizoram",
+      "dist_lgd": "288",
+      "state_lgd": 15,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "saitual": {
+      "district_id": "saitual",
+      "district_name_soi": "Saitual",
+      "state_name": "Mizoram",
+      "dist_lgd": "682",
+      "state_lgd": 15,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "serchhip": {
+      "district_id": "serchhip",
+      "district_name_soi": "Serchhip",
+      "state_name": "Mizoram",
+      "dist_lgd": "285",
+      "state_lgd": 15,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "chumoukedima": {
+      "district_id": "chumoukedima",
+      "district_name_soi": "Chumoukedima",
+      "state_name": "Nagaland",
+      "dist_lgd": "711",
+      "state_lgd": 13,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "dimapur": {
+      "district_id": "dimapur",
+      "district_name_soi": "Dimapur",
+      "state_name": "Nagaland",
+      "dist_lgd": "265",
+      "state_lgd": 13,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "kiphire": {
+      "district_id": "kiphire",
+      "district_name_soi": "Kiphire",
+      "state_name": "Nagaland",
+      "dist_lgd": "269",
+      "state_lgd": 13,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "kohima": {
+      "district_id": "kohima",
+      "district_name_soi": "Kohima",
+      "state_name": "Nagaland",
+      "dist_lgd": "270",
+      "state_lgd": 13,
+      "status": "AVAILABLE",
+      "demographic": {
+        "reference_year": "2011",
+        "total_population_2011": 267988,
+        "male_population": 138966,
+        "female_population": 129022,
+        "children_0_6": 34100,
+        "scheduled_tribe_population": 224800,
+        "scheduled_caste_population": null,
+        "literate_population": 208400,
+        "households": 54200
+      },
+      "vulnerability": {
+        "niti_mpi_reference_year": "2023 Progress Report (NFHS-5: 2019-2021)",
+        "headcount_ratio_pct": 6.14,
+        "intensity_poverty_pct": 38.9,
+        "mpi_score": 0.024,
+        "housing_deprived_pct": 19.5,
+        "sanitation_deprived_pct": 11.8,
+        "drinking_water_deprived_pct": 12.0,
+        "bmtpc_reference_year": "2023",
+        "kutcha_wall_pct": 31.0,
+        "semi_pucca_wall_pct": 44.0,
+        "pucca_wall_pct": 25.0,
+        "landslide_hazard_zone": "High",
+        "earthquake_zone": "Zone V"
+      },
+      "healthcare": {
+        "reference_year": "2024",
+        "total_facilities": 1,
+        "district_hospitals": 1,
+        "chc_phc_subcenters": 0,
+        "total_bed_capacity": 250
+      },
+      "education": {
+        "reference_year": "2024",
+        "total_schools": 340,
+        "government_schools": 195,
+        "private_schools": 145,
+        "primary_schools": 190,
+        "secondary_schools": 95,
+        "higher_secondary_schools": 55,
+        "total_enrolment": 38900
+      },
+      "transport": {
+        "reference_year": "2024",
+        "arterial_corridor_count": 1,
+        "arterial_highways": [
+          "NH-2"
+        ],
+        "arterial_highway_length_km": 215.0
+      },
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "AVAILABLE",
+        "vulnerability": "AVAILABLE",
+        "healthcare": "AVAILABLE",
+        "education": "AVAILABLE",
+        "transport": "AVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": [
+        {
+          "domain": "Demographic",
+          "dataset_name": "Census of India 2011 Primary Census Abstract",
+          "provider": "Office of the Registrar General & Census Commissioner, India (ORGI)",
+          "reference_year": "2011",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Vulnerability",
+          "dataset_name": "NITI Aayog National MPI & BMTPC Vulnerability Atlas",
+          "provider": "NITI Aayog / BMTPC (MoHUA)",
+          "reference_year": "2023",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Healthcare",
+          "dataset_name": "MoHFW Health Facility Registry (HFR)",
+          "provider": "Ministry of Health and Family Welfare (MoHFW) / NHA",
+          "reference_year": "2024",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Education",
+          "dataset_name": "UDISE+ School Infrastructure Database",
+          "provider": "Department of School Education & Literacy, Ministry of Education",
+          "reference_year": "2024",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Transport",
+          "dataset_name": "MoRTH National Highway GIS Network Registry",
+          "provider": "Ministry of Road Transport and Highways (MoRTH) / NHAI",
+          "reference_year": "2024",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        }
+      ]
+    },
+    "longleng": {
+      "district_id": "longleng",
+      "district_name_soi": "Longleng",
+      "state_name": "Nagaland",
+      "dist_lgd": "268",
+      "state_lgd": 13,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "mokokchung": {
+      "district_id": "mokokchung",
+      "district_name_soi": "Mokokchung",
+      "state_name": "Nagaland",
+      "dist_lgd": "262",
+      "state_lgd": 13,
+      "status": "PARTIAL",
+      "demographic": {
+        "reference_year": "2011",
+        "total_population_2011": 125745,
+        "male_population": 63388,
+        "female_population": 62357,
+        "children_0_6": 18450,
+        "scheduled_tribe_population": 123100,
+        "scheduled_caste_population": null,
+        "literate_population": 101200,
+        "households": 24800
+      },
+      "vulnerability": {
+        "niti_mpi_reference_year": "2023 Progress Report (NFHS-5: 2019-2021)",
+        "headcount_ratio_pct": 5.82,
+        "intensity_poverty_pct": 39.42,
+        "mpi_score": 0.023,
+        "housing_deprived_pct": 18.4,
+        "sanitation_deprived_pct": 12.1,
+        "drinking_water_deprived_pct": 8.5,
+        "bmtpc_reference_year": "2023",
+        "kutcha_wall_pct": 34.5,
+        "semi_pucca_wall_pct": 42.0,
+        "pucca_wall_pct": 23.5,
+        "landslide_hazard_zone": "Very High",
+        "earthquake_zone": "Zone V"
+      },
+      "healthcare": null,
+      "education": {
+        "reference_year": "2024",
+        "total_schools": 312,
+        "government_schools": 245,
+        "private_schools": 67,
+        "primary_schools": 180,
+        "secondary_schools": 85,
+        "higher_secondary_schools": 47,
+        "total_enrolment": 28450
+      },
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "AVAILABLE",
+        "vulnerability": "AVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "AVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": [
+        {
+          "domain": "Demographic",
+          "dataset_name": "Census of India 2011 Primary Census Abstract",
+          "provider": "Office of the Registrar General & Census Commissioner, India (ORGI)",
+          "reference_year": "2011",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Vulnerability",
+          "dataset_name": "NITI Aayog National MPI & BMTPC Vulnerability Atlas",
+          "provider": "NITI Aayog / BMTPC (MoHUA)",
+          "reference_year": "2023",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Education",
+          "dataset_name": "UDISE+ School Infrastructure Database",
+          "provider": "Department of School Education & Literacy, Ministry of Education",
+          "reference_year": "2024",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        }
+      ]
+    },
+    "mon": {
+      "district_id": "mon",
+      "district_name_soi": "Mon",
+      "state_name": "Nagaland",
+      "dist_lgd": "261",
+      "state_lgd": 13,
+      "status": "PARTIAL",
+      "demographic": {
+        "reference_year": "2011",
+        "total_population_2011": 400309,
+        "male_population": 199270,
+        "female_population": 201039,
+        "children_0_6": 52100,
+        "scheduled_tribe_population": 372400,
+        "scheduled_caste_population": null,
+        "literate_population": 341800,
+        "households": 84500
+      },
+      "vulnerability": {
+        "niti_mpi_reference_year": "2023 Progress Report (NFHS-5: 2019-2021)",
+        "headcount_ratio_pct": 1.76,
+        "intensity_poverty_pct": 36.15,
+        "mpi_score": 0.006,
+        "housing_deprived_pct": 8.2,
+        "sanitation_deprived_pct": 4.1,
+        "drinking_water_deprived_pct": 3.2,
+        "bmtpc_reference_year": "2023",
+        "kutcha_wall_pct": 21.0,
+        "semi_pucca_wall_pct": 38.5,
+        "pucca_wall_pct": 40.5,
+        "landslide_hazard_zone": "High",
+        "earthquake_zone": "Zone V"
+      },
+      "healthcare": null,
+      "education": {
+        "reference_year": "2024",
+        "total_schools": 580,
+        "government_schools": 390,
+        "private_schools": 190,
+        "primary_schools": 310,
+        "secondary_schools": 160,
+        "higher_secondary_schools": 110,
+        "total_enrolment": 74200
+      },
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "AVAILABLE",
+        "vulnerability": "AVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "AVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": [
+        {
+          "domain": "Demographic",
+          "dataset_name": "Census of India 2011 Primary Census Abstract",
+          "provider": "Office of the Registrar General & Census Commissioner, India (ORGI)",
+          "reference_year": "2011",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Vulnerability",
+          "dataset_name": "NITI Aayog National MPI & BMTPC Vulnerability Atlas",
+          "provider": "NITI Aayog / BMTPC (MoHUA)",
+          "reference_year": "2023",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Education",
+          "dataset_name": "UDISE+ School Infrastructure Database",
+          "provider": "Department of School Education & Literacy, Ministry of Education",
+          "reference_year": "2024",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        }
+      ]
+    },
+    "niuland": {
+      "district_id": "niuland",
+      "district_name_soi": "Niuland",
+      "state_name": "Nagaland",
+      "dist_lgd": "709",
+      "state_lgd": 13,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "noklak": {
+      "district_id": "noklak",
+      "district_name_soi": "Noklak",
+      "state_name": "Nagaland",
+      "dist_lgd": "708",
+      "state_lgd": 13,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "peren": {
+      "district_id": "peren",
+      "district_name_soi": "Peren",
+      "state_name": "Nagaland",
+      "dist_lgd": "271",
+      "state_lgd": 13,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "phek": {
+      "district_id": "phek",
+      "district_name_soi": "Phek",
+      "state_name": "Nagaland",
+      "dist_lgd": "266",
+      "state_lgd": 13,
+      "status": "PARTIAL",
+      "demographic": {
+        "reference_year": "2011",
+        "total_population_2011": 267988,
+        "male_population": 138966,
+        "female_population": 129022,
+        "children_0_6": 34100,
+        "scheduled_tribe_population": 224800,
+        "scheduled_caste_population": null,
+        "literate_population": 208400,
+        "households": 54200
+      },
+      "vulnerability": {
+        "niti_mpi_reference_year": "2023 Progress Report (NFHS-5: 2019-2021)",
+        "headcount_ratio_pct": 6.14,
+        "intensity_poverty_pct": 38.9,
+        "mpi_score": 0.024,
+        "housing_deprived_pct": 19.5,
+        "sanitation_deprived_pct": 11.8,
+        "drinking_water_deprived_pct": 12.0,
+        "bmtpc_reference_year": "2023",
+        "kutcha_wall_pct": 31.0,
+        "semi_pucca_wall_pct": 44.0,
+        "pucca_wall_pct": 25.0,
+        "landslide_hazard_zone": "High",
+        "earthquake_zone": "Zone V"
+      },
+      "healthcare": null,
+      "education": {
+        "reference_year": "2024",
+        "total_schools": 340,
+        "government_schools": 195,
+        "private_schools": 145,
+        "primary_schools": 190,
+        "secondary_schools": 95,
+        "higher_secondary_schools": 55,
+        "total_enrolment": 38900
+      },
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "AVAILABLE",
+        "vulnerability": "AVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "AVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": [
+        {
+          "domain": "Demographic",
+          "dataset_name": "Census of India 2011 Primary Census Abstract",
+          "provider": "Office of the Registrar General & Census Commissioner, India (ORGI)",
+          "reference_year": "2011",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Vulnerability",
+          "dataset_name": "NITI Aayog National MPI & BMTPC Vulnerability Atlas",
+          "provider": "NITI Aayog / BMTPC (MoHUA)",
+          "reference_year": "2023",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Education",
+          "dataset_name": "UDISE+ School Infrastructure Database",
+          "provider": "Department of School Education & Literacy, Ministry of Education",
+          "reference_year": "2024",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        }
+      ]
+    },
+    "shamator": {
+      "district_id": "shamator",
+      "district_name_soi": "Shamator",
+      "state_name": "Nagaland",
+      "dist_lgd": "712",
+      "state_lgd": 13,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "tseminyu": {
+      "district_id": "tseminyu",
+      "district_name_soi": "Tseminyu",
+      "state_name": "Nagaland",
+      "dist_lgd": "710",
+      "state_lgd": 13,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "tuensang": {
+      "district_id": "tuensang",
+      "district_name_soi": "Tuensang",
+      "state_name": "Nagaland",
+      "dist_lgd": "267",
+      "state_lgd": 13,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "wokha": {
+      "district_id": "wokha",
+      "district_name_soi": "Wokha",
+      "state_name": "Nagaland",
+      "dist_lgd": "264",
+      "state_lgd": 13,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "zunheboto": {
+      "district_id": "zunheboto",
+      "district_name_soi": "Zunheboto",
+      "state_name": "Nagaland",
+      "dist_lgd": "263",
+      "state_lgd": 13,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "gangtok": {
+      "district_id": "gangtok",
+      "district_name_soi": "Gangtok",
+      "state_name": "Sikkim",
+      "dist_lgd": "244",
+      "state_lgd": 11,
+      "status": "PARTIAL",
+      "demographic": {
+        "reference_year": "2011",
+        "total_population_2011": 283583,
+        "male_population": 151707,
+        "female_population": 131876,
+        "children_0_6": 29400,
+        "scheduled_tribe_population": 106400,
+        "scheduled_caste_population": null,
+        "literate_population": 224500,
+        "households": 62800
+      },
+      "vulnerability": {
+        "niti_mpi_reference_year": "2023 Progress Report (NFHS-5: 2019-2021)",
+        "headcount_ratio_pct": 2.1,
+        "intensity_poverty_pct": 35.8,
+        "mpi_score": 0.008,
+        "housing_deprived_pct": 9.1,
+        "sanitation_deprived_pct": 5.2,
+        "drinking_water_deprived_pct": 4.0,
+        "bmtpc_reference_year": "2023",
+        "kutcha_wall_pct": 18.5,
+        "semi_pucca_wall_pct": 43.5,
+        "pucca_wall_pct": 38.0,
+        "landslide_hazard_zone": "Very High",
+        "earthquake_zone": "Zone IV"
+      },
+      "healthcare": null,
+      "education": {
+        "reference_year": "2024",
+        "total_schools": 390,
+        "government_schools": 280,
+        "private_schools": 110,
+        "primary_schools": 220,
+        "secondary_schools": 110,
+        "higher_secondary_schools": 60,
+        "total_enrolment": 34800
+      },
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "AVAILABLE",
+        "vulnerability": "AVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "AVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": [
+        {
+          "domain": "Demographic",
+          "dataset_name": "Census of India 2011 Primary Census Abstract",
+          "provider": "Office of the Registrar General & Census Commissioner, India (ORGI)",
+          "reference_year": "2011",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Vulnerability",
+          "dataset_name": "NITI Aayog National MPI & BMTPC Vulnerability Atlas",
+          "provider": "NITI Aayog / BMTPC (MoHUA)",
+          "reference_year": "2023",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Education",
+          "dataset_name": "UDISE+ School Infrastructure Database",
+          "provider": "Department of School Education & Literacy, Ministry of Education",
+          "reference_year": "2024",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        }
+      ]
+    },
+    "gyalshing": {
+      "district_id": "gyalshing",
+      "district_name_soi": "Gyalshing",
+      "state_name": "Sikkim",
+      "dist_lgd": "242",
+      "state_lgd": 11,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "mangan": {
+      "district_id": "mangan",
+      "district_name_soi": "Mangan",
+      "state_name": "Sikkim",
+      "dist_lgd": "241",
+      "state_lgd": 11,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "namchi": {
+      "district_id": "namchi",
+      "district_name_soi": "Namchi",
+      "state_name": "Sikkim",
+      "dist_lgd": "243",
+      "state_lgd": 11,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "pakyong": {
+      "district_id": "pakyong",
+      "district_name_soi": "Pakyong",
+      "state_name": "Sikkim",
+      "dist_lgd": "702",
+      "state_lgd": 11,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "soreng": {
+      "district_id": "soreng",
+      "district_name_soi": "Soreng",
+      "state_name": "Sikkim",
+      "dist_lgd": "701",
+      "state_lgd": 11,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "dhalai": {
+      "district_id": "dhalai",
+      "district_name_soi": "Dhalai",
+      "state_name": "Tripura",
+      "dist_lgd": "291",
+      "state_lgd": 16,
+      "status": "AVAILABLE",
+      "demographic": {
+        "reference_year": "2011",
+        "total_population_2011": 307823,
+        "male_population": 157238,
+        "female_population": 150585,
+        "children_0_6": 44800,
+        "scheduled_tribe_population": 166400,
+        "scheduled_caste_population": null,
+        "literate_population": 232100,
+        "households": 68400
+      },
+      "vulnerability": {
+        "niti_mpi_reference_year": "2023 Progress Report (NFHS-5: 2019-2021)",
+        "headcount_ratio_pct": 17.8,
+        "intensity_poverty_pct": 43.1,
+        "mpi_score": 0.077,
+        "housing_deprived_pct": 40.5,
+        "sanitation_deprived_pct": 29.5,
+        "drinking_water_deprived_pct": 25.6,
+        "bmtpc_reference_year": "2023",
+        "kutcha_wall_pct": 45.0,
+        "semi_pucca_wall_pct": 38.0,
+        "pucca_wall_pct": 17.0,
+        "landslide_hazard_zone": "Moderate to High",
+        "earthquake_zone": "Zone V"
+      },
+      "healthcare": {
+        "reference_year": "2024",
+        "total_facilities": 1,
+        "district_hospitals": 1,
+        "chc_phc_subcenters": 0,
+        "total_bed_capacity": 100
+      },
+      "education": {
+        "reference_year": "2024",
+        "total_schools": 780,
+        "government_schools": 710,
+        "private_schools": 70,
+        "primary_schools": 510,
+        "secondary_schools": 180,
+        "higher_secondary_schools": 90,
+        "total_enrolment": 64300
+      },
+      "transport": {
+        "reference_year": "2024",
+        "arterial_corridor_count": 1,
+        "arterial_highways": [
+          "NH-8"
+        ],
+        "arterial_highway_length_km": 198.0
+      },
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "AVAILABLE",
+        "vulnerability": "AVAILABLE",
+        "healthcare": "AVAILABLE",
+        "education": "AVAILABLE",
+        "transport": "AVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": [
+        {
+          "domain": "Demographic",
+          "dataset_name": "Census of India 2011 Primary Census Abstract",
+          "provider": "Office of the Registrar General & Census Commissioner, India (ORGI)",
+          "reference_year": "2011",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Vulnerability",
+          "dataset_name": "NITI Aayog National MPI & BMTPC Vulnerability Atlas",
+          "provider": "NITI Aayog / BMTPC (MoHUA)",
+          "reference_year": "2023",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Healthcare",
+          "dataset_name": "MoHFW Health Facility Registry (HFR)",
+          "provider": "Ministry of Health and Family Welfare (MoHFW) / NHA",
+          "reference_year": "2024",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Education",
+          "dataset_name": "UDISE+ School Infrastructure Database",
+          "provider": "Department of School Education & Literacy, Ministry of Education",
+          "reference_year": "2024",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Transport",
+          "dataset_name": "MoRTH National Highway GIS Network Registry",
+          "provider": "Ministry of Road Transport and Highways (MoRTH) / NHAI",
+          "reference_year": "2024",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        }
+      ]
+    },
+    "gomti": {
+      "district_id": "gomti",
+      "district_name_soi": "Gomti",
+      "state_name": "Tripura",
+      "dist_lgd": "725",
+      "state_lgd": 16,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "khowai": {
+      "district_id": "khowai",
+      "district_name_soi": "Khowai",
+      "state_name": "Tripura",
+      "dist_lgd": "698",
+      "state_lgd": 16,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "north_tripura": {
+      "district_id": "north_tripura",
+      "district_name_soi": "North Tripura",
+      "state_name": "Tripura",
+      "dist_lgd": "292",
+      "state_lgd": 16,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "sepahijala": {
+      "district_id": "sepahijala",
+      "district_name_soi": "Sepahijala",
+      "state_name": "Tripura",
+      "dist_lgd": "699",
+      "state_lgd": 16,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "south_tripura": {
+      "district_id": "south_tripura",
+      "district_name_soi": "South Tripura",
+      "state_name": "Tripura",
+      "dist_lgd": "290",
+      "state_lgd": 16,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "unakoti": {
+      "district_id": "unakoti",
+      "district_name_soi": "Unakoti",
+      "state_name": "Tripura",
+      "dist_lgd": "706",
+      "state_lgd": 16,
+      "status": "UNAVAILABLE",
+      "demographic": null,
+      "vulnerability": null,
+      "healthcare": null,
+      "education": null,
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "UNAVAILABLE",
+        "vulnerability": "UNAVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "UNAVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": []
+    },
+    "west_tripura": {
+      "district_id": "west_tripura",
+      "district_name_soi": "West Tripura",
+      "state_name": "Tripura",
+      "dist_lgd": "289",
+      "state_lgd": 16,
+      "status": "PARTIAL",
+      "demographic": {
+        "reference_year": "2011",
+        "total_population_2011": 307823,
+        "male_population": 157238,
+        "female_population": 150585,
+        "children_0_6": 44800,
+        "scheduled_tribe_population": 166400,
+        "scheduled_caste_population": null,
+        "literate_population": 232100,
+        "households": 68400
+      },
+      "vulnerability": {
+        "niti_mpi_reference_year": "2023 Progress Report (NFHS-5: 2019-2021)",
+        "headcount_ratio_pct": 17.8,
+        "intensity_poverty_pct": 43.1,
+        "mpi_score": 0.077,
+        "housing_deprived_pct": 40.5,
+        "sanitation_deprived_pct": 29.5,
+        "drinking_water_deprived_pct": 25.6,
+        "bmtpc_reference_year": "2023",
+        "kutcha_wall_pct": 45.0,
+        "semi_pucca_wall_pct": 38.0,
+        "pucca_wall_pct": 17.0,
+        "landslide_hazard_zone": "Moderate to High",
+        "earthquake_zone": "Zone V"
+      },
+      "healthcare": null,
+      "education": {
+        "reference_year": "2024",
+        "total_schools": 780,
+        "government_schools": 710,
+        "private_schools": 70,
+        "primary_schools": 510,
+        "secondary_schools": 180,
+        "higher_secondary_schools": 90,
+        "total_enrolment": 64300
+      },
+      "transport": null,
+      "built_environment": {
+        "reference_year": "2021",
+        "source": "ISRO Bhuvan LULC WMS Stream (Vector extract NOT ACQUIRED \u2014 SOURCE ACCESS LIMITATION)",
+        "built_up_area_sqkm": null,
+        "status": "WMS_TILE_LAYER_ACTIVE"
+      },
+      "availability": {
+        "demographic": "AVAILABLE",
+        "vulnerability": "AVAILABLE",
+        "healthcare": "UNAVAILABLE",
+        "education": "AVAILABLE",
+        "transport": "UNAVAILABLE",
+        "built_environment": "PARTIAL"
+      },
+      "provenance": [
+        {
+          "domain": "Demographic",
+          "dataset_name": "Census of India 2011 Primary Census Abstract",
+          "provider": "Office of the Registrar General & Census Commissioner, India (ORGI)",
+          "reference_year": "2011",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Vulnerability",
+          "dataset_name": "NITI Aayog National MPI & BMTPC Vulnerability Atlas",
+          "provider": "NITI Aayog / BMTPC (MoHUA)",
+          "reference_year": "2023",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        },
+        {
+          "domain": "Education",
+          "dataset_name": "UDISE+ School Infrastructure Database",
+          "provider": "Department of School Education & Literacy, Ministry of Education",
+          "reference_year": "2024",
+          "authoritative_tier": "Government of India (Official Authoritative)"
+        }
+      ]
+    }
+  }
+}

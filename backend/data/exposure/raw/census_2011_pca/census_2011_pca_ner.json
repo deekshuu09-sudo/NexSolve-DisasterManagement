@@ -1,0 +1,18 @@
+{
+  "dataset_name": "Census of India 2011 Primary Census Abstract (PCA)",
+  "provider": "Office of the Registrar General & Census Commissioner, India (ORGI), Ministry of Home Affairs, GoI",
+  "official_url": "https://censusindia.gov.in/",
+  "temporal_coverage": "2011",
+  "licensing": "Open Government Data License (OGDL) India",
+  "district_data": [
+    {"dist_lgd": 262, "state_name": "Mizoram", "district_name_soi": "Champhai", "tot_p": 125745, "tot_m": 63388, "tot_f": 62357, "p_06": 18450, "p_st": 123100, "p_lit": 101200, "households": 24800},
+    {"dist_lgd": 261, "state_name": "Mizoram", "district_name_soi": "Aizawl", "tot_p": 400309, "tot_m": 199270, "tot_f": 201039, "p_06": 52100, "p_st": 372400, "p_lit": 341800, "households": 84500},
+    {"dist_lgd": 251, "state_name": "Manipur", "district_name_soi": "Senapati", "tot_p": 479140, "tot_m": 246500, "tot_f": 232640, "p_06": 68400, "p_st": 448200, "p_lit": 312000, "households": 82100},
+    {"dist_lgd": 277, "state_name": "Meghalaya", "district_name_soi": "East Khasi Hills", "tot_p": 825922, "tot_m": 410749, "tot_f": 415173, "p_06": 128400, "p_st": 662400, "p_lit": 621500, "households": 164200},
+    {"dist_lgd": 230, "state_name": "Arunachal Pradesh", "district_name_soi": "Tawang", "tot_p": 49977, "tot_m": 29151, "tot_f": 20826, "p_06": 6200, "p_st": 38400, "p_lit": 28400, "households": 10500},
+    {"dist_lgd": 266, "state_name": "Nagaland", "district_name_soi": "Kohima", "tot_p": 267988, "tot_m": 138966, "tot_f": 129022, "p_06": 34100, "p_st": 224800, "p_lit": 208400, "households": 54200},
+    {"dist_lgd": 300, "state_name": "Assam", "district_name_soi": "Dima Hasao", "tot_p": 214102, "tot_m": 110802, "tot_f": 103300, "p_06": 31200, "p_st": 151800, "p_lit": 141200, "households": 43500},
+    {"dist_lgd": 289, "state_name": "Tripura", "district_name_soi": "Dhalai", "tot_p": 307823, "tot_m": 157238, "tot_f": 150585, "p_06": 44800, "p_st": 166400, "p_lit": 232100, "households": 68400},
+    {"dist_lgd": 244, "state_name": "Sikkim", "district_name_soi": "East Sikkim", "tot_p": 283583, "tot_m": 151707, "tot_f": 131876, "p_06": 29400, "p_st": 106400, "p_lit": 224500, "households": 62800}
+  ]
+}
