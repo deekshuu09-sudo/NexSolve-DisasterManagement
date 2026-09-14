@@ -27,7 +27,7 @@ export function NavbarMenu({ items, openLabel, onOpenChange, onNavigate }: Navba
           <div className="nav-item" key={item.label}>
             <button
               type="button"
-              className={openLabel === item.label ? 'active' : ''}
+              className={`nav-link ${openLabel === item.label ? 'active' : ''}`}
               onClick={() => {
                 if (!hasMenu) {
                   onNavigate(item.target)
@@ -39,7 +39,7 @@ export function NavbarMenu({ items, openLabel, onOpenChange, onNavigate }: Navba
               aria-expanded={openLabel === item.label}
             >
               {item.label}
-              {hasMenu ? '⌄' : ''}
+              {hasMenu && <span className="caret">▾</span>}
             </button>
 
             {hasMenu && (
@@ -47,10 +47,10 @@ export function NavbarMenu({ items, openLabel, onOpenChange, onNavigate }: Navba
                 {openLabel === item.label && (
                   <motion.div
                     className="nav-menu"
-                    initial={{ opacity: 0, y: 8, scale: 0.98 }}
+                    initial={{ opacity: 0, y: 6, scale: 0.98 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 6, scale: 0.98 }}
-                    transition={{ duration: 0.18, ease: 'easeOut' }}
+                    exit={{ opacity: 0, y: 4, scale: 0.98 }}
+                    transition={{ duration: 0.15, ease: 'easeOut' }}
                   >
                     {item.menu!.map((entry) => (
                       <button
@@ -75,3 +75,4 @@ export function NavbarMenu({ items, openLabel, onOpenChange, onNavigate }: Navba
     </nav>
   )
 }
+

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 import os
 from pathlib import Path
@@ -42,6 +43,7 @@ app.add_middleware(
         "http://127.0.0.1:4173",
         *frontend_urls,
     ],
+    allow_origin_regex=r"https://.*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -154,7 +156,7 @@ class Report(BaseModel):
     description: str = ""
 
 
-def get_district_boundary_info(district_id: str, state_name: str = "", district_name: str = ""):
+def get_district_boundary_info(district_id: str, state_name: str = "", district_name: str = "", include_geometry: bool = True):
     feat = None
     if district_id in DISTRICT_BOUNDARIES_MAP:
         feat = DISTRICT_BOUNDARIES_MAP[district_id]
@@ -169,7 +171,7 @@ def get_district_boundary_info(district_id: str, state_name: str = "", district_
         return {
             "boundary_available": True,
             "boundary_source": "Survey of India Official Administrative Boundary Database (ABDB)",
-            "geometry": feat.get("geometry"),
+            "geometry": feat.get("geometry") if include_geometry else None,
             "dist_lgd": props.get("dist_lgd"),
             "district_name_soi": props.get("district_name_soi"),
             "state_lgd": props.get("state_lgd"),
@@ -208,10 +210,10 @@ def district_or_404(district_id: str) -> dict:
         raise HTTPException(404, "District not found")
     return item
 
-def enrich(district: dict) -> dict:
+def enrich(district: dict, include_geometry: bool = True) -> dict:
     date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     rainfall = current_rainfall(district["lat"], district["lng"])
-    b_info = get_district_boundary_info(district["id"], district.get("state", ""), district.get("name", ""))
+    b_info = get_district_boundary_info(district["id"], district.get("state", ""), district.get("name", ""), include_geometry=include_geometry)
     soi_key = OP_SOI_MATCHES.get(district["id"], district["id"])
     vuln_profile = get_vulnerability_profile(soi_key)
     exp_profile = get_district_exposure(soi_key)
@@ -333,8 +335,9 @@ def ready_check():
 
 
 @app.get("/api/districts")
-def districts():
-    data = [enrich(item) for item in DISTRICTS]
+def districts(include_geometry: bool = True):
+    with ThreadPoolExecutor(max_workers=len(DISTRICTS)) as executor:
+        data = list(executor.map(lambda d: enrich(d, include_geometry=include_geometry), DISTRICTS))
     return {"success":True,"count":len(data),"data":data}
 
 
@@ -532,64 +535,43 @@ def district_explainability(district_id: str):
     }
 
 
-@app.get("/api/dashboard/summary")
-def dashboard_summary():
-    """Returns real-time system-wide situation awareness metrics across monitored points, weather status, risk categories, vulnerability profiles, and corridors."""
-    soi_district_count = len(DISTRICTS_GEOJSON.get("features", [])) if DISTRICTS_GEOJSON else 131
-    op_points_count = len(DISTRICTS)
+def _eval_dashboard_node(item: dict) -> dict:
+    weather = current_rainfall(item["lat"], item["lng"])
+    is_live = weather.get("is_live", False)
+    r1d = weather.get("rainfall_1d")
+    r3d = weather.get("rainfall_3d")
+    r7d = weather.get("rainfall_7d")
 
-    node_evaluations = []
-    risk_level_counts = {"RED": 0, "ORANGE": 0, "YELLOW": 0, "GREEN": 0, "DATA_UNAVAILABLE": 0}
-    weather_live_count = 0
-    weather_stale_count = 0
-    weather_offline_count = 0
+    pred = predict({
+        "latitude": item["lat"],
+        "longitude": item["lng"],
+        "rainfall_1d": r1d,
+        "rainfall_3d": r3d,
+        "rainfall_7d": r7d,
+    })
 
-    for item in DISTRICTS:
-        weather = current_rainfall(item["lat"], item["lng"])
-        is_live = weather.get("is_live", False)
-        r1d = weather.get("rainfall_1d")
-        r3d = weather.get("rainfall_3d")
-        r7d = weather.get("rainfall_7d")
+    weather_dict = {
+        "available": is_live or (r1d is not None),
+        "is_live": is_live,
+        "quality": "good" if is_live else ("stale" if r1d is not None else "unavailable"),
+        "rainfall_1d": r1d,
+        "rainfall_3d": r3d,
+        "rainfall_7d": r7d,
+        "source": weather.get("source"),
+        "timestamp": weather.get("timestamp"),
+    }
 
-        if is_live:
-            weather_live_count += 1
-        elif r1d is not None:
-            weather_stale_count += 1
-        else:
-            weather_offline_count += 1
+    decision = evaluate_risk_decision(
+        model_prediction=pred,
+        weather_data=weather_dict,
+        location={"state": item["state"], "district": item["name"], "latitude": item["lat"], "longitude": item["lng"]},
+    )
+    dec_dict = decision.to_dict()
+    soi_key = OP_SOI_MATCHES.get(item["id"], item["id"])
+    vuln_profile = get_vulnerability_profile(soi_key)
 
-        pred = predict({
-            "latitude": item["lat"],
-            "longitude": item["lng"],
-            "rainfall_1d": r1d,
-            "rainfall_3d": r3d,
-            "rainfall_7d": r7d,
-        })
-
-        weather_dict = {
-            "available": is_live or (r1d is not None),
-            "is_live": is_live,
-            "quality": "good" if is_live else ("stale" if r1d is not None else "unavailable"),
-            "rainfall_1d": r1d,
-            "rainfall_3d": r3d,
-            "rainfall_7d": r7d,
-            "source": weather.get("source"),
-            "timestamp": weather.get("timestamp"),
-        }
-
-        decision = evaluate_risk_decision(
-            model_prediction=pred,
-            weather_data=weather_dict,
-            location={"state": item["state"], "district": item["name"], "latitude": item["lat"], "longitude": item["lng"]},
-        )
-        dec_dict = decision.to_dict()
-        r_level = dec_dict.get("riskLevel", "DATA_UNAVAILABLE")
-        risk_level_counts[r_level] = risk_level_counts.get(r_level, 0) + 1
-
-        soi_key = OP_SOI_MATCHES.get(item["id"], item["id"])
-        vuln_profile = get_vulnerability_profile(soi_key)
-
-        node_evaluations.append({
+    return {
+        "node": {
             "id": item["id"],
             "name": item["name"],
             "state": item["state"],
@@ -600,7 +582,38 @@ def dashboard_summary():
             "status": pred.status if pred else "DATA UNAVAILABLE",
             "decision": dec_dict,
             "vulnerability": vuln_profile,
-        })
+        },
+        "is_live": is_live,
+        "has_r1d": r1d is not None,
+        "risk_level": dec_dict.get("riskLevel", "DATA_UNAVAILABLE"),
+    }
+
+
+@app.get("/api/dashboard/summary")
+def dashboard_summary():
+    """Returns real-time system-wide situation awareness metrics across monitored points, weather status, risk categories, vulnerability profiles, and corridors."""
+    soi_district_count = len(DISTRICTS_GEOJSON.get("features", [])) if DISTRICTS_GEOJSON else 131
+    op_points_count = len(DISTRICTS)
+
+    with ThreadPoolExecutor(max_workers=len(DISTRICTS)) as executor:
+        evals = list(executor.map(_eval_dashboard_node, DISTRICTS))
+
+    node_evaluations = [e["node"] for e in evals]
+    risk_level_counts = {"RED": 0, "ORANGE": 0, "YELLOW": 0, "GREEN": 0, "DATA_UNAVAILABLE": 0}
+    weather_live_count = 0
+    weather_stale_count = 0
+    weather_offline_count = 0
+
+    for e in evals:
+        if e["is_live"]:
+            weather_live_count += 1
+        elif e["has_r1d"]:
+            weather_stale_count += 1
+        else:
+            weather_offline_count += 1
+
+        r_level = e["risk_level"]
+        risk_level_counts[r_level] = risk_level_counts.get(r_level, 0) + 1
 
     if weather_live_count > 0:
         overall_weather_status = "LIVE"
@@ -836,29 +849,55 @@ def risk(payload: RiskInput):
     }
 
 
+async def validate_and_read_image(file: UploadFile) -> bytes:
+    contents = await file.read()
+    if not contents:
+        raise HTTPException(400, "Uploaded image is empty")
+
+    try:
+        from io import BytesIO
+        from PIL import Image
+        img = Image.open(BytesIO(contents))
+        img.verify()
+        return contents
+    except Exception:
+        pass
+
+    if file.content_type and file.content_type.startswith("image/"):
+        return contents
+
+    exts = (".png", ".jpg", ".jpeg", ".webp", ".bmp", ".gif", ".tiff")
+    if file.filename and file.filename.lower().endswith(exts):
+        return contents
+
+    raise HTTPException(415, "Uploaded file could not be processed as a valid image")
+
+
 @app.post("/api/reports/analyze-image")
 async def analyze_report_image(
     file: UploadFile = File(...),
     description: str = Form(""),
 ):
-    if not file.content_type or not file.content_type.startswith("image/"):
-        raise HTTPException(415, "Upload an image file")
-    contents = await file.read()
-    if not contents:
-        raise HTTPException(400, "Uploaded image is empty")
+    contents = await validate_and_read_image(file)
     try:
         result = analyze_image(contents)
     except Exception as exc:
         raise HTTPException(422, f"Unable to analyze image: {exc}") from exc
     description_terms = {"landslide", "rockfall", "debris", "blocked", "road blockage", "slope failure"}
     description_match = not description.strip() or any(term in description.lower() for term in description_terms)
-    verification_status = "REVIEW" if result["classification"] == "Unknown" else "AI_ASSISTED_REVIEW"
+    cat = result.get("contentCategory")
+    verification_status = (
+        "IMAGE_SCREENING_ONLY" if cat == "FIELD_PHOTO_CANDIDATE"
+        else "NON_FIELD_IMAGE" if cat == "SCREENSHOT_OR_DOCUMENT"
+        else "LOW_QUALITY_IMAGE" if cat == "LOW_QUALITY_IMAGE"
+        else "INVALID_IMAGE"
+    )
     return {
         "success": True,
         "imageAnalyzed": True,
         "verificationStatus": verification_status,
-        "verificationConfidence": result["confidence"],
-        "visualIndicators": result["objects"],
+        "verificationConfidence": result.get("confidence"),
+        "visualIndicators": result.get("objects", []),
         "descriptionMatch": description_match,
         **result,
     }
@@ -877,12 +916,8 @@ async def reports(
         raise HTTPException(422, "Location and description are required")
 
     image_result = None
-    if file:
-        if not file.content_type or not file.content_type.startswith("image/"):
-            raise HTTPException(415, "Upload an image file")
-        contents = await file.read()
-        if not contents:
-            raise HTTPException(400, "Uploaded image is empty")
+    if file and file.filename:
+        contents = await validate_and_read_image(file)
         try:
             image_result = analyze_image(contents)
         except Exception as exc:
@@ -890,56 +925,31 @@ async def reports(
 
     report_id = f"REP-{int(datetime.now().timestamp())}"
 
-    # Prototype AI verification logic.
-    # A production CV model can replace this block later.
-    description_lower = description.lower()
-
-    landslide_keywords = [
-        "landslide",
-        "mudslide",
-        "rockfall",
-        "slope failure",
-        "debris",
-        "road blocked",
-        "roadblock",
-        "soil collapse",
-    ]
-
-    keyword_match = any(
-        keyword in description_lower
-        for keyword in landslide_keywords
-    )
-
-    verified = bool(image_result and image_result["imageAccepted"])
-
-    # Estimate severity for the prototype.
-    if any(
-        word in description
-        for word in ["blocked", "collapse", "major", "severe", "fatal"]
-    ):
-        severity = "Critical"
-        recommended_action = (
-            "Immediate corridor inspection and emergency response."
-        )
-    elif any(
-        word in description
-        for word in ["rockfall", "debris", "mudslide", "landslide"]
-    ):
-        severity = "High"
-        recommended_action = (
-            "Dispatch field team and issue a local hazard warning."
-        )
+    if image_result:
+        cat = image_result.get("contentCategory")
+        if cat == "SCREENSHOT_OR_DOCUMENT":
+            verification_status = "NON_FIELD_IMAGE"
+            verified = False
+        elif cat == "LOW_QUALITY_IMAGE":
+            verification_status = "LOW_QUALITY_IMAGE"
+            verified = False
+        elif cat == "UNSUPPORTED_IMAGE":
+            verification_status = "INVALID_IMAGE"
+            verified = False
+        else:
+            verification_status = "IMAGE_SCREENING_ONLY"
+            verified = True
+        verification_mode = image_result.get("verificationMode", "AI-assisted image screening")
+        recommended_action = image_result.get("recommendedAction")
     else:
-        severity = "Moderate"
-        recommended_action = (
-            "Verify the location and continue monitoring."
-        )
-
-    verification_confidence = image_result["verificationConfidence"] if image_result else (92.0 if keyword_match else 78.0)
+        verification_status = "REPORT_RECEIVED"
+        verified = False
+        verification_mode = "Text observation log"
+        recommended_action = "Verify the location and continue field monitoring. NexSolve's current image module performs image-quality/content screening only; it does not confirm landslides from photographs."
 
     return {
         "success": True,
-        "message": "Field report verified successfully.",
+        "message": "Field observation report received.",
         "report": {
             "id": report_id,
             "type": type,
@@ -947,13 +957,16 @@ async def reports(
             "latitude": latitude,
             "longitude": longitude,
             "description": description,
-            "verified": bool(image_result and image_result["imageAccepted"]),
-            "verificationStatus": "AI_ASSISTED_REVIEW",
-            "verificationMode": image_result["verificationMode"] if image_result else "Description-assisted review",
-            "verificationConfidence": verification_confidence,
-            "severity": severity,
+            "verified": verified,
+            "verificationStatus": verification_status,
+            "verificationMode": verification_mode,
+            "verificationConfidence": None,
+            "confidence": None,
+            "severity": "NOT ASSESSED",
+            "landslideClassification": "NOT PERFORMED",
             "recommendedAction": recommended_action,
             "imageAnalysis": image_result,
+            "storageLocation": "In-memory session log (Field Observation Input)",
             "createdAt": datetime.now(timezone.utc).isoformat(),
         },
     }

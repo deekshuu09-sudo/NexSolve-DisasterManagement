@@ -13,6 +13,20 @@ export default defineConfig(({ mode }) => {
     server: {
       proxy: { '/api': apiUrl },
     },
+    build: {
+      chunkSizeWarningLimit: 600,
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.includes('node_modules/leaflet') || id.includes('node_modules/react-leaflet')) {
+              return 'leaflet-vendor'
+            }
+            if (id.includes('node_modules/motion')) {
+              return 'motion-vendor'
+            }
+          },
+        },
+      },
+    },
   }
 })
-

@@ -46,7 +46,26 @@ def _accumulation(points: list[tuple[datetime, float]], end: datetime, hours: in
     return round(sum(value for timestamp, value in points if start <= timestamp <= end), 2)
 
 
+import time
+
+_WEATHER_CACHE: dict[tuple[float, float], tuple[float, dict]] = {}
+_FORECAST_CACHE: dict[tuple[float, float], tuple[float, tuple[list[dict], bool, str]]] = {}
+_CACHE_TTL_SECONDS = 300.0
+
+
+def clear_weather_cache():
+    _WEATHER_CACHE.clear()
+    _FORECAST_CACHE.clear()
+
+
 def current_rainfall(lat: float, lon: float) -> dict:
+    key = (round(lat, 4), round(lon, 4))
+    now_mono = time.monotonic()
+    if key in _WEATHER_CACHE:
+        cached_time, cached_val = _WEATHER_CACHE[key]
+        if now_mono - cached_time < _CACHE_TTL_SECONDS:
+            return cached_val
+
     now = datetime.now(timezone.utc).replace(minute=0, second=0, microsecond=0)
     try:
         data = _open_meteo(lat, lon)
@@ -59,12 +78,12 @@ def current_rainfall(lat: float, lon: float) -> dict:
         r1d = _accumulation(past, now, 24)
         r3d = _accumulation(past, now, 72)
         r7d = _accumulation(past, now, 168)
-        
+
         last_obs_time = past[-1][0]
         data_age_hours = round((now - last_obs_time).total_seconds() / 3600.0, 1)
         quality = "good" if data_age_hours <= 3 else "stale"
-        
-        return {
+
+        res = {
             "available": True,
             "timestamp": current.get("time", now.isoformat()),
             "rainfall_1h": round(float(current_value or past[-1][1]), 2),
@@ -78,8 +97,10 @@ def current_rainfall(lat: float, lon: float) -> dict:
             "quality": quality,
             "message": "Live weather observation current",
         }
+        _WEATHER_CACHE[key] = (now_mono, res)
+        return res
     except Exception as exc:
-        return {
+        res = {
             "available": False,
             "timestamp": now.isoformat(),
             "rainfall_1h": None,
@@ -93,9 +114,17 @@ def current_rainfall(lat: float, lon: float) -> dict:
             "quality": "unavailable",
             "message": f"Live weather feed offline: {exc}",
         }
+        return res
 
 
 def forecast_rainfall(lat: float, lon: float) -> tuple[list[dict], bool, str]:
+    key = (round(lat, 4), round(lon, 4))
+    now_mono = time.monotonic()
+    if key in _FORECAST_CACHE:
+        cached_time, cached_val = _FORECAST_CACHE[key]
+        if now_mono - cached_time < _CACHE_TTL_SECONDS:
+            return cached_val
+
     now = datetime.now(timezone.utc).replace(minute=0, second=0, microsecond=0)
     try:
         points = _hourly_points(_open_meteo(lat, lon))
@@ -112,10 +141,12 @@ def forecast_rainfall(lat: float, lon: float) -> tuple[list[dict], bool, str]:
             }
             for timestamp, rainfall in future
         ]
-        return forecast, True, "Open-Meteo hourly precipitation forecast"
+        res = (forecast, True, "Open-Meteo hourly precipitation forecast")
+        _FORECAST_CACHE[key] = (now_mono, res)
+        return res
     except Exception as exc:
-        fallback = latest_historical_rainfall(lat, lon)
-        return [], False, f"IMD historical fallback; forecast source unavailable: {exc}"
+        res = ([], False, f"IMD historical fallback; forecast source unavailable: {exc}")
+        return res
 
 
 def latest_historical_rainfall(lat: float, lon: float) -> dict:

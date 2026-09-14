@@ -21,21 +21,30 @@ from typing import Any
 PROCESSED_PROFILES_PATH = Path(__file__).resolve().parents[1] / "data" / "exposure" / "processed" / "district_vulnerability_profiles.json"
 
 
+_VULN_DB_CACHE: dict[str, Any] | None = None
+
+
 def load_vulnerability_database() -> dict[str, Any]:
     """Load calculated district vulnerability profiles."""
+    global _VULN_DB_CACHE
+    if _VULN_DB_CACHE is not None:
+        return _VULN_DB_CACHE
+
     if PROCESSED_PROFILES_PATH.exists():
         try:
             with open(PROCESSED_PROFILES_PATH, "r", encoding="utf-8") as f:
-                return json.load(f)
+                _VULN_DB_CACHE = json.load(f)
+                return _VULN_DB_CACHE
         except Exception:
             pass
-    return {
+    _VULN_DB_CACHE = {
         "schema_version": "1.0.0-PROTOTYPE",
         "policy_version": "1.0.0-PROTOTYPE",
         "total_districts": 0,
         "districts": {},
         "disclaimer": "NexSolve Prototype Exposure/Vulnerability Scoring Framework — Information for decision-support assessment only. Not an official government emergency alert category or prediction model.",
     }
+    return _VULN_DB_CACHE
 
 
 VULNERABILITY_DB = load_vulnerability_database()

@@ -45,7 +45,26 @@ export type District = {
 export type Corridor = { code: string; name: string; status: string; eta: string }
 export type ForecastPoint = { timestamp: string; rainfall: number; riskScore: number; status: string; modelSource?: string; decision?: RiskDecision }
 export type RainfallData = { timestamp: string; rainfall_1h?: number; rainfall_24h?: number; rainfall_1d: number; rainfall_3d: number; rainfall_7d: number; source: string; is_live: boolean }
-export type ImageAnalysis = { imageAccepted: boolean; imageQuality: string; verificationMode: string; imageAnalyzed?: boolean; verificationStatus: string; verificationConfidence: number; visualIndicators: string[]; descriptionMatch: boolean; classification: string; confidence: number; severity: string; objects: string[]; recommendedAction: string; modelSource: string; is_trained: boolean }
+export type ImageAnalysis = {
+  imageAccepted: boolean
+  contentCategory?: 'FIELD_PHOTO_CANDIDATE' | 'SCREENSHOT_OR_DOCUMENT' | 'LOW_QUALITY_IMAGE' | 'UNSUPPORTED_IMAGE'
+  imageQuality: string
+  contentScreening?: string
+  landslideClassification?: string
+  verificationMode: string
+  imageAnalyzed?: boolean
+  verificationStatus: string
+  verificationConfidence: number | null
+  visualIndicators: string[]
+  descriptionMatch: boolean
+  classification: string
+  confidence: number | null
+  severity: string
+  objects: string[]
+  recommendedAction: string
+  modelSource: string
+  is_trained: boolean
+}
 export type TerrainData = {
   available: boolean
   source: string
@@ -272,7 +291,16 @@ export type RiskPrediction = {
   explainability?: ExplainabilityReport
 }
 
-export const API = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '')
+const getApiBase = () => {
+  if (import.meta.env.VITE_API_URL) {
+    return import.meta.env.VITE_API_URL.replace(/\/$/, '')
+  }
+  if (typeof window !== 'undefined' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+    return 'https://nexsolve-disastermanagement.onrender.com'
+  }
+  return ''
+}
+export const API = getApiBase()
 
 export async function getJSON<T>(path: string): Promise<T> {
   const response = await fetch(`${API}${path}`)
