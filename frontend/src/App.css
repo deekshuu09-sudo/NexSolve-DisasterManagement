@@ -57,12 +57,34 @@ html[data-theme='dark'] .brand-mark,
 html[data-theme='dark'] .steps button strong,
 html[data-theme='dark'] .report-close,
 html[data-theme='dark'] .workflow-fab,
-html[data-theme='dark'] .nav-menu button,
 html[data-theme='dark'] .topbar-tools select,
 html[data-theme='dark'] .icon-button {
   background: var(--panel);
   border-color: var(--line);
   color: var(--text-primary);
+}
+
+html[data-theme='dark'] .nav-menu button {
+  background: transparent !important;
+  color: var(--text-primary) !important;
+}
+
+html[data-theme='dark'] .nav-menu button b {
+  color: var(--text-primary) !important;
+}
+
+html[data-theme='dark'] .nav-menu button small {
+  color: var(--text-muted) !important;
+}
+
+html[data-theme='dark'] .nav-menu button:hover,
+html[data-theme='dark'] .nav-menu button:focus-visible {
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme='dark'] .nav-menu button:hover b,
+html[data-theme='dark'] .nav-menu button:focus-visible b {
+  color: var(--text-accent) !important;
 }
 
 html[data-theme='dark'] .steps button {

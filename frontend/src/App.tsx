@@ -21,12 +21,12 @@ const navItems: NavMenuItem[] = [
   { label: 'Forecast', target: 'forecast-step' },
   { label: 'Field Reports', target: 'field-step' },
   {
-    label: 'More ▾',
+    label: 'More',
     target: '',
     menu: [
-      { title: 'Vulnerability (P7C)', description: 'District exposure & vulnerability scores', target: 'vuln-step' },
-      { title: 'Explainability (P8)', description: 'Model factor decomposition & risk signals', target: 'xai-step' },
-      { title: 'Operational Dashboard (P9)', description: 'Priority alerts & decision support queue', target: 'alerts-step' },
+      { title: 'Vulnerability', description: 'District exposure & vulnerability scores', target: 'vuln-step' },
+      { title: 'Explainability', description: 'Model factor decomposition & risk signals', target: 'xai-step' },
+      { title: 'Operational Dashboard', description: 'Priority alerts & decision support queue', target: 'alerts-step' },
       { title: 'System Status & Advisory', description: 'Audio advisory & API connectivity', target: 'response-step' },
     ],
   },
