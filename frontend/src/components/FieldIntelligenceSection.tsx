@@ -64,8 +64,9 @@ export default function FieldIntelligenceSection({
           <h3>Submit Field Observation Report</h3>
           <div className="form-grid">
             <div className="form-group">
-              <label>Location / Corridor Axis *</label>
+              <label htmlFor="field-report-location">Location / Corridor Axis *</label>
               <input
+                id="field-report-location"
                 type="text"
                 value={reportLocation}
                 onChange={(e) => setReportLocation(e.target.value)}
@@ -74,8 +75,9 @@ export default function FieldIntelligenceSection({
             </div>
             <div className="form-group inline-coords">
               <div>
-                <label>Latitude (Optional)</label>
+                <label htmlFor="field-report-latitude">Latitude (Optional)</label>
                 <input
+                  id="field-report-latitude"
                   type="text"
                   value={reportLatitude}
                   onChange={(e) => setReportLatitude(e.target.value)}
@@ -83,8 +85,9 @@ export default function FieldIntelligenceSection({
                 />
               </div>
               <div>
-                <label>Longitude (Optional)</label>
+                <label htmlFor="field-report-longitude">Longitude (Optional)</label>
                 <input
+                  id="field-report-longitude"
                   type="text"
                   value={reportLongitude}
                   onChange={(e) => setReportLongitude(e.target.value)}
@@ -93,8 +96,9 @@ export default function FieldIntelligenceSection({
               </div>
             </div>
             <div className="form-group full-width">
-              <label>Field Observations & Description *</label>
+              <label htmlFor="field-report-description">Field Observations & Description *</label>
               <textarea
+                id="field-report-description"
                 rows={3}
                 value={reportDescription}
                 onChange={(e) => setReportDescription(e.target.value)}
@@ -102,8 +106,8 @@ export default function FieldIntelligenceSection({
               />
             </div>
             <div className="form-group full-width">
-              <label>Incident Photograph (Image Quality Screening)</label>
-              <input type="file" accept="image/*" onChange={handleImageChange} />
+              <label htmlFor="field-report-image">Incident Photograph (Image Quality Screening)</label>
+              <input id="field-report-image" type="file" accept="image/*" onChange={handleImageChange} />
               {imageLoading && <p className="status-text">Analyzing image quality & resolution...</p>}
               {imageError && <p className="error-text">{imageError}</p>}
               {reportImagePreview && (
