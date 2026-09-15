@@ -39,7 +39,7 @@ export function NavbarMenu({ items, openLabel, onOpenChange, onNavigate }: Navba
               aria-expanded={openLabel === item.label}
             >
               {item.label}
-              {hasMenu && <span className="caret">▾</span>}
+              {hasMenu && <span className="caret" aria-hidden="true">▾</span>}
             </button>
 
             {hasMenu && (
