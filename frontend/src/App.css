@@ -1903,9 +1903,10 @@ html[data-theme='dark'] .leaflet-container a.leaflet-popup-close-button {
 .tooltip-badge.badge-yellow { background: rgba(234, 179, 8, 0.15); color: #eab308; border: 1px solid rgba(234, 179, 8, 0.3); }
 .tooltip-badge.badge-green { background: rgba(34, 197, 94, 0.15); color: #22c55e; border: 1px solid rgba(34, 197, 94, 0.3); }
 
-/* Chart Canvas with Y-Axis & Thresholds */
+/* Chart Canvas with Y-Axis, Main Plot & Dedicated Right Threshold Gutter */
 .chart-canvas-wrapper {
   display: flex;
+  align-items: stretch;
   gap: 12px;
   height: 190px;
   margin-top: 4px;
@@ -1923,21 +1924,23 @@ html[data-theme='dark'] .leaflet-container a.leaflet-popup-close-button {
   user-select: none;
   min-width: 22px;
   text-align: right;
+  flex: 0 0 auto;
 }
 
-.chart-main-area {
+.chart-plot-container {
   position: relative;
   flex: 1;
   height: 100%;
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
-/* Threshold lines */
+/* Threshold lines spanning across plot area */
 .threshold-line {
   position: absolute;
   left: 0;
-  right: 0;
+  right: -12px;
   border-top: 1px dashed var(--line);
   z-index: 1;
   pointer-events: none;
@@ -1947,20 +1950,63 @@ html[data-theme='dark'] .leaflet-container a.leaflet-popup-close-button {
 .threshold-line.line-50 { top: 50%; border-top-color: rgba(249, 115, 22, 0.28); }
 .threshold-line.line-35 { top: 65%; border-top-color: rgba(234, 179, 8, 0.25); }
 
-.threshold-line .line-label {
-  position: absolute;
-  right: 4px;
-  top: -9px;
-  font-size: 0.58rem;
-  font-family: ui-monospace, monospace;
-  font-weight: 700;
-  padding: 0 4px;
-  background: var(--panel-subtle);
+/* Dedicated Right Annotation Gutter */
+.threshold-gutter {
+  position: relative;
+  width: 98px;
+  flex: 0 0 98px;
+  height: 165px;
+  user-select: none;
 }
 
-.threshold-line.line-75 .line-label { color: #ef4444; opacity: 0.9; }
-.threshold-line.line-50 .line-label { color: #f97316; opacity: 0.9; }
-.threshold-line.line-35 .line-label { color: #eab308; opacity: 0.9; }
+.gutter-label {
+  position: absolute;
+  left: 6px;
+  transform: translateY(-50%);
+  font-size: 0.62rem;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-weight: 700;
+  white-space: nowrap;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: var(--panel-bg);
+  border: 1px solid var(--line);
+  z-index: 2;
+  line-height: 1.2;
+}
+
+.gutter-label.label-75 {
+  top: 25%;
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.35);
+  background: rgba(239, 68, 68, 0.08);
+}
+
+.gutter-label.label-50 {
+  top: 50%;
+  color: #f97316;
+  border-color: rgba(249, 115, 22, 0.35);
+  background: rgba(249, 115, 22, 0.08);
+}
+
+.gutter-label.label-35 {
+  top: 65%;
+  color: #eab308;
+  border-color: rgba(234, 179, 8, 0.35);
+  background: rgba(234, 179, 8, 0.08);
+}
+
+@media (max-width: 640px) {
+  .threshold-gutter {
+    width: 78px;
+    flex: 0 0 78px;
+  }
+  .gutter-label {
+    font-size: 0.56rem;
+    padding: 1px 4px;
+    left: 4px;
+  }
+}
 
 /* Bars Flex Container */
 .chart-bars-flex {

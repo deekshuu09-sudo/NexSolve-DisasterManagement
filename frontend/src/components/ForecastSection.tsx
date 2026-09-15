@@ -152,16 +152,10 @@ export default function ForecastSection({
                 <span>0</span>
               </div>
 
-              <div className="chart-main-area">
-                <div className="threshold-line line-75" title="Critical Threshold (75)">
-                  <span className="line-label">Critical 75</span>
-                </div>
-                <div className="threshold-line line-50" title="High Alert Threshold (50)">
-                  <span className="line-label">High Alert 50</span>
-                </div>
-                <div className="threshold-line line-35" title="Elevated Threshold (35)">
-                  <span className="line-label">Elevated 35</span>
-                </div>
+              <div className="chart-plot-container">
+                <div className="threshold-line line-75" title="Critical Threshold (75)" />
+                <div className="threshold-line line-50" title="High Alert Threshold (50)" />
+                <div className="threshold-line line-35" title="Elevated Threshold (35)" />
 
                 <div className="chart-bars-flex">
                   {forecast.map((pt, idx) => {
@@ -196,6 +190,12 @@ export default function ForecastSection({
                     )
                   })}
                 </div>
+              </div>
+
+              <div className="threshold-gutter">
+                <div className="gutter-label label-75">Critical 75</div>
+                <div className="gutter-label label-50">High Alert 50</div>
+                <div className="gutter-label label-35">Elevated 35</div>
               </div>
             </div>
           </div>
