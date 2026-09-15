@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState, lazy, Suspense } from 'react'
 import { NavbarMenu, type NavMenuItem } from './components/NavbarMenu'
-import { API, fallbackCorridors, fallbackDistricts, getJSON, getExposure, postJSON, getDashboardSummary } from './lib/api'
+import { API, fallbackCorridors, fallbackDistricts, getJSON, getExposure, postJSON, getDashboardSummary, probeReadiness } from './lib/api'
 import type { District, ExposureRecord, ForecastPoint, ImageAnalysis, RainfallData, RiskPrediction, DashboardSummary } from './lib/api'
 import './App.css'
 import './interactions.css'
@@ -13,6 +13,7 @@ const ExplainabilitySection = lazy(() => import('./components/ExplainabilitySect
 const VulnerabilitySection = lazy(() => import('./components/VulnerabilitySection'))
 
 type Theme = 'light' | 'dark'
+type ConnectionState = 'CONNECTING' | 'LIVE' | 'DEGRADED' | 'UNAVAILABLE'
 type Corridor = { code: string; name: string; status: string; eta: string }
 
 const navItems: NavMenuItem[] = [
@@ -43,6 +44,7 @@ function SectionSkeleton({ title }: { title: string }) {
 
 export function App() {
   const [theme, setTheme] = useState<Theme>('dark')
+  const [connectionState, setConnectionState] = useState<ConnectionState>('CONNECTING')
   const [mapInfoOpen, setMapInfoOpen] = useState(false)
   const [lastUpdated, setLastUpdated] = useState<string>('')
   const [navOpen, setNavOpen] = useState<string | null>(null)
@@ -52,7 +54,6 @@ export function App() {
   const [selectedDistrictId, setSelectedDistrictId] = useState<string | null>(null)
   const [districts, setDistricts] = useState<District[]>(fallbackDistricts)
   const [corridors, setCorridors] = useState<Corridor[]>(fallbackCorridors)
-  const [apiOnline, setApiOnline] = useState(false)
   const [refreshing, setRefreshing] = useState(false)
   const [reportOpen, setReportOpen] = useState(false)
   const [reportLocation, setReportLocation] = useState('')
@@ -78,6 +79,7 @@ export function App() {
   const [forecastError, setForecastError] = useState<string | null>(null)
   const [rainfallData, setRainfallData] = useState<RainfallData | null>(null)
   const [broadcastStatus, setBroadcastStatus] = useState<'idle' | 'broadcasting' | 'complete' | 'unavailable'>('idle')
+  const [dashboardSummary, setDashboardSummary] = useState<DashboardSummary | null>(null)
 
   const requestRiskPrediction = async (district: District) => {
     if (district.rainfall_3d == null || district.rainfall_7d == null) {
@@ -124,7 +126,7 @@ export function App() {
 
   const loadDistrictSignals = async (district: District) => {
     setForecastLoading(true)
-    const [riskResponse, rainfallResponse, forecastResponse, exposureResponse] = await Promise.allSettled([
+    const [, rainfallResponse, forecastResponse, exposureResponse] = await Promise.allSettled([
       requestRiskPrediction(district),
       getJSON<RainfallData>(`/api/rainfall/current?latitude=${district.lat}&longitude=${district.lng}`),
       getJSON<{ forecast: ForecastPoint[]; source: string; is_live: boolean }>(`/api/forecast/${district.id}`),
@@ -141,7 +143,6 @@ export function App() {
       setForecast([])
       setForecastError('Forecast source unavailable — showing latest available IMD data.')
     }
-    if (riskResponse.status === 'fulfilled') setApiOnline(true)
     setForecastLoading(false)
   }
 
@@ -186,21 +187,32 @@ export function App() {
     }
   }
 
-  const [dashboardSummary, setDashboardSummary] = useState<DashboardSummary | null>(null)
-
-  const handleRefresh = async () => {
+  const handleWarmupAndRefresh = async (isManual = false) => {
     setRefreshing(true)
+    if (isManual || connectionState !== 'LIVE') {
+      setConnectionState('CONNECTING')
+    }
+
     try {
-      const [corridorResponse, summaryResponse] = await Promise.all([
-        getJSON<{ data: Corridor[] }>('/api/corridors'),
+      const { ready } = await probeReadiness()
+
+      const [corridorResponse, summaryResponse] = await Promise.allSettled([
+        getJSON<{ data: Corridor[] }>('/api/corridors', {}, 3),
         getDashboardSummary().catch(() => null),
       ])
-      setCorridors(corridorResponse.data)
-      if (summaryResponse) setDashboardSummary(summaryResponse)
-      setApiOnline(true)
+
+      if (corridorResponse.status === 'fulfilled') {
+        setCorridors(corridorResponse.value.data)
+      }
+      if (summaryResponse.status === 'fulfilled' && summaryResponse.value) {
+        setDashboardSummary(summaryResponse.value)
+      }
+
+      const isConnected = ready || summaryResponse.status === 'fulfilled' || corridorResponse.status === 'fulfilled'
+      setConnectionState(isConnected ? 'LIVE' : 'DEGRADED')
       setLastUpdated(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }))
     } catch {
-      setApiOnline(false)
+      setConnectionState('DEGRADED')
     } finally {
       setRefreshing(false)
     }
@@ -210,14 +222,13 @@ export function App() {
     document.documentElement.dataset.theme = theme
   }, [theme])
 
-  // Initial fast app shell mount — loads essential summary & corridors without blocking on full districts payload
+  // Initial non-blocking shell mount — immediately renders static UI, then initiates background warm-up & health probe
   useEffect(() => {
-    handleRefresh().then(() => {
-      const defaultDistrict = fallbackDistricts.find((d) => d.id === 'champhai') || fallbackDistricts[0]
-      if (defaultDistrict && !selectedDistrictId) {
-        setSelectedDistrictId(defaultDistrict.id)
-      }
-    })
+    const defaultDistrict = fallbackDistricts.find((d) => d.id === 'champhai') || fallbackDistricts[0]
+    if (defaultDistrict && !selectedDistrictId) {
+      setSelectedDistrictId(defaultDistrict.id)
+    }
+    void handleWarmupAndRefresh(false)
   }, [])
 
   // Lazy-load full district dataset on demand when user opens Risk Map
@@ -377,12 +388,18 @@ export function App() {
             <option value="Sikkim">Sikkim</option>
           </select>
 
-          <div className={`status-pill ${apiOnline ? 'online' : 'degraded'}`}>
+          <div className={`status-pill ${connectionState.toLowerCase()}`}>
             <span className="status-dot" />
-            {apiOnline ? 'SYSTEM ONLINE' : 'SYSTEM DEGRADED'}
+            {connectionState === 'CONNECTING'
+              ? 'CONNECTING TO LIVE SERVICES…'
+              : connectionState === 'LIVE'
+              ? 'SYSTEM ONLINE'
+              : connectionState === 'DEGRADED'
+              ? 'LIVE SERVICES DEGRADED'
+              : 'LIVE SERVICES UNREACHABLE'}
           </div>
 
-          <button className="refresh-button" disabled={refreshing} onClick={handleRefresh}>
+          <button className="refresh-button" disabled={refreshing} onClick={() => void handleWarmupAndRefresh(true)}>
             {refreshing ? 'Updating…' : lastUpdated ? `Updated ${lastUpdated}` : 'Refresh data'}
           </button>
 
@@ -391,6 +408,22 @@ export function App() {
           </button>
         </div>
       </header>
+
+      {connectionState === 'CONNECTING' && (
+        <div className="connection-banner connecting">
+          <span className="banner-spinner" />
+          <span>Connecting to live risk services… (Render cold start in progress)</span>
+        </div>
+      )}
+
+      {connectionState === 'DEGRADED' && (
+        <div className="connection-banner degraded">
+          <span>Live backend services are temporarily degraded. Static intelligence remains available.</span>
+          <button className="banner-retry-btn" onClick={() => void handleWarmupAndRefresh(true)}>
+            Retry Connection
+          </button>
+        </div>
+      )}
 
       <main className="main-content">
         {/* VIEW 1: OVERVIEW DASHBOARD */}

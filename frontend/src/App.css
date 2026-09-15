@@ -1094,7 +1094,8 @@ html[data-theme='dark'] .region-select option {
   white-space: nowrap;
 }
 
-.status-pill.online {
+.status-pill.online,
+.status-pill.live {
   border-color: rgba(34, 197, 94, 0.3);
   color: #22c55e;
   background: rgba(34, 197, 94, 0.08);
@@ -1104,6 +1105,71 @@ html[data-theme='dark'] .region-select option {
   border-color: rgba(249, 115, 22, 0.3);
   color: #f97316;
   background: rgba(249, 115, 22, 0.08);
+}
+
+.status-pill.connecting {
+  border-color: rgba(234, 179, 8, 0.35);
+  color: #eab308;
+  background: rgba(234, 179, 8, 0.08);
+}
+
+.status-pill.unavailable {
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.08);
+}
+
+.connection-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 8px 16px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-bottom: 1px solid var(--line);
+}
+
+.connection-banner.connecting {
+  background: rgba(234, 179, 8, 0.08);
+  color: var(--text-primary);
+  border-color: rgba(234, 179, 8, 0.2);
+}
+
+.connection-banner.degraded {
+  background: rgba(249, 115, 22, 0.08);
+  color: var(--text-primary);
+  border-color: rgba(249, 115, 22, 0.2);
+}
+
+.banner-spinner {
+  width: 12px;
+  height: 12px;
+  border: 2px solid rgba(234, 179, 8, 0.3);
+  border-top-color: #eab308;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.banner-retry-btn {
+  padding: 3px 10px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--panel-bg);
+  color: var(--text-primary);
+  font-size: 0.7rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.banner-retry-btn:hover {
+  border-color: var(--text-accent);
+  color: var(--text-accent);
 }
 
 .status-dot {

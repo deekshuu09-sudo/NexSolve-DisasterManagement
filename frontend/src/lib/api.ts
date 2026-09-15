@@ -302,10 +302,79 @@ const getApiBase = () => {
 }
 export const API = getApiBase()
 
-export async function getJSON<T>(path: string): Promise<T> {
-  const response = await fetch(`${API}${path}`)
-  if (!response.ok) throw new Error(`API ${response.status}`)
-  return response.json()
+export async function fetchWithRetry<T>(
+  url: string,
+  options: RequestInit = {},
+  maxRetries = 3,
+  baseDelayMs = 1500,
+  timeoutMs = 10000
+): Promise<T> {
+  let lastError: Error | null = null
+
+  for (let attempt = 0; attempt <= maxRetries; attempt++) {
+    if (attempt > 0) {
+      const delay = baseDelayMs * Math.pow(2, attempt - 1)
+      await new Promise((res) => setTimeout(res, delay))
+    }
+
+    const controller = new AbortController()
+    const timeoutId = setTimeout(() => controller.abort(), timeoutMs)
+
+    try {
+      const response = await fetch(url, {
+        ...options,
+        signal: controller.signal,
+      })
+      clearTimeout(timeoutId)
+
+      if (response.ok) {
+        return (await response.json()) as T
+      }
+
+      if (response.status >= 400 && response.status < 500) {
+        throw new Error(`API ${response.status}`)
+      }
+
+      lastError = new Error(`API ${response.status}`)
+    } catch (err: any) {
+      clearTimeout(timeoutId)
+      if (err.name === 'AbortError') {
+        lastError = new Error('Request Timeout')
+      } else {
+        lastError = err instanceof Error ? err : new Error(String(err))
+      }
+      if (lastError.message.startsWith('API 4')) {
+        throw lastError
+      }
+    }
+  }
+
+  throw lastError || new Error('API fetch failed after retries')
+}
+
+export async function getJSON<T>(path: string, options?: RequestInit, retries = 3): Promise<T> {
+  return fetchWithRetry<T>(`${API}${path}`, { method: 'GET', ...options }, retries)
+}
+
+export async function postJSON<T>(path: string, payload: unknown, retries = 3): Promise<T> {
+  return fetchWithRetry<T>(
+    `${API}${path}`,
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    },
+    retries
+  )
+}
+
+export async function probeReadiness(): Promise<{ ready: boolean; timestamp: string }> {
+  try {
+    const data = await getJSON<{ status: string; timestamp: string }>('/api/ready', {}, 4)
+    return { ready: data.status === 'READY', timestamp: data.timestamp }
+  } catch {
+    return { ready: false, timestamp: new Date().toISOString() }
+  }
 }
 
 export async function getExposure(districtId: string): Promise<ExposureRecord> {
@@ -358,16 +427,6 @@ export async function getExplainability(districtId: string): Promise<{ success: 
 
 export async function getDashboardSummary(): Promise<DashboardSummary> {
   return getJSON<DashboardSummary>('/api/dashboard/summary')
-}
-
-export async function postJSON<T>(path: string, payload: unknown): Promise<T> {
-  const response = await fetch(`${API}${path}`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload),
-  })
-  if (!response.ok) throw new Error(`API ${response.status}`)
-  return response.json()
 }
 
 export const fallbackDistricts: District[] = [
