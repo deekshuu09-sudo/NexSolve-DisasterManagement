@@ -81,6 +81,7 @@ export function App() {
   const [broadcastStatus, setBroadcastStatus] = useState<'idle' | 'broadcasting' | 'complete' | 'unavailable'>('idle')
   const [dashboardSummary, setDashboardSummary] = useState<DashboardSummary | null>(null)
   const [activeModelMeta, setActiveModelMeta] = useState<{ id: string; version: string; sha256: string } | null>(null)
+  const [modelReadinessState, setModelReadinessState] = useState<'LOADING' | 'READY' | 'UNAVAILABLE'>('LOADING')
 
   const requestRiskPrediction = async (district: District) => {
     if (district.rainfall_3d == null || district.rainfall_7d == null) {
@@ -196,12 +197,23 @@ export function App() {
 
     try {
       const probeRes = await probeReadiness()
-      if (probeRes.model_id && probeRes.model_version && probeRes.model_sha256) {
+      if (probeRes.ready && probeRes.model_id && probeRes.model_version && probeRes.model_sha256) {
         setActiveModelMeta({
           id: probeRes.model_id,
           version: probeRes.model_version,
           sha256: probeRes.model_sha256,
         })
+        setModelReadinessState('READY')
+      } else if (probeRes.model_id && probeRes.model_version) {
+        setActiveModelMeta({
+          id: probeRes.model_id,
+          version: probeRes.model_version,
+          sha256: probeRes.model_sha256 || '',
+        })
+        setModelReadinessState('READY')
+      } else {
+        setActiveModelMeta(null)
+        setModelReadinessState('UNAVAILABLE')
       }
 
       const [corridorResponse, summaryResponse, districtsResponse] = await Promise.allSettled([
@@ -224,6 +236,8 @@ export function App() {
       setConnectionState(isConnected ? 'LIVE' : 'DEGRADED')
       setLastUpdated(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }))
     } catch {
+      setActiveModelMeta(null)
+      setModelReadinessState('UNAVAILABLE')
       setConnectionState('DEGRADED')
     } finally {
       setRefreshing(false)
@@ -451,8 +465,26 @@ export function App() {
               <div className="op-card risk-op-card">
                 <div className="op-card-header">
                   <span className="op-card-title">MODELED RISK SCORE</span>
-                  <span className={`op-card-badge ${!highestRiskDistrict || (highestRiskDistrict.riskScore ?? 0) < 35 ? 'green' : (highestRiskDistrict.riskScore ?? 0) >= 75 ? 'red' : 'amber'}`}>
-                    {!highestRiskDistrict || (highestRiskDistrict.riskScore ?? 0) < 35 ? 'NOMINAL' : (highestRiskDistrict.riskScore ?? 0) >= 75 ? 'HIGHEST PRIORITY' : 'ELEVATED RISK'}
+                  <span className={`op-card-badge ${
+                    !highestRiskDistrict
+                      ? 'green'
+                      : (highestRiskDistrict.decision?.riskLevel === 'RED' || (highestRiskDistrict.riskScore ?? 0) >= 75)
+                      ? 'red'
+                      : (highestRiskDistrict.decision?.riskLevel === 'ORANGE' || (highestRiskDistrict.riskScore ?? 0) >= 50)
+                      ? 'amber'
+                      : (highestRiskDistrict.decision?.riskLevel === 'YELLOW' || (highestRiskDistrict.riskScore ?? 0) >= 35)
+                      ? 'amber'
+                      : 'green'
+                  }`}>
+                    {!highestRiskDistrict
+                      ? 'NOMINAL'
+                      : (highestRiskDistrict.decision?.riskLevel === 'RED' || (highestRiskDistrict.riskScore ?? 0) >= 75)
+                      ? 'EMERGENCY'
+                      : (highestRiskDistrict.decision?.riskLevel === 'ORANGE' || (highestRiskDistrict.riskScore ?? 0) >= 50)
+                      ? 'WARNING'
+                      : (highestRiskDistrict.decision?.riskLevel === 'YELLOW' || (highestRiskDistrict.riskScore ?? 0) >= 35)
+                      ? 'ELEVATED'
+                      : 'NOMINAL'}
                   </span>
                 </div>
                 <div className="op-card-body">
@@ -562,8 +594,20 @@ export function App() {
                       <p className="subtext">Coordinates: {activeDistrict.lat.toFixed(4)}°N, {activeDistrict.lng.toFixed(4)}°E | Slope: {activeDistrict.slopeAngle.toFixed(1)}°</p>
                     </div>
                     <div className="detail-badges">
-                      <span className={`risk-badge level-${(activeDistrict.decision?.riskLevel || 'GREEN').toLowerCase()}`}>
-                        {activeDistrict.decision?.riskLevel || 'NOMINAL'} ({activeDistrict.riskScore ?? 'N/A'})
+                      <span className={`risk-badge level-${(
+                        activeDistrict.decision?.riskLevel || (
+                          (activeDistrict.riskScore ?? 0) >= 75 ? 'RED' :
+                          (activeDistrict.riskScore ?? 0) >= 50 ? 'ORANGE' :
+                          (activeDistrict.riskScore ?? 0) >= 35 ? 'YELLOW' : 'GREEN'
+                        )
+                      ).toLowerCase()}`}>
+                        {activeDistrict.decision?.riskLevel === 'RED' || (activeDistrict.riskScore ?? 0) >= 75
+                          ? 'EMERGENCY'
+                          : activeDistrict.decision?.riskLevel === 'ORANGE' || (activeDistrict.riskScore ?? 0) >= 50
+                          ? 'WARNING'
+                          : activeDistrict.decision?.riskLevel === 'YELLOW' || (activeDistrict.riskScore ?? 0) >= 35
+                          ? 'ELEVATED'
+                          : 'NOMINAL'} ({activeDistrict.riskScore ?? 'N/A'})
                       </span>
                     </div>
                   </div>
@@ -572,7 +616,7 @@ export function App() {
                     <div><span>24h Rainfall (At {activeDistrict.name}):</span> <strong>{activeDistrict.rain24h != null ? `${activeDistrict.rain24h} mm` : 'N/A'}</strong></div>
                     <div><span>Terrain Slope:</span> <strong>{activeDistrict.slopeAngle != null ? `${activeDistrict.slopeAngle.toFixed(1)}°` : 'Unavailable'}</strong></div>
                     <div><span>Historical GSI Events:</span> <strong>{activeDistrict.gsiEvents} (Historical Inventory)</strong></div>
-                    <div><span>Model Confidence:</span> <strong>{activeDistrict.confidence ? `${activeDistrict.confidence}%` : 'HIGH'}</strong></div>
+                    <div><span>Model Source:</span> <strong>{activeDistrict.modelSource && activeDistrict.modelSource !== 'uninitialized' && activeDistrict.modelSource !== 'Loading…' ? activeDistrict.modelSource : activeModelMeta ? `Random Forest v${activeModelMeta.version}` : modelReadinessState === 'LOADING' ? 'Loading…' : 'Unavailable'}</strong></div>
                   </div>
 
                   <div className="detail-actions">
@@ -668,7 +712,13 @@ export function App() {
       <footer className="footer-bar">
         <span>NexSolve Disaster Management © 2026</span>
         <span>
-          Model: Random Forest v{activeModelMeta?.version || '1.1.0'} · {activeModelMeta?.id || 'candidate_a_rf_v1'} (SHA-256: {activeModelMeta?.sha256 ? `${activeModelMeta.sha256.slice(0, 9)}...` : '1acad34e8...'})
+          Model: {
+            modelReadinessState === 'LOADING'
+              ? 'Loading…'
+              : modelReadinessState === 'UNAVAILABLE' || !activeModelMeta
+              ? 'Unavailable'
+              : `Random Forest v${activeModelMeta.version} · ${activeModelMeta.id} (SHA-256: ${activeModelMeta.sha256 ? `${activeModelMeta.sha256.slice(0, 9)}...` : 'Unavailable'})`
+          }
         </span>
       </footer>
     </div>
