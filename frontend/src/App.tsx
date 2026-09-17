@@ -401,7 +401,7 @@ export function App() {
             {connectionState === 'CONNECTING'
               ? 'CONNECTING TO LIVE SERVICES…'
               : connectionState === 'LIVE'
-              ? 'SYSTEM ONLINE'
+              ? 'SYSTEM READY'
               : connectionState === 'DEGRADED'
               ? 'LIVE SERVICES DEGRADED'
               : 'LIVE SERVICES UNREACHABLE'}
@@ -574,10 +574,10 @@ export function App() {
                       {broadcastStatus === 'broadcasting' ? '🔊 Stop Advisory' : '🔊 Listen to Advisory'}
                     </button>
                     <button className="action-button secondary" onClick={() => setActiveTab('Explainability')}>
-                      Inspect Explainability (P8)
+                      Inspect Explainability
                     </button>
                     <button className="action-button secondary" onClick={() => setActiveTab('Vulnerability')}>
-                      Inspect Exposure Profile (P7C)
+                      Inspect Exposure Profile
                     </button>
                   </div>
                 </div>

@@ -21,7 +21,7 @@ export default function ExplainabilitySection({
     <section id="xai-step" className="step-card xai-layout-card">
       <div className="section-header">
         <div>
-          <h2>Explainable AI & Risk Signal Decomposition (P8)</h2>
+          <h2>Explainable AI & Risk Signal Decomposition</h2>
           <p className="subtext">
             Transparent feature weight decomposition and decision rationale for <strong>{activeDistrict?.name || 'Selected Location'}</strong>
           </p>
