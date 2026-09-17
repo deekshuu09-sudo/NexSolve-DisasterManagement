@@ -368,10 +368,16 @@ export async function postJSON<T>(path: string, payload: unknown, retries = 3): 
   )
 }
 
-export async function probeReadiness(): Promise<{ ready: boolean; timestamp: string }> {
+export async function probeReadiness(): Promise<{ ready: boolean; timestamp: string; model_id?: string; model_version?: string; model_sha256?: string }> {
   try {
-    const data = await getJSON<{ status: string; timestamp: string }>('/api/ready', {}, 4)
-    return { ready: data.status === 'READY', timestamp: data.timestamp }
+    const data = await getJSON<{ status: string; timestamp: string; checks?: { model_id?: string; model_version?: string; model_sha256?: string } }>('/api/ready', {}, 4)
+    return {
+      ready: data.status === 'READY',
+      timestamp: data.timestamp,
+      model_id: data.checks?.model_id,
+      model_version: data.checks?.model_version,
+      model_sha256: data.checks?.model_sha256,
+    }
   } catch {
     return { ready: false, timestamp: new Date().toISOString() }
   }

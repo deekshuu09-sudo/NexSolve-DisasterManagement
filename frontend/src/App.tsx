@@ -80,6 +80,7 @@ export function App() {
   const [rainfallData, setRainfallData] = useState<RainfallData | null>(null)
   const [broadcastStatus, setBroadcastStatus] = useState<'idle' | 'broadcasting' | 'complete' | 'unavailable'>('idle')
   const [dashboardSummary, setDashboardSummary] = useState<DashboardSummary | null>(null)
+  const [activeModelMeta, setActiveModelMeta] = useState<{ id: string; version: string; sha256: string } | null>(null)
 
   const requestRiskPrediction = async (district: District) => {
     if (district.rainfall_3d == null || district.rainfall_7d == null) {
@@ -194,7 +195,14 @@ export function App() {
     }
 
     try {
-      const { ready } = await probeReadiness()
+      const probeRes = await probeReadiness()
+      if (probeRes.model_id && probeRes.model_version && probeRes.model_sha256) {
+        setActiveModelMeta({
+          id: probeRes.model_id,
+          version: probeRes.model_version,
+          sha256: probeRes.model_sha256,
+        })
+      }
 
       const [corridorResponse, summaryResponse] = await Promise.allSettled([
         getJSON<{ data: Corridor[] }>('/api/corridors', {}, 3),
@@ -208,7 +216,7 @@ export function App() {
         setDashboardSummary(summaryResponse.value)
       }
 
-      const isConnected = ready || summaryResponse.status === 'fulfilled' || corridorResponse.status === 'fulfilled'
+      const isConnected = probeRes.ready || summaryResponse.status === 'fulfilled' || corridorResponse.status === 'fulfilled'
       setConnectionState(isConnected ? 'LIVE' : 'DEGRADED')
       setLastUpdated(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }))
     } catch {
@@ -653,7 +661,9 @@ export function App() {
 
       <footer className="footer-bar">
         <span>NexSolve Disaster Management © 2026</span>
-        <span>Model Version: RF-v1.0 (SHA-256: d8546b0f7...)</span>
+        <span>
+          Model: Random Forest v{activeModelMeta?.version || '1.1.0'} · {activeModelMeta?.id || 'candidate_a_rf_v1'} (SHA-256: {activeModelMeta?.sha256 ? `${activeModelMeta.sha256.slice(0, 9)}...` : '1acad34e8...'})
+        </span>
       </footer>
     </div>
   )

@@ -59,10 +59,10 @@ export default function RiskMap({
               Rainfall
             </button>
             <button
-              className={`layer-chip ${layer === 'Road corridors' ? 'active' : ''}`}
-              onClick={() => setLayer('Road corridors')}
+              className={`layer-chip ${layer === 'Road corridors' || layer === 'Corridor Nodes' ? 'active' : ''}`}
+              onClick={() => setLayer('Corridor Nodes')}
             >
-              Road corridors
+              Corridor Nodes
             </button>
           </div>
           <button className="info-popover-trigger" onClick={() => setMapInfoOpen(!mapInfoOpen)}>
@@ -81,7 +81,7 @@ export default function RiskMap({
             </p>
             <ul>
               <li><strong>Basemap:</strong> OpenStreetMap Carto (Standard OSM EPSG:3857 tile services)</li>
-              <li><strong>Road Corridors:</strong> MoRTH / NHAI registry metadata for key arterial axes</li>
+              <li><strong>Road Corridors:</strong> MoRTH / NHAI corridor registry metadata for key arterial axes</li>
               <li><strong>Boundaries:</strong> Survey of India Official Administrative Boundary Database (ABDB)</li>
             </ul>
             <button className="popover-close" onClick={() => setMapInfoOpen(false)}>Close</button>
@@ -89,9 +89,15 @@ export default function RiskMap({
         </div>
       )}
 
-      {layer === 'Road corridors' && (
+      {(layer === 'Road corridors' || layer === 'Corridor Nodes') && (
         <div className="corridor-layer-notice">
-          <strong>MoRTH / NHAI Corridor Registry Layer Active</strong> — Highlighting key arterial corridor nodes ({corridors.length} registered axes). Vector line geometry is not connected.
+          <strong>MoRTH / NHAI Corridor Registry Active</strong> — Operational corridor nodes shown ({corridors.length} registered axes). Route line geometry is not available in the current dataset.
+        </div>
+      )}
+
+      {layer === 'Rainfall' && (
+        <div className="corridor-layer-notice">
+          <strong>Precipitation Layer Active</strong> — Showing 24h peak accumulation (mm) across operational monitoring points.
         </div>
       )}
 
@@ -103,10 +109,39 @@ export default function RiskMap({
           />
           <FitDistrictBounds districts={districts} />
           {districts.map((district) => {
-            const score = district.riskScore ?? 0
-            const decisionLevel = district.decision?.riskLevel
-            const color = decisionLevel === 'RED' ? '#ef4444' : decisionLevel === 'ORANGE' ? '#f97316' : decisionLevel === 'YELLOW' ? '#eab308' : '#22c55e'
-            const radius = Math.max(12, Math.min(26, score / 3))
+            const isRainfallLayer = layer === 'Rainfall'
+            const isCorridorLayer = layer === 'Road corridors' || layer === 'Corridor Nodes'
+
+            let color = '#22c55e'
+            let radius = 14
+
+            if (isRainfallLayer) {
+              const rain = district.rain24h
+              if (rain == null) {
+                color = '#9ca3af'
+                radius = 12
+              } else if (rain >= 150) {
+                color = '#ef4444'
+                radius = 24
+              } else if (rain >= 100) {
+                color = '#f97316'
+                radius = 20
+              } else if (rain >= 50) {
+                color = '#eab308'
+                radius = 16
+              } else {
+                color = '#3b82f6'
+                radius = 12
+              }
+            } else if (isCorridorLayer) {
+              color = '#38bdf8'
+              radius = 16
+            } else {
+              const score = district.riskScore ?? 0
+              const decisionLevel = district.decision?.riskLevel
+              color = decisionLevel === 'RED' ? '#ef4444' : decisionLevel === 'ORANGE' ? '#f97316' : decisionLevel === 'YELLOW' ? '#eab308' : '#22c55e'
+              radius = Math.max(12, Math.min(26, score / 3))
+            }
 
             return (
               <CircleMarker
@@ -124,9 +159,9 @@ export default function RiskMap({
                     <p className="popup-state">{district.state}</p>
                     <div className="popup-metrics">
                       <div><span>Risk Score:</span> <strong>{district.riskScore != null ? district.riskScore : 'N/A'}</strong></div>
-                      <div><span>24h Rainfall:</span> <strong>{district.rain24h != null ? `${district.rain24h} mm` : 'N/A'}</strong></div>
-                      <div><span>Slope Angle:</span> <strong>{district.slopeAngle.toFixed(1)}°</strong></div>
-                      <div><span>Model:</span> <strong>{district.modelSource}</strong></div>
+                      <div><span>24h Rainfall:</span> <strong>{district.rain24h != null ? `${district.rain24h} mm` : 'Unavailable'}</strong></div>
+                      <div><span>Slope Angle:</span> <strong>{district.slopeAngle ? `${district.slopeAngle.toFixed(1)}°` : 'N/A'}</strong></div>
+                      <div><span>Point Type:</span> <strong>{district.decision?.riskLabel || 'Operational Node'}</strong></div>
                     </div>
                   </div>
                 </Popup>
@@ -136,13 +171,35 @@ export default function RiskMap({
         </MapContainer>
 
         <div className="map-floating-legend">
-          <div className="legend-title">Risk Level</div>
-          <div className="legend-items">
-            <span className="legend-badge red">■ Critical (&ge;75)</span>
-            <span className="legend-badge orange">■ High (&ge;50)</span>
-            <span className="legend-badge yellow">■ Elevated (&ge;35)</span>
-            <span className="legend-badge green">■ Nominal (&lt;35)</span>
-          </div>
+          {layer === 'Rainfall' ? (
+            <>
+              <div className="legend-title">24h Rainfall (mm)</div>
+              <div className="legend-items">
+                <span className="legend-badge red">■ Heavy (&ge;150 mm)</span>
+                <span className="legend-badge orange">■ Substantial (&ge;100 mm)</span>
+                <span className="legend-badge yellow">■ Moderate (&ge;50 mm)</span>
+                <span className="legend-badge blue">■ Light (&lt;50 mm)</span>
+                <span className="legend-badge gray">■ Unavailable</span>
+              </div>
+            </>
+          ) : layer === 'Road corridors' || layer === 'Corridor Nodes' ? (
+            <>
+              <div className="legend-title">Corridor Registry</div>
+              <div className="legend-items">
+                <span className="legend-badge blue">● MoRTH Operational Node</span>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="legend-title">Risk Level</div>
+              <div className="legend-items">
+                <span className="legend-badge red">■ Critical (&ge;75)</span>
+                <span className="legend-badge orange">■ High (&ge;50)</span>
+                <span className="legend-badge yellow">■ Elevated (&ge;35)</span>
+                <span className="legend-badge green">■ Nominal (&lt;35)</span>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </section>
