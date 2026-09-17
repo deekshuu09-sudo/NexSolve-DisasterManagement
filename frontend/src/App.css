@@ -549,9 +549,15 @@ button {
 }
 
 .primary-button {
-  border: 1px solid #111;
-  background: #151515;
-  color: #fff;
+  border: 1px solid var(--text-primary);
+  background: var(--text-primary);
+  color: var(--bg-main);
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.primary-button:hover {
+  opacity: 0.9;
 }
 
 .secondary-button {
@@ -2757,6 +2763,43 @@ html[data-theme='dark'] .form-group input[type="file"]::file-selector-button {
   background: rgba(156, 163, 175, 0.15);
   color: var(--text-secondary);
   border: 1px solid var(--line);
+}
+
+.empty-reports-panel {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.empty-panel-icon {
+  font-size: 1.5rem;
+  margin-bottom: 2px;
+}
+
+.empty-panel-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.empty-panel-desc {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  max-width: 480px;
+  line-height: 1.4;
+}
+
+.empty-panel-sub {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-top: 4px;
 }
 
 

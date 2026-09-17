@@ -160,7 +160,14 @@ export default function FieldIntelligenceSection({
       <div className="submitted-feed">
         <h4>Recent Field Reports ({submittedReports.length})</h4>
         {submittedReports.length === 0 ? (
-          <p className="empty-text">No field reports submitted yet during this session.</p>
+          <div className="empty-reports-panel">
+            <div className="empty-panel-icon">📝</div>
+            <div className="empty-panel-title">No field reports yet</div>
+            <p className="empty-panel-desc">
+              Submit a field observation with location, description, and optional image evidence using the button above.
+            </p>
+            <span className="empty-panel-sub">Reports submitted during this session will appear here.</span>
+          </div>
         ) : (
           <div className="reports-list">
             {submittedReports.map((report, idx) => (
