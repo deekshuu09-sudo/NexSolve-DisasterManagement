@@ -11,6 +11,7 @@ const ForecastSection = lazy(() => import('./components/ForecastSection'))
 const FieldIntelligenceSection = lazy(() => import('./components/FieldIntelligenceSection'))
 const ExplainabilitySection = lazy(() => import('./components/ExplainabilitySection'))
 const VulnerabilitySection = lazy(() => import('./components/VulnerabilitySection'))
+const SystemStatusSection = lazy(() => import('./components/SystemStatusSection'))
 
 type Theme = 'light' | 'dark'
 type ConnectionState = 'CONNECTING' | 'LIVE' | 'DEGRADED' | 'UNAVAILABLE'
@@ -48,7 +49,7 @@ export function App() {
   const [mapInfoOpen, setMapInfoOpen] = useState(false)
   const [lastUpdated, setLastUpdated] = useState<string>('')
   const [navOpen, setNavOpen] = useState<string | null>(null)
-  const [activeTab, setActiveTab] = useState<'Overview' | 'Risk Map' | 'Forecast' | 'Field Reports' | 'Vulnerability' | 'Explainability'>('Overview')
+  const [activeTab, setActiveTab] = useState<'Overview' | 'Risk Map' | 'Forecast' | 'Field Reports' | 'Vulnerability' | 'Explainability' | 'System Status'>('Overview')
   const [region, setRegion] = useState('All North Eastern Region (NER)')
   const [layer, setLayer] = useState('Risk')
   const [selectedDistrictId, setSelectedDistrictId] = useState<string | null>(null)
@@ -377,6 +378,7 @@ export function App() {
     else if (label === 'Field Reports' || target === 'field-step') setActiveTab('Field Reports')
     else if (target === 'vuln-step') setActiveTab('Vulnerability')
     else if (target === 'xai-step') setActiveTab('Explainability')
+    else if (target === 'response-step' || target === 'status-step' || target === 'alerts-step' || label === 'System Status & Advisory') setActiveTab('System Status')
     else setActiveTab('Overview')
   }
 
@@ -705,6 +707,23 @@ export function App() {
         {activeTab === 'Explainability' && (
           <Suspense fallback={<SectionSkeleton title="Explainable AI" />}>
             <ExplainabilitySection activeDistrict={activeDistrict} riskPrediction={riskPrediction} riskLoading={riskLoading} riskError={riskError} />
+          </Suspense>
+        )}
+
+        {/* VIEW 7: SYSTEM STATUS & ADVISORY */}
+        {activeTab === 'System Status' && (
+          <Suspense fallback={<SectionSkeleton title="System Status & Advisory" />}>
+            <SystemStatusSection
+              connectionState={connectionState}
+              activeModelMeta={activeModelMeta}
+              modelReadinessState={modelReadinessState}
+              rainfallData={rainfallData}
+              dashboardSummary={dashboardSummary}
+              lastUpdated={lastUpdated}
+              broadcastStatus={broadcastStatus}
+              broadcastWarning={broadcastWarning}
+              handleWarmupAndRefresh={handleWarmupAndRefresh}
+            />
           </Suspense>
         )}
       </main>
