@@ -204,9 +204,10 @@ export function App() {
         })
       }
 
-      const [corridorResponse, summaryResponse] = await Promise.allSettled([
+      const [corridorResponse, summaryResponse, districtsResponse] = await Promise.allSettled([
         getJSON<{ data: Corridor[] }>('/api/corridors', {}, 3),
         getDashboardSummary().catch(() => null),
+        getJSON<{ data: District[] }>('/api/districts', {}, 3),
       ])
 
       if (corridorResponse.status === 'fulfilled') {
@@ -214,6 +215,9 @@ export function App() {
       }
       if (summaryResponse.status === 'fulfilled' && summaryResponse.value) {
         setDashboardSummary(summaryResponse.value)
+      }
+      if (districtsResponse.status === 'fulfilled') {
+        setDistricts(districtsResponse.value.data)
       }
 
       const isConnected = probeRes.ready || summaryResponse.status === 'fulfilled' || corridorResponse.status === 'fulfilled'
@@ -447,7 +451,9 @@ export function App() {
               <div className="op-card risk-op-card">
                 <div className="op-card-header">
                   <span className="op-card-title">MODELED RISK SCORE</span>
-                  <span className="op-card-badge red">HIGHEST PRIORITY</span>
+                  <span className={`op-card-badge ${!highestRiskDistrict || (highestRiskDistrict.riskScore ?? 0) < 35 ? 'green' : (highestRiskDistrict.riskScore ?? 0) >= 75 ? 'red' : 'amber'}`}>
+                    {!highestRiskDistrict || (highestRiskDistrict.riskScore ?? 0) < 35 ? 'NOMINAL' : (highestRiskDistrict.riskScore ?? 0) >= 75 ? 'HIGHEST PRIORITY' : 'ELEVATED RISK'}
+                  </span>
                 </div>
                 <div className="op-card-body">
                   <div className="op-stat-large">{highestRiskDistrict?.riskScore ?? 'N/A'}</div>
@@ -467,14 +473,14 @@ export function App() {
                 <div className="op-card-header">
                   <span className="op-card-title">{rainfallData?.is_live ? 'LIVE WEATHER FEED' : 'WEATHER FEED'}</span>
                   <span className={`op-card-badge ${rainfallData?.is_live ? 'green' : 'amber'}`}>
-                    {rainfallData?.is_live ? 'LIVE IMD FEED' : 'STALE / DEGRADED'}
+                    {rainfallData?.is_live ? 'LIVE WEATHER FEED' : 'STALE / DEGRADED'}
                   </span>
                 </div>
                 <div className="op-card-body">
                   <div className="op-stat-large">{rainfallData?.rainfall_24h ?? activeDistrict?.rain24h ?? 'N/A'} mm</div>
-                  <div className="op-stat-label">24h Peak Rainfall</div>
+                  <div className="op-stat-label">24h Peak Rainfall (Max Across Nodes)</div>
                   <p className="op-stat-desc">
-                    Source: {rainfallData?.source || 'IMD Open-Meteo API'}. No historical substitution when live feeds disconnect.
+                    Source: {rainfallData?.source || 'Open-Meteo current/hourly precipitation'}. No historical substitution when live feeds disconnect.
                   </p>
                 </div>
                 <div className="op-card-footer">
@@ -491,7 +497,7 @@ export function App() {
                 </div>
                 <div className="op-card-body">
                   <div className="corridor-mini-list">
-                    {corridors.slice(0, 3).map((c) => (
+                    {corridors.slice(0, 4).map((c) => (
                       <div key={c.code} className="mini-corridor-row">
                         <span className="corridor-code">{c.code}</span>
                         <span className="corridor-name">{c.name}</span>
@@ -520,8 +526,8 @@ export function App() {
                       <span className="coverage-label">Operational risk locations</span>
                     </div>
                     <div>
-                      <strong className="coverage-num">16 / 131</strong>
-                      <span className="coverage-label">Districts with computed exposure profiles</span>
+                      <strong className="coverage-num">16 / 131 profiled</strong>
+                      <span className="coverage-label">8 full / 8 partial / 115 insufficient data</span>
                     </div>
                   </div>
                 </div>
@@ -563,10 +569,10 @@ export function App() {
                   </div>
 
                   <div className="detail-metrics-grid">
-                    <div><span>24h Rainfall:</span> <strong>{activeDistrict.rain24h != null ? `${activeDistrict.rain24h} mm` : 'N/A'}</strong></div>
+                    <div><span>24h Rainfall (At {activeDistrict.name}):</span> <strong>{activeDistrict.rain24h != null ? `${activeDistrict.rain24h} mm` : 'N/A'}</strong></div>
                     <div><span>Terrain Slope:</span> <strong>{activeDistrict.slopeAngle != null ? `${activeDistrict.slopeAngle.toFixed(1)}°` : 'Unavailable'}</strong></div>
-                    <div><span>Historical GSI Events:</span> <strong>{activeDistrict.gsiEvents}</strong></div>
-                    <div><span>Model Source:</span> <strong>{activeDistrict.modelSource}</strong></div>
+                    <div><span>Historical GSI Events:</span> <strong>{activeDistrict.gsiEvents} (Historical Inventory)</strong></div>
+                    <div><span>Model Confidence:</span> <strong>{activeDistrict.confidence ? `${activeDistrict.confidence}%` : 'HIGH'}</strong></div>
                   </div>
 
                   <div className="detail-actions">

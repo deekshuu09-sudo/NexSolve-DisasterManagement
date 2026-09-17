@@ -436,14 +436,15 @@ export async function getDashboardSummary(): Promise<DashboardSummary> {
 }
 
 export const fallbackDistricts: District[] = [
-  { id: 'champhai', state: 'Mizoram', name: 'Champhai District', lat: 23.4756, lng: 93.3289, riskScore: 0, status: 'Pending', rain24h: 0, soilSat: 88, slopeAngle: 42, gsiEvents: 14, confidence: 0, modelSource: 'uninitialized', factors: [] },
-  { id: 'senapati', state: 'Manipur', name: 'Senapati NH-2 Corridor', lat: 25.2686, lng: 94.0186, riskScore: 0, status: 'Pending', rain24h: 0, soilSat: 85, slopeAngle: 44, gsiEvents: 16, confidence: 0, modelSource: 'uninitialized', factors: [] },
-  { id: 'cherrapunji', state: 'Meghalaya', name: 'Sohra / Cherrapunji Plateau', lat: 25.27, lng: 91.732, riskScore: 0, status: 'Pending', rain24h: 0, soilSat: 91, slopeAngle: 40, gsiEvents: 19, confidence: 0, modelSource: 'uninitialized', factors: [] },
-  { id: 'tawang', state: 'Arunachal Pradesh', name: 'Tawang High Pass', lat: 27.586, lng: 91.865, riskScore: 0, status: 'Pending', rain24h: 0, soilSat: 79, slopeAngle: 43, gsiEvents: 11, confidence: 0, modelSource: 'uninitialized', factors: [] },
-  { id: 'kohima', state: 'Nagaland', name: 'Kohima Bypass Corridor', lat: 25.6751, lng: 94.1086, riskScore: 0, status: 'Pending', rain24h: 0, soilSat: 82, slopeAngle: 41, gsiEvents: 13, confidence: 0, modelSource: 'uninitialized', factors: [] },
-  { id: 'dima_hasao', state: 'Assam', name: 'Dima Hasao Hill Axis', lat: 25.18, lng: 93.02, riskScore: 0, status: 'Pending', rain24h: 0, soilSat: 80, slopeAngle: 38, gsiEvents: 10, confidence: 0, modelSource: 'uninitialized', factors: [] },
-  { id: 'dhalai', state: 'Tripura', name: 'Dhalai Pass Corridor', lat: 23.84, lng: 91.28, riskScore: 0, status: 'Pending', rain24h: 0, soilSat: 76, slopeAngle: 35, gsiEvents: 7, confidence: 0, modelSource: 'uninitialized', factors: [] },
-  { id: 'gangtok', state: 'Sikkim', name: 'Gangtok / East Sikkim', lat: 27.33, lng: 88.61, riskScore: 0, status: 'Pending', rain24h: 0, soilSat: 83, slopeAngle: 42, gsiEvents: 15, confidence: 0, modelSource: 'uninitialized', factors: [] },
+  { id: 'champhai', state: 'Mizoram', name: 'Champhai District', lat: 23.4756, lng: 93.3289, riskScore: 0, status: 'Pending', rain24h: 0, soilSat: 88, slopeAngle: 42, gsiEvents: 14, confidence: 0, modelSource: 'Random Forest v1.1.0', factors: [] },
+  { id: 'aizawl', state: 'Mizoram', name: 'Aizawl Capital Corridor', lat: 23.7271, lng: 92.7176, riskScore: 0, status: 'Pending', rain24h: 0, soilSat: 74, slopeAngle: 36, gsiEvents: 8, confidence: 0, modelSource: 'Random Forest v1.1.0', factors: [] },
+  { id: 'senapati', state: 'Manipur', name: 'Senapati NH-2 Corridor', lat: 25.2686, lng: 94.0186, riskScore: 0, status: 'Pending', rain24h: 0, soilSat: 85, slopeAngle: 44, gsiEvents: 16, confidence: 0, modelSource: 'Random Forest v1.1.0', factors: [] },
+  { id: 'cherrapunji', state: 'Meghalaya', name: 'Sohra / Cherrapunji Plateau', lat: 25.27, lng: 91.732, riskScore: 0, status: 'Pending', rain24h: 0, soilSat: 91, slopeAngle: 40, gsiEvents: 19, confidence: 0, modelSource: 'Random Forest v1.1.0', factors: [] },
+  { id: 'tawang', state: 'Arunachal Pradesh', name: 'Tawang High Pass', lat: 27.586, lng: 91.865, riskScore: 0, status: 'Pending', rain24h: 0, soilSat: 79, slopeAngle: 43, gsiEvents: 11, confidence: 0, modelSource: 'Random Forest v1.1.0', factors: [] },
+  { id: 'kohima', state: 'Nagaland', name: 'Kohima Bypass Corridor', lat: 25.6751, lng: 94.1086, riskScore: 0, status: 'Pending', rain24h: 0, soilSat: 82, slopeAngle: 41, gsiEvents: 13, confidence: 0, modelSource: 'Random Forest v1.1.0', factors: [] },
+  { id: 'dima_hasao', state: 'Assam', name: 'Dima Hasao Hill Axis', lat: 25.18, lng: 93.02, riskScore: 0, status: 'Pending', rain24h: 0, soilSat: 80, slopeAngle: 38, gsiEvents: 10, confidence: 0, modelSource: 'Random Forest v1.1.0', factors: [] },
+  { id: 'dhalai', state: 'Tripura', name: 'Dhalai Pass Corridor', lat: 23.84, lng: 91.28, riskScore: 0, status: 'Pending', rain24h: 0, soilSat: 76, slopeAngle: 35, gsiEvents: 7, confidence: 0, modelSource: 'Random Forest v1.1.0', factors: [] },
+  { id: 'gangtok', state: 'Sikkim', name: 'Gangtok / East Sikkim', lat: 27.33, lng: 88.61, riskScore: 0, status: 'Pending', rain24h: 0, soilSat: 83, slopeAngle: 42, gsiEvents: 15, confidence: 0, modelSource: 'Random Forest v1.1.0', factors: [] },
 ]
 
 export const fallbackCorridors: Corridor[] = [
