@@ -408,7 +408,7 @@ export function App() {
           </div>
 
           <button className="refresh-button" disabled={refreshing} onClick={() => void handleWarmupAndRefresh(true)}>
-            {refreshing ? 'Updating…' : lastUpdated ? `Updated ${lastUpdated}` : 'Refresh data'}
+            {refreshing ? 'Updating…' : lastUpdated ? `Last live update ${lastUpdated}` : 'Refresh data'}
           </button>
 
           <button className="theme-toggle" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>

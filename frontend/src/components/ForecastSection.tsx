@@ -60,7 +60,7 @@ export default function ForecastSection({
         </div>
         <div className="forecast-source-badge">
           <span className={`status-dot ${forecastLive ? 'live' : 'historical'}`} />
-          {forecastSource || 'IMD GFS Ensemble'}
+          {forecastLive ? (forecastSource || 'IMD GFS Ensemble') : 'Forecast source: unavailable'}
         </div>
       </div>
 
@@ -69,7 +69,25 @@ export default function ForecastSection({
       {forecastLoading ? (
         <div className="card-skeleton">Loading 72-hour forecast projection...</div>
       ) : forecast.length === 0 ? (
-        <div className="empty-forecast-notice">Forecast projections currently unavailable for this location.</div>
+        <div className="forecast-unavailable-panel">
+          <div className="unavailable-header">
+            <span className="warning-icon">⚠️</span>
+            <h4>FORECAST DATA UNAVAILABLE</h4>
+          </div>
+          <p className="unavailable-text">
+            Live forecast data could not be retrieved for <strong>{activeDistrict?.name || 'this location'}</strong>. No historical values are substituted.
+          </p>
+          <div className="unavailable-status-grid">
+            <div className="status-item">
+              <span className="item-label">Forecast Status</span>
+              <span className="item-value offline">UNAVAILABLE</span>
+            </div>
+            <div className="status-item">
+              <span className="item-label">Risk Projection</span>
+              <span className="item-value neutral">NOT EVALUABLE</span>
+            </div>
+          </div>
+        </div>
       ) : (
         <>
           <div className="forecast-grid-summary">

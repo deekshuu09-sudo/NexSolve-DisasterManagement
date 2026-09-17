@@ -59,7 +59,7 @@ export default function ExplainabilitySection({
             <h4>Decision Rationale & Uncertainty</h4>
             <div className="rationale-text">
               <p><strong>Model Decision Rationale:</strong> {decision?.explanation || 'Feature values indicate nominal slope stability under current 24h/3d/7d precipitation regimes.'}</p>
-              <p><strong>Model Artifact SHA-256:</strong> <code>d8546b0f78372c...50eb1</code> (Production RF v1.0)</p>
+              <p><strong>Model Artifact SHA-256:</strong> <code>{riskPrediction?.explainability?.model_version ? `${riskPrediction.explainability.model_id} (v${riskPrediction.explainability.model_version})` : '1acad34e85b53df0cb68e5e81cd81d68066c4173792e65a51288b35557ba0f72 (Random Forest v1.1.0)'}</code></p>
               <p><strong>Uncertainty Level:</strong> {explainability?.uncertainty?.uncertainty_level || 'LOW'}</p>
               {explainability?.uncertainty?.uncertainty_notes?.length ? (
                 <ul>
