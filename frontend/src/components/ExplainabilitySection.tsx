@@ -31,11 +31,11 @@ export default function ExplainabilitySection({
       {riskError && <div className="inline-error-banner">{riskError}</div>}
 
       {riskLoading ? (
-        <div className="card-skeleton">Extracting feature importance & SHAP/LIME decision parameters...</div>
+        <div className="card-skeleton">Extracting 7-feature production model weights & decision rationale...</div>
       ) : (
         <div className="xai-content-grid">
           <div className="xai-box">
-            <h4>7-Feature Production Model Weights</h4>
+            <h4>Global Feature Importance (7-Feature Random Forest)</h4>
             <div className="factor-bars-list">
               {factors.length === 0 ? (
                 <p className="subtext">No feature factor breakdown available for current selection.</p>
@@ -59,7 +59,7 @@ export default function ExplainabilitySection({
             <h4>Decision Rationale & Uncertainty</h4>
             <div className="rationale-text">
               <p><strong>Model Decision Rationale:</strong> {decision?.explanation || 'Feature values indicate nominal slope stability under current 24h/3d/7d precipitation regimes.'}</p>
-              <p><strong>Model Artifact SHA-256:</strong> <code>{riskPrediction?.explainability?.model_version ? `${riskPrediction.explainability.model_id} (v${riskPrediction.explainability.model_version})` : '1acad34e85b53df0cb68e5e81cd81d68066c4173792e65a51288b35557ba0f72 (Random Forest v1.1.0)'}</code></p>
+              <p><strong>Model Provenance:</strong> <code>{riskPrediction?.explainability?.model_id ? `${riskPrediction.explainability.model_id} (v${riskPrediction.explainability.model_version || '1.1.0'})` : 'Random Forest production model (candidate_a_rf_v1)'}</code></p>
               <p><strong>Uncertainty Level:</strong> {explainability?.uncertainty?.uncertainty_level || 'LOW'}</p>
               {explainability?.uncertainty?.uncertainty_notes?.length ? (
                 <ul>
@@ -68,6 +68,9 @@ export default function ExplainabilitySection({
                   ))}
                 </ul>
               ) : null}
+              <p className="human-guidance-note" style={{ marginTop: '0.75rem', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+                <strong>Human Verification Guidance:</strong> Model risk probabilities are decision-support estimates and require ground verification by local disaster management authorities.
+              </p>
             </div>
           </div>
         </div>
