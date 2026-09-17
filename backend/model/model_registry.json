@@ -8,7 +8,7 @@
       "version": "1.1.0",
       "label": "RF-LEAKAGE-FREE-BASELINE",
       "model_type": "RandomForestClassifier",
-      "model_source": "NexSolve leakage-free RF",
+      "model_source": "NexSolve Random Forest v1.1",
       "feature_set": [
         "latitude",
         "longitude",

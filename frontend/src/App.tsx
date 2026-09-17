@@ -438,7 +438,7 @@ export function App() {
             <section className="primary-cards-grid">
               <div className="op-card risk-op-card">
                 <div className="op-card-header">
-                  <span className="op-card-title">MODELED RISK</span>
+                  <span className="op-card-title">MODELED RISK SCORE</span>
                   <span className="op-card-badge red">HIGHEST PRIORITY</span>
                 </div>
                 <div className="op-card-body">
@@ -457,7 +457,7 @@ export function App() {
 
               <div className="op-card weather-op-card">
                 <div className="op-card-header">
-                  <span className="op-card-title">LIVE WEATHER FEED</span>
+                  <span className="op-card-title">{rainfallData?.is_live ? 'LIVE WEATHER FEED' : 'WEATHER FEED'}</span>
                   <span className={`op-card-badge ${rainfallData?.is_live ? 'green' : 'amber'}`}>
                     {rainfallData?.is_live ? 'LIVE IMD FEED' : 'STALE / DEGRADED'}
                   </span>
@@ -556,14 +556,14 @@ export function App() {
 
                   <div className="detail-metrics-grid">
                     <div><span>24h Rainfall:</span> <strong>{activeDistrict.rain24h != null ? `${activeDistrict.rain24h} mm` : 'N/A'}</strong></div>
-                    <div><span>Soil Saturation:</span> <strong>{activeDistrict.soilSat}%</strong></div>
+                    <div><span>Terrain Slope:</span> <strong>{activeDistrict.slopeAngle != null ? `${activeDistrict.slopeAngle.toFixed(1)}°` : 'Unavailable'}</strong></div>
                     <div><span>Historical GSI Events:</span> <strong>{activeDistrict.gsiEvents}</strong></div>
                     <div><span>Model Source:</span> <strong>{activeDistrict.modelSource}</strong></div>
                   </div>
 
                   <div className="detail-actions">
                     <button className="action-button primary" onClick={broadcastWarning}>
-                      {broadcastStatus === 'broadcasting' ? '🔊 Stop Advisory' : '🔊 Broadcast Audio Advisory'}
+                      {broadcastStatus === 'broadcasting' ? '🔊 Stop Advisory' : '🔊 Listen to Advisory'}
                     </button>
                     <button className="action-button secondary" onClick={() => setActiveTab('Explainability')}>
                       Inspect Explainability (P8)

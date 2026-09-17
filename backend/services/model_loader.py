@@ -67,7 +67,7 @@ def load_active_model() -> Optional[Dict[str, Any]]:
             "features": features_list,
             "model_id": active_meta["model_id"],
             "model_version": active_meta.get("version", "1.0.0"),
-            "model_source": active_meta.get("model_source", "NexSolve leakage-free RF"),
+            "model_source": active_meta.get("model_source", "NexSolve Random Forest v1.1"),
             "feature_schema_version": active_meta.get("feature_schema_version", "v1"),
             "sha256": computed_sha,
             "artifact_path": str(artifact_path),
