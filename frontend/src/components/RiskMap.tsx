@@ -117,22 +117,8 @@ export default function RiskMap({
 
             if (isRainfallLayer) {
               const rain = district.rain24h
-              if (rain == null) {
-                color = '#9ca3af'
-                radius = 12
-              } else if (rain >= 150) {
-                color = '#ef4444'
-                radius = 24
-              } else if (rain >= 100) {
-                color = '#f97316'
-                radius = 20
-              } else if (rain >= 50) {
-                color = '#eab308'
-                radius = 16
-              } else {
-                color = '#3b82f6'
-                radius = 12
-              }
+              color = rain != null ? '#3b82f6' : '#9ca3af'
+              radius = 16
             } else if (isCorridorLayer) {
               color = '#38bdf8'
               radius = 16
@@ -142,6 +128,10 @@ export default function RiskMap({
               color = decisionLevel === 'RED' ? '#ef4444' : decisionLevel === 'ORANGE' ? '#f97316' : decisionLevel === 'YELLOW' ? '#eab308' : '#22c55e'
               radius = Math.max(12, Math.min(26, score / 3))
             }
+
+            const weatherStatusText = district.rain24h != null
+              ? (district.decision?.dataStatus || 'LIVE / STALE')
+              : 'UNAVAILABLE'
 
             return (
               <CircleMarker
@@ -158,10 +148,20 @@ export default function RiskMap({
                     <h4>{district.name}</h4>
                     <p className="popup-state">{district.state}</p>
                     <div className="popup-metrics">
-                      <div><span>Risk Score:</span> <strong>{district.riskScore != null ? district.riskScore : 'N/A'}</strong></div>
-                      <div><span>24h Rainfall:</span> <strong>{district.rain24h != null ? `${district.rain24h} mm` : 'Unavailable'}</strong></div>
-                      <div><span>Slope Angle:</span> <strong>{district.slopeAngle ? `${district.slopeAngle.toFixed(1)}°` : 'N/A'}</strong></div>
-                      <div><span>Point Type:</span> <strong>{district.decision?.riskLabel || 'Operational Node'}</strong></div>
+                      {isRainfallLayer ? (
+                        <>
+                          <div><span>24h Rainfall:</span> <strong>{district.rain24h != null ? `${district.rain24h} mm` : 'Unavailable'}</strong></div>
+                          <div><span>Weather Status:</span> <strong>{weatherStatusText}</strong></div>
+                          <div><span>Slope Angle:</span> <strong>{district.slopeAngle ? `${district.slopeAngle.toFixed(1)}°` : 'N/A'}</strong></div>
+                        </>
+                      ) : (
+                        <>
+                          <div><span>Risk Score:</span> <strong>{district.riskScore != null ? district.riskScore : 'N/A'}</strong></div>
+                          <div><span>24h Rainfall:</span> <strong>{district.rain24h != null ? `${district.rain24h} mm` : 'Unavailable'}</strong></div>
+                          <div><span>Slope Angle:</span> <strong>{district.slopeAngle ? `${district.slopeAngle.toFixed(1)}°` : 'N/A'}</strong></div>
+                          <div><span>Point Type:</span> <strong>{district.decision?.riskLabel || 'Operational Node'}</strong></div>
+                        </>
+                      )}
                     </div>
                   </div>
                 </Popup>
@@ -173,13 +173,10 @@ export default function RiskMap({
         <div className="map-floating-legend">
           {layer === 'Rainfall' ? (
             <>
-              <div className="legend-title">24h Rainfall (mm)</div>
+              <div className="legend-title">24h Rainfall (Precipitation)</div>
               <div className="legend-items">
-                <span className="legend-badge red">■ Heavy (&ge;150 mm)</span>
-                <span className="legend-badge orange">■ Substantial (&ge;100 mm)</span>
-                <span className="legend-badge yellow">■ Moderate (&ge;50 mm)</span>
-                <span className="legend-badge blue">■ Light (&lt;50 mm)</span>
-                <span className="legend-badge gray">■ Unavailable</span>
+                <span className="legend-badge blue">● Actual value shown per node</span>
+                <span className="legend-badge gray">● Unavailable when feed offline</span>
               </div>
             </>
           ) : layer === 'Road corridors' || layer === 'Corridor Nodes' ? (
