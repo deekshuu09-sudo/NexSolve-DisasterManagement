@@ -103,9 +103,9 @@ export default function SystemStatusSection({
           <div className="op-card-body">
             <div style={{ fontSize: '0.9rem', lineHeight: '1.4' }}>
               <div>Administrative Geometry: <strong>Survey of India ABDB GeoJSON</strong></div>
-              <div>Monitored Framework: <strong>{dashboardSummary?.monitored_districts_count ?? 131} Official Districts</strong></div>
+              <div>Official District Framework: <strong>{dashboardSummary?.monitored_districts_count ?? 131} Districts</strong></div>
               <div>Operational Risk Nodes: <strong>{dashboardSummary?.operational_nodes_count ?? 9} Locations</strong></div>
-              <div>Terrain Data: <strong>NASADEM ~30m DEM Terrain Slope</strong></div>
+              <div>Terrain Data: <strong>NASADEM ~30m · USGS/AWS archive</strong></div>
             </div>
           </div>
         </div>
@@ -123,7 +123,7 @@ export default function SystemStatusSection({
                 Decision thresholds: <strong>0.35 (Elevated) / 0.50 (Warning) / 0.75 (Emergency)</strong>. Modeled risk probability is decoupled from vulnerability scores.
               </p>
               <div className="subtext">
-                Broadcast status: <strong>{broadcastStatus === 'broadcasting' ? 'Audio Advisory Playing' : broadcastStatus === 'unavailable' ? 'Text-to-speech SpeechSynthesis unavailable in browser' : 'Idle'}</strong>
+                Advisory audio: <strong>{broadcastStatus === 'broadcasting' ? 'Audio Advisory Playing' : broadcastStatus === 'unavailable' ? 'Text-to-speech SpeechSynthesis unavailable in browser' : 'Idle'}</strong>
               </div>
             </div>
             <button className="action-button primary" onClick={broadcastWarning}>
@@ -136,7 +136,7 @@ export default function SystemStatusSection({
       <div className="provenance-disclaimer-note" style={{ padding: '1rem', borderRadius: '8px', background: 'rgba(239, 68, 68, 0.08)', border: '1px solid rgba(239, 68, 68, 0.2)' }}>
         <h4 style={{ color: 'var(--red, #ef4444)', marginTop: 0, marginBottom: '0.4rem' }}>⚠️ Decision Support Operational Disclaimer</h4>
         <p style={{ margin: 0, fontSize: '0.9rem', lineHeight: '1.5' }}>
-          <strong>NexSolve is an automated risk-intelligence decision-support framework.</strong> It does <strong>NOT</strong> autonomously issue official government warnings, public alerts, or evacuation orders. All model outputs, weather observations, and risk estimates require ground verification by authorized disaster management personnel (SDMA/NDRF) prior to operational decision deployment.
+          <strong>NexSolve is an automated risk-intelligence decision-support framework.</strong> It does <strong>NOT</strong> autonomously issue official government warnings, public alerts, or evacuation orders. All model outputs, weather observations, and risk estimates require ground verification by authorized disaster-management authorities prior to operational decision deployment.
         </p>
       </div>
     </section>
