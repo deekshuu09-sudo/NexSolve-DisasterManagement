@@ -49,138 +49,120 @@ export default function FieldIntelligenceSection({
     <section id="field-step" className="step-card field-layout-card">
       <div className="section-header">
         <div>
-          <h2>FIELD REPORTS</h2>
+          <h2>Field Incident Observations</h2>
           <p className="subtext">
-            Operational field observation submission & image quality screening portal
+            Submit and inspect field observation reports and image screening results
           </p>
         </div>
-        <button className="primary-button" onClick={() => setReportOpen(!reportOpen)}>
-          {reportOpen ? 'Close Form' : '+ Submit Field Incident'}
+        <button className="btn-primary" onClick={() => setReportOpen(!reportOpen)}>
+          {reportOpen ? 'Close Form' : '+ Submit Incident'}
         </button>
       </div>
 
       {reportOpen && (
-        <div className="report-form-container">
-          <h3>Submit Field Observation Report</h3>
-          <div className="form-grid">
-            <div className="form-group">
-              <label htmlFor="field-report-location">Location / Corridor Axis *</label>
+        <div style={{ background: 'var(--panel-subtle)', padding: '20px', borderRadius: '8px', border: '1px solid var(--panel-border)', marginBottom: '20px' }}>
+          <h3 style={{ fontSize: '1rem', fontWeight: 600, marginBottom: '16px' }}>Submit Field Report</h3>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '12px', marginBottom: '12px' }}>
+            <div>
+              <label htmlFor="field-report-location" style={{ fontSize: '0.78rem', fontWeight: 600, display: 'block', marginBottom: '4px' }}>Location / Corridor *</label>
               <input
                 id="field-report-location"
                 type="text"
                 value={reportLocation}
                 onChange={(e) => setReportLocation(e.target.value)}
-                placeholder="e.g. NH-306 Corridor, Champhai Axis"
+                placeholder="e.g. Champhai Axis"
+                style={{ width: '100%', height: '36px', padding: '0 10px', borderRadius: '6px', border: '1px solid var(--panel-border)', background: 'var(--panel-bg)', color: 'var(--text-primary)' }}
               />
             </div>
-            <div className="form-group inline-coords">
-              <div>
-                <label htmlFor="field-report-latitude">Latitude (Optional)</label>
+            <div style={{ display: 'flex', gap: '8px' }}>
+              <div style={{ flex: 1 }}>
+                <label htmlFor="field-report-latitude" style={{ fontSize: '0.78rem', fontWeight: 600, display: 'block', marginBottom: '4px' }}>Lat</label>
                 <input
                   id="field-report-latitude"
                   type="text"
                   value={reportLatitude}
                   onChange={(e) => setReportLatitude(e.target.value)}
                   placeholder="23.4756"
+                  style={{ width: '100%', height: '36px', padding: '0 10px', borderRadius: '6px', border: '1px solid var(--panel-border)', background: 'var(--panel-bg)', color: 'var(--text-primary)' }}
                 />
               </div>
-              <div>
-                <label htmlFor="field-report-longitude">Longitude (Optional)</label>
+              <div style={{ flex: 1 }}>
+                <label htmlFor="field-report-longitude" style={{ fontSize: '0.78rem', fontWeight: 600, display: 'block', marginBottom: '4px' }}>Lng</label>
                 <input
                   id="field-report-longitude"
                   type="text"
                   value={reportLongitude}
                   onChange={(e) => setReportLongitude(e.target.value)}
                   placeholder="93.3289"
+                  style={{ width: '100%', height: '36px', padding: '0 10px', borderRadius: '6px', border: '1px solid var(--panel-border)', background: 'var(--panel-bg)', color: 'var(--text-primary)' }}
                 />
               </div>
             </div>
-            <div className="form-group full-width">
-              <label htmlFor="field-report-description">Field Observations & Description *</label>
-              <textarea
-                id="field-report-description"
-                rows={3}
-                value={reportDescription}
-                onChange={(e) => setReportDescription(e.target.value)}
-                placeholder="Describe slope movement, road blockages, mud accumulation, or structural impacts..."
-              />
-            </div>
-            <div className="form-group full-width">
-              <label htmlFor="field-report-image">Incident Photograph (Image Quality Screening)</label>
-              <input id="field-report-image" type="file" accept="image/*" onChange={handleImageChange} />
-              {imageLoading && <p className="status-text">Analyzing image quality & resolution...</p>}
-              {imageError && <p className="error-text">{imageError}</p>}
-              {reportImagePreview && (
-                <div className="image-preview-wrapper">
-                  <img src={reportImagePreview} alt="Incident Upload Preview" className="uploaded-preview-img" />
-                </div>
-              )}
-              {imageAnalysis && (
-                <div className="image-analysis-badge-card">
-                  <div className="analysis-title">AI-Assisted Image Screening Result</div>
-                  <div>Quality: <strong>{imageAnalysis.imageQuality}</strong></div>
-                  <div>Content Category: <strong>{imageAnalysis.contentCategory || 'Photo'}</strong></div>
-                  <div>Accepted: <strong>{imageAnalysis.imageAccepted ? 'YES' : 'NO'}</strong></div>
-                  <p className="note-text">
-                    Note: Image quality screening checks exposure and focus. Landslide classification requires a validated vision model.
-                  </p>
-                </div>
-              )}
-            </div>
           </div>
-          <div className="form-actions">
-            <button
-              className="submit-button"
-              disabled={reportSubmitting || !reportLocation.trim() || !reportDescription.trim()}
-              onClick={submitReport}
-            >
-              {reportSubmitting ? 'Submitting Report…' : 'Submit Field Report'}
-            </button>
+          <div style={{ marginBottom: '12px' }}>
+            <label htmlFor="field-report-description" style={{ fontSize: '0.78rem', fontWeight: 600, display: 'block', marginBottom: '4px' }}>Field Observations *</label>
+            <textarea
+              id="field-report-description"
+              rows={3}
+              value={reportDescription}
+              onChange={(e) => setReportDescription(e.target.value)}
+              placeholder="Describe slope movement, road blockages, or structural impacts..."
+              style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid var(--panel-border)', background: 'var(--panel-bg)', color: 'var(--text-primary)' }}
+            />
           </div>
+          <div style={{ marginBottom: '16px' }}>
+            <label htmlFor="field-report-image" style={{ fontSize: '0.78rem', fontWeight: 600, display: 'block', marginBottom: '4px' }}>Incident Photograph (Quality Screening)</label>
+            <input id="field-report-image" type="file" accept="image/*" onChange={handleImageChange} style={{ fontSize: '0.85rem' }} />
+            {imageLoading && <p className="subtext" style={{ marginTop: '4px' }}>Screening image quality...</p>}
+            {imageError && <p style={{ color: 'var(--red)', fontSize: '0.8rem', marginTop: '4px' }}>{imageError}</p>}
+            {reportImagePreview && (
+              <div style={{ marginTop: '10px' }}>
+                <img src={reportImagePreview} alt="Incident Preview" style={{ maxHeight: '140px', borderRadius: '6px', border: '1px solid var(--panel-border)' }} />
+                <span className="subtext" style={{ display: 'block', marginTop: '4px' }}>Attached: {reportImage?.name}</span>
+              </div>
+            )}
+            {imageAnalysis && (
+              <div style={{ marginTop: '8px', padding: '10px', background: 'var(--panel-bg)', borderRadius: '6px', border: '1px solid var(--panel-border)', fontSize: '0.82rem' }}>
+                <div>Quality: <strong>{imageAnalysis.imageQuality}</strong> · Accepted: <strong>{imageAnalysis.imageAccepted ? 'YES' : 'NO'}</strong></div>
+              </div>
+            )}
+          </div>
+          <button
+            className="btn-primary"
+            disabled={reportSubmitting || !reportLocation.trim() || !reportDescription.trim()}
+            onClick={submitReport}
+          >
+            {reportSubmitting ? 'Submitting…' : 'Submit Report'}
+          </button>
         </div>
       )}
 
       {reportResult && (
-        <div className="report-result-card">
-          <h4>Report Submission Result</h4>
-          <div className="result-grid">
-            <div><span>Status:</span> <strong>{reportResult.verificationStatus || 'SUBMITTED'}</strong></div>
-            <div><span>Image:</span> <strong>{reportImage ? 'RECEIVED' : 'NOT PROVIDED'}</strong></div>
-            <div><span>Image Quality:</span> <strong>{reportResult.imageQuality || 'Screened'}</strong></div>
-            <div><span>Landslide Classification:</span> <strong>{reportResult.landslideClassification || 'NOT AVAILABLE'}</strong></div>
-            <div><span>Confidence:</span> <strong>{reportResult.verificationConfidence != null ? `${(reportResult.verificationConfidence * 100).toFixed(0)}%` : 'N/A'}</strong></div>
-            <div><span>Severity:</span> <strong>{reportResult.severity || 'UNKNOWN'}</strong></div>
-          </div>
-          <div className="result-action">
-            <strong>Recommended Response:</strong> {reportResult.recommendedAction || 'Record filed in operational log.'}
+        <div style={{ padding: '16px', borderRadius: '8px', background: 'var(--panel-subtle)', border: '1px solid var(--panel-border)', marginBottom: '20px' }}>
+          <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '8px' }}>Submission Status</h4>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '8px', fontSize: '0.82rem' }}>
+            <div>Status: <strong>{reportResult.verificationStatus || 'SUBMITTED'}</strong></div>
+            <div>Image Quality: <strong>{reportResult.imageQuality || 'Screened'}</strong></div>
+            <div>Severity: <strong>{reportResult.severity || 'UNKNOWN'}</strong></div>
           </div>
         </div>
       )}
 
-      <div className="submitted-feed">
-        <h4>Recent Field Reports ({submittedReports.length})</h4>
+      <div>
+        <h4 style={{ fontSize: '0.95rem', fontWeight: 600, marginBottom: '12px' }}>Recent Reports ({submittedReports.length})</h4>
         {submittedReports.length === 0 ? (
-          <div className="empty-reports-panel">
-            <div className="empty-panel-icon">📝</div>
-            <div className="empty-panel-title">No field reports yet</div>
-            <p className="empty-panel-desc">
-              Submit a field observation with location, description, and optional image evidence using the button above.
-            </p>
-            <span className="empty-panel-sub">Reports submitted during this session will appear here.</span>
+          <div style={{ textAlign: 'center', padding: '32px', background: 'var(--panel-subtle)', borderRadius: '8px', border: '1px solid var(--panel-border)' }}>
+            <p className="subtext">No field reports submitted in this session.</p>
           </div>
         ) : (
-          <div className="reports-list">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
             {submittedReports.map((report, idx) => (
-              <div key={report.id || idx} className="report-item-card">
-                <div className="report-header">
-                  <strong>{report.location}</strong>
-                  <span className="report-time">{new Date(report.timestamp || Date.now()).toLocaleTimeString()}</span>
+              <div key={report.id || idx} style={{ padding: '12px 16px', background: 'var(--panel-subtle)', borderRadius: '6px', border: '1px solid var(--panel-border)' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
+                  <strong style={{ fontSize: '0.88rem' }}>{report.location}</strong>
+                  <span className="subtext">{new Date(report.timestamp || Date.now()).toLocaleTimeString()}</span>
                 </div>
-                <p className="report-desc">{report.description}</p>
-                <div className="report-tags">
-                  <span className="tag">Quality: {report.imageQuality || 'Screened'}</span>
-                  <span className="tag">Classification: {report.landslideClassification || 'NOT AVAILABLE'}</span>
-                </div>
+                <p style={{ fontSize: '0.82rem', color: 'var(--text-secondary)' }}>{report.description}</p>
               </div>
             ))}
           </div>

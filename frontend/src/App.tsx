@@ -28,7 +28,6 @@ const navItems: NavMenuItem[] = [
     menu: [
       { title: 'Vulnerability', description: 'District exposure & vulnerability scores', target: 'vuln-step' },
       { title: 'Explainability', description: 'Model factor decomposition & risk signals', target: 'xai-step' },
-      { title: 'Operational Dashboard', description: 'Priority alerts & decision support queue', target: 'alerts-step' },
       { title: 'System Status & Advisory', description: 'Audio advisory & API connectivity', target: 'response-step' },
     ],
   },
@@ -36,9 +35,8 @@ const navItems: NavMenuItem[] = [
 
 function SectionSkeleton({ title }: { title: string }) {
   return (
-    <div className="step-card card-skeleton-box">
-      <div className="skeleton-line title-line" />
-      <div className="skeleton-text">Loading {title}...</div>
+    <div className="step-card card-skeleton-box" style={{ padding: '32px', textAlign: 'center' }}>
+      <div className="subtext">Loading {title}...</div>
     </div>
   )
 }
@@ -121,7 +119,7 @@ export function App() {
       )
     } catch {
       setRiskPrediction(null)
-      setRiskError('Live risk prediction unavailable; showing the district feed result.')
+      setRiskError('Live risk prediction unavailable; showing district feed result.')
     } finally {
       setRiskLoading(false)
     }
@@ -141,10 +139,10 @@ export function App() {
       setForecast(forecastResponse.value.forecast)
       setForecastSource(forecastResponse.value.source)
       setForecastLive(forecastResponse.value.is_live)
-      setForecastError(forecastResponse.value.is_live ? null : 'Forecast source unavailable — showing latest available IMD data.')
+      setForecastError(forecastResponse.value.is_live ? null : 'Forecast source unavailable.')
     } else {
       setForecast([])
-      setForecastError('Forecast source unavailable — showing latest available IMD data.')
+      setForecastError('Forecast source unavailable.')
     }
     setForecastLoading(false)
   }
@@ -168,13 +166,13 @@ export function App() {
 
     let speechText = ''
     if (level === 'RED') {
-      speechText = `NexSolve decision support notice for ${districtName}. Current modeled risk score is ${score} out of 100. Decision status: Red, emergency level decision.`
+      speechText = `NexSolve notice for ${districtName}. Current risk score is ${score} out of 100. Status: Emergency level.`
     } else if (level === 'ORANGE') {
-      speechText = `NexSolve decision support notice for ${districtName}. Current modeled risk score is ${score} out of 100. Decision status: Orange, warning level.`
+      speechText = `NexSolve notice for ${districtName}. Current risk score is ${score} out of 100. Status: Warning level.`
     } else if (level === 'YELLOW') {
-      speechText = `NexSolve decision support notice for ${districtName}. Current modeled risk score is ${score} out of 100. Decision status: Yellow, elevated.`
+      speechText = `NexSolve notice for ${districtName}. Current risk score is ${score} out of 100. Status: Elevated level.`
     } else {
-      speechText = `NexSolve decision support notice for ${districtName}. Current modeled risk score is ${score} out of 100. Decision status: Green, nominal.`
+      speechText = `NexSolve notice for ${districtName}. Current risk score is ${score} out of 100. Status: Nominal.`
     }
 
     try {
@@ -249,7 +247,6 @@ export function App() {
     document.documentElement.dataset.theme = theme
   }, [theme])
 
-  // Initial non-blocking shell mount — immediately renders static UI, then initiates background warm-up & health probe
   useEffect(() => {
     const defaultDistrict = fallbackDistricts.find((d) => d.id === 'champhai') || fallbackDistricts[0]
     if (defaultDistrict && !selectedDistrictId) {
@@ -258,7 +255,6 @@ export function App() {
     void handleWarmupAndRefresh(false)
   }, [])
 
-  // Lazy-load full district dataset on demand when user opens Risk Map
   useEffect(() => {
     if (activeTab === 'Risk Map') {
       getJSON<{ data: District[] }>('/api/districts')
@@ -267,7 +263,6 @@ export function App() {
     }
   }, [activeTab])
 
-  // Lazy-load district signals when selected district changes
   useEffect(() => {
     if (!selectedDistrictId) return
     const selected = districts.find((d) => d.id === selectedDistrictId)
@@ -325,7 +320,7 @@ export function App() {
         setImageAnalysis(data)
       })
       .catch(() => {
-        setImageError('Image screening service unavailable; file will be submitted for manual review.')
+        setImageError('Image screening service unavailable; report queued for manual review.')
         setImageAnalysis(null)
       })
       .finally(() => {
@@ -364,7 +359,7 @@ export function App() {
         verificationConfidence: null,
         severity: 'UNKNOWN',
         landslideClassification: 'NOT AVAILABLE',
-        recommendedAction: 'Unable to contact verification service. Report queued locally.',
+        recommendedAction: 'Report queued locally.',
       })
     } finally {
       setReportSubmitting(false)
@@ -382,6 +377,26 @@ export function App() {
     else setActiveTab('Overview')
   }
 
+  const getDistrictStatusBadgeClass = (district: District | null) => {
+    if (!district) return 'green'
+    const level = district.decision?.riskLevel
+    const score = district.riskScore ?? 0
+    if (level === 'RED' || score >= 75) return 'red'
+    if (level === 'ORANGE' || score >= 50) return 'orange'
+    if (level === 'YELLOW' || score >= 35) return 'yellow'
+    return 'green'
+  }
+
+  const getDistrictStatusLabel = (district: District | null) => {
+    if (!district) return 'NOMINAL'
+    const level = district.decision?.riskLevel
+    const score = district.riskScore ?? 0
+    if (level === 'RED' || score >= 75) return 'EMERGENCY'
+    if (level === 'ORANGE' || score >= 50) return 'WARNING'
+    if (level === 'YELLOW' || score >= 35) return 'ELEVATED'
+    return 'NOMINAL'
+  }
+
   return (
     <div className="app-shell">
       {/* Top Header Navigation */}
@@ -391,13 +406,14 @@ export function App() {
             <span className="brand-mark">N</span>
             <div className="brand-text">
               <span className="brand-title">NexSolve</span>
-              <span className="brand-subtitle">Disaster Management Risk Intelligence</span>
+              <span className="brand-subtitle">Risk Intelligence</span>
             </div>
           </div>
         </div>
 
         <NavbarMenu
           items={navItems}
+          activeTab={activeTab}
           openLabel={navOpen}
           onOpenChange={(l) => setNavOpen(l)}
           onNavigate={(target) => handleNavClick(target)}
@@ -405,7 +421,7 @@ export function App() {
 
         <div className="topbar-right">
           <select value={region} onChange={(e) => setRegion(e.target.value)} className="region-select">
-            <option value="All North Eastern Region (NER)">All North Eastern Region (NER)</option>
+            <option value="All North Eastern Region (NER)">All NER</option>
             <option value="Mizoram">Mizoram</option>
             <option value="Manipur">Manipur</option>
             <option value="Meghalaya">Meghalaya</option>
@@ -418,17 +434,11 @@ export function App() {
 
           <div className={`status-pill ${connectionState.toLowerCase()}`}>
             <span className="status-dot" />
-            {connectionState === 'CONNECTING'
-              ? 'CONNECTING TO LIVE SERVICES…'
-              : connectionState === 'LIVE'
-              ? 'SYSTEM READY'
-              : connectionState === 'DEGRADED'
-              ? 'LIVE SERVICES DEGRADED'
-              : 'LIVE SERVICES UNREACHABLE'}
+            {connectionState === 'LIVE' ? 'LIVE' : connectionState === 'CONNECTING' ? 'CONNECTING' : 'DEGRADED'}
           </div>
 
           <button className="refresh-button" disabled={refreshing} onClick={() => void handleWarmupAndRefresh(true)}>
-            {refreshing ? 'Updating…' : lastUpdated ? `Last live update ${lastUpdated}` : 'Refresh data'}
+            {refreshing ? 'Updating…' : lastUpdated ? lastUpdated : 'Refresh'}
           </button>
 
           <button className="theme-toggle" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
@@ -437,210 +447,192 @@ export function App() {
         </div>
       </header>
 
-      {connectionState === 'CONNECTING' && (
-        <div className="connection-banner connecting">
-          <span className="banner-spinner" />
-          <span>Connecting to live risk services… (Render cold start in progress)</span>
-        </div>
-      )}
-
-      {connectionState === 'DEGRADED' && (
-        <div className="connection-banner degraded">
-          <span>Live backend services are temporarily degraded. Static intelligence remains available.</span>
-          <button className="banner-retry-btn" onClick={() => void handleWarmupAndRefresh(true)}>
-            Retry Connection
-          </button>
-        </div>
-      )}
-
       <main className="main-content">
         {/* VIEW 1: OVERVIEW DASHBOARD */}
         {activeTab === 'Overview' && (
           <div className="overview-view">
-            <section className="hero-compact">
-              <h1>LANDSLIDE RISK INTELLIGENCE</h1>
-              <p className="hero-subtext">NER · 8 states · 131 official districts</p>
-            </section>
-
-            {/* 4 Primary Above-the-Fold Operational Cards */}
-            <section className="primary-cards-grid">
-              <div className="op-card risk-op-card">
-                <div className="op-card-header">
-                  <span className="op-card-title">MODELED RISK SCORE</span>
-                  <span className={`op-card-badge ${
-                    !highestRiskDistrict
-                      ? 'green'
-                      : (highestRiskDistrict.decision?.riskLevel === 'RED' || (highestRiskDistrict.riskScore ?? 0) >= 75)
-                      ? 'red'
-                      : (highestRiskDistrict.decision?.riskLevel === 'ORANGE' || (highestRiskDistrict.riskScore ?? 0) >= 50)
-                      ? 'amber'
-                      : (highestRiskDistrict.decision?.riskLevel === 'YELLOW' || (highestRiskDistrict.riskScore ?? 0) >= 35)
-                      ? 'amber'
-                      : 'green'
-                  }`}>
-                    {!highestRiskDistrict
-                      ? 'NOMINAL'
-                      : (highestRiskDistrict.decision?.riskLevel === 'RED' || (highestRiskDistrict.riskScore ?? 0) >= 75)
-                      ? 'EMERGENCY'
-                      : (highestRiskDistrict.decision?.riskLevel === 'ORANGE' || (highestRiskDistrict.riskScore ?? 0) >= 50)
-                      ? 'WARNING'
-                      : (highestRiskDistrict.decision?.riskLevel === 'YELLOW' || (highestRiskDistrict.riskScore ?? 0) >= 35)
-                      ? 'ELEVATED'
-                      : 'NOMINAL'}
+            {/* Minimal High-Visibility Executive Summary Metrics Strip */}
+            <div className="metrics-summary-strip">
+              <div className="summary-metric-card">
+                <div className="metric-header">
+                  <span className="metric-kicker">HIGHEST RISK NODE</span>
+                  <span className={`risk-badge level-${getDistrictStatusBadgeClass(highestRiskDistrict)}`}>
+                    {getDistrictStatusLabel(highestRiskDistrict)}
                   </span>
                 </div>
-                <div className="op-card-body">
-                  <div className="op-stat-large">{highestRiskDistrict?.riskScore ?? 'N/A'}</div>
-                  <div className="op-stat-label">{highestRiskDistrict?.name || 'Champhai Axis'}</div>
-                  <p className="op-stat-desc">
-                    Modeled risk score ({highestRiskDistrict?.riskScore ?? 'N/A'} / 100) evaluated against P6 production decision threshold.
-                  </p>
-                </div>
-                <div className="op-card-footer">
-                  <button className="text-action-link" onClick={() => setActiveTab('Risk Map')}>
-                    View on Risk Map &rarr;
-                  </button>
-                </div>
+                <div className="metric-val-large">{highestRiskDistrict?.riskScore ?? 0} <span style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>/ 100</span></div>
+                <div className="metric-sub-label">{highestRiskDistrict?.name || 'Champhai Axis'}</div>
               </div>
 
-              <div className="op-card weather-op-card">
-                <div className="op-card-header">
-                  <span className="op-card-title">{rainfallData?.is_live ? 'LIVE WEATHER FEED' : 'WEATHER FEED'}</span>
-                  <span className={`op-card-badge ${rainfallData?.is_live ? 'green' : 'amber'}`}>
-                    {rainfallData?.is_live ? 'LIVE WEATHER FEED' : 'STALE / DEGRADED'}
+              <div className="summary-metric-card">
+                <div className="metric-header">
+                  <span className="metric-kicker">24H PEAK RAINFALL</span>
+                  <span className={`risk-badge ${rainfallData?.is_live ? 'level-green' : 'level-yellow'}`}>
+                    {rainfallData?.is_live ? 'LIVE FEED' : 'DEGRADED'}
                   </span>
                 </div>
-                <div className="op-card-body">
-                  <div className="op-stat-large">{rainfallData?.rainfall_24h ?? activeDistrict?.rain24h ?? 'N/A'} mm</div>
-                  <div className="op-stat-label">24h Peak Rainfall (Max Across Nodes)</div>
-                  <p className="op-stat-desc">
-                    Source: {rainfallData?.source || 'Open-Meteo current/hourly precipitation'}. No historical substitution when live feeds disconnect.
-                  </p>
-                </div>
-                <div className="op-card-footer">
-                  <button className="text-action-link" onClick={() => setActiveTab('Forecast')}>
-                    View 72H Forecast &rarr;
-                  </button>
-                </div>
+                <div className="metric-val-large">{rainfallData?.rainfall_24h ?? activeDistrict?.rain24h ?? 0} <span style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>mm</span></div>
+                <div className="metric-sub-label">{rainfallData?.source || 'Open-Meteo API'}</div>
               </div>
 
-              <div className="op-card corridors-op-card">
-                <div className="op-card-header">
-                  <span className="op-card-title">ROAD CORRIDORS</span>
-                  <span className="op-card-badge blue">MoRTH REGISTRY</span>
+              <div className="summary-metric-card">
+                <div className="metric-header">
+                  <span className="metric-kicker">ROAD CORRIDORS</span>
+                  <span className="risk-badge level-blue">MoRTH REGISTRY</span>
                 </div>
-                <div className="op-card-body">
-                  <div className="corridor-mini-list">
+                <div className="metric-val-large">4 <span style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>AXES</span></div>
+                <div className="metric-sub-label">2 Blocked · 1 Restricted · 1 Open</div>
+              </div>
+
+              <div className="summary-metric-card">
+                <div className="metric-header">
+                  <span className="metric-kicker">SPATIAL COVERAGE</span>
+                  <span className="risk-badge level-green">SoI ABDB</span>
+                </div>
+                <div className="metric-val-large">131 <span style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>DISTRICTS</span></div>
+                <div className="metric-sub-label">9 Operational Nodes · 16 Profiled</div>
+              </div>
+            </div>
+
+            {/* Structured 2-Column Operational Grid */}
+            <div className="overview-dashboard-grid">
+              <div className="overview-main-panel">
+                {/* Operational Nodes Table */}
+                <div className="panel-box">
+                  <div className="panel-box-header">
+                    <h3>Operational Locations ({filteredDistricts.length})</h3>
+                    <span className="subtext">Click row to inspect signals</span>
+                  </div>
+                  <table className="node-table">
+                    <thead>
+                      <tr>
+                        <th>Location & State</th>
+                        <th>24h Rain</th>
+                        <th>Slope</th>
+                        <th>GSI Events</th>
+                        <th>Risk Score</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {filteredDistricts.map((d) => (
+                        <tr
+                          key={d.id}
+                          className={selectedDistrictId === d.id ? 'selected' : ''}
+                          onClick={() => setSelectedDistrictId(d.id)}
+                        >
+                          <td>
+                            <div className="node-name-cell">{d.name}</div>
+                            <div className="node-state-sub">{d.state}</div>
+                          </td>
+                          <td>{d.rain24h != null ? `${d.rain24h} mm` : 'N/A'}</td>
+                          <td>{d.slopeAngle != null ? `${d.slopeAngle.toFixed(1)}°` : 'N/A'}</td>
+                          <td>{d.gsiEvents}</td>
+                          <td>
+                            <span className={`risk-badge level-${getDistrictStatusBadgeClass(d)}`}>
+                              {getDistrictStatusLabel(d)} ({d.riskScore ?? 0})
+                            </span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+
+                {/* Active District Inspector */}
+                {activeDistrict && (
+                  <div className="district-inspector-card">
+                    <div className="inspector-header">
+                      <div className="inspector-title-group">
+                        <h3>{activeDistrict.name} — {activeDistrict.state}</h3>
+                        <div className="inspector-sub">
+                          {activeDistrict.lat.toFixed(4)}°N, {activeDistrict.lng.toFixed(4)}°E · Slope {activeDistrict.slopeAngle.toFixed(1)}°
+                        </div>
+                      </div>
+                      <span className={`risk-badge level-${getDistrictStatusBadgeClass(activeDistrict)}`}>
+                        {getDistrictStatusLabel(activeDistrict)} ({activeDistrict.riskScore ?? 0})
+                      </span>
+                    </div>
+
+                    <div className="inspector-metrics-grid">
+                      <div className="inspector-metric-item">
+                        <span>24h Rainfall</span>
+                        <strong>{activeDistrict.rain24h != null ? `${activeDistrict.rain24h} mm` : 'N/A'}</strong>
+                      </div>
+                      <div className="inspector-metric-item">
+                        <span>Terrain Slope</span>
+                        <strong>{activeDistrict.slopeAngle != null ? `${activeDistrict.slopeAngle.toFixed(1)}°` : 'N/A'}</strong>
+                      </div>
+                      <div className="inspector-metric-item">
+                        <span>Historical GSI Events</span>
+                        <strong>{activeDistrict.gsiEvents}</strong>
+                      </div>
+                      <div className="inspector-metric-item">
+                        <span>Model Source</span>
+                        <strong>{activeDistrict.modelSource && activeDistrict.modelSource !== 'uninitialized' && activeDistrict.modelSource !== 'Loading…' ? activeDistrict.modelSource : activeModelMeta ? `Random Forest v${activeModelMeta.version}` : modelReadinessState === 'LOADING' ? 'Loading…' : 'Unavailable'}</strong>
+                      </div>
+                    </div>
+
+                    <div className="inspector-actions">
+                      <button className="btn-primary" onClick={broadcastWarning}>
+                        {broadcastStatus === 'broadcasting' ? '🔊 Stop Audio Advisory' : '🔊 Listen to Advisory'}
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Side Panels Column */}
+              <div className="overview-side-panel">
+                {/* Road Corridors Panel */}
+                <div className="panel-box">
+                  <div className="panel-box-header">
+                    <h3>Road Corridors</h3>
+                    <span className="subtext">MoRTH Registry</span>
+                  </div>
+                  <div className="corridor-list">
                     {corridors.slice(0, 4).map((c) => (
-                      <div key={c.code} className="mini-corridor-row">
-                        <span className="corridor-code">{c.code}</span>
-                        <span className="corridor-name">{c.name}</span>
+                      <div key={c.code} className="corridor-row">
+                        <div>
+                          <span className="corridor-code">{c.code}</span>
+                          <span className="corridor-name">{c.name}</span>
+                        </div>
+                        <span className={`corridor-status-tag ${c.status.toLowerCase()}`}>
+                          {c.status}
+                        </span>
                       </div>
                     ))}
                   </div>
                 </div>
-                <div className="op-card-footer">
-                  <span className="provenance-note">Verified MoRTH Arterial Axes</span>
+
+                {/* Spatial Framework Intelligence */}
+                <div className="panel-box">
+                  <div className="panel-box-header">
+                    <h3>Spatial Framework</h3>
+                    <span className="subtext">SoI ABDB</span>
+                  </div>
+                  <div style={{ padding: '16px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px', fontSize: '0.85rem' }}>
+                      <span style={{ color: 'var(--text-muted)' }}>Official Districts</span>
+                      <strong>{dashboardSummary?.monitored_districts_count ?? 131}</strong>
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px', fontSize: '0.85rem' }}>
+                      <span style={{ color: 'var(--text-muted)' }}>Operational Risk Nodes</span>
+                      <strong>{dashboardSummary?.operational_nodes_count ?? 9}</strong>
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem' }}>
+                      <span style={{ color: 'var(--text-muted)' }}>Profiled Exposure</span>
+                      <strong>16 / 131 Profiled</strong>
+                    </div>
+                  </div>
                 </div>
               </div>
-
-              <div className="op-card coverage-op-card">
-                <div className="op-card-header">
-                  <span className="op-card-title">SPATIAL COVERAGE</span>
-                  <span className="op-card-badge green">SoI AUTHORITATIVE</span>
-                </div>
-                <div className="op-card-body">
-                  <div className="coverage-metrics-stack">
-                    <div>
-                      <strong className="coverage-num">{dashboardSummary?.monitored_districts_count ?? 131}</strong>
-                      <span className="coverage-label">Official districts in framework</span>
-                    </div>
-                    <div>
-                      <strong className="coverage-num">{dashboardSummary?.operational_nodes_count ?? 9}</strong>
-                      <span className="coverage-label">Operational risk locations</span>
-                    </div>
-                    <div>
-                      <strong className="coverage-num">16 / 131 profiled</strong>
-                      <span className="coverage-label">8 full / 8 partial / 115 insufficient data</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="op-card-footer">
-                  <span className="provenance-note">Survey of India ABDB Database</span>
-                </div>
-              </div>
-            </section>
-
-            {/* Quick District Selector & Operational Summary */}
-            <section className="overview-summary-section">
-              <div className="section-title-bar">
-                <h3>Operational Location Summary ({filteredDistricts.length})</h3>
-                <div className="district-pills">
-                  {filteredDistricts.map((d) => (
-                    <button
-                      key={d.id}
-                      className={`district-pill ${selectedDistrictId === d.id ? 'selected' : ''}`}
-                      onClick={() => setSelectedDistrictId(d.id)}
-                    >
-                      {d.name} ({d.riskScore ?? 'N/A'})
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {activeDistrict && (
-                <div className="active-district-detail-card">
-                  <div className="detail-header">
-                    <div>
-                      <h4>{activeDistrict.name} — {activeDistrict.state}</h4>
-                      <p className="subtext">Coordinates: {activeDistrict.lat.toFixed(4)}°N, {activeDistrict.lng.toFixed(4)}°E | Slope: {activeDistrict.slopeAngle.toFixed(1)}°</p>
-                    </div>
-                    <div className="detail-badges">
-                      <span className={`risk-badge level-${(
-                        activeDistrict.decision?.riskLevel || (
-                          (activeDistrict.riskScore ?? 0) >= 75 ? 'RED' :
-                          (activeDistrict.riskScore ?? 0) >= 50 ? 'ORANGE' :
-                          (activeDistrict.riskScore ?? 0) >= 35 ? 'YELLOW' : 'GREEN'
-                        )
-                      ).toLowerCase()}`}>
-                        {activeDistrict.decision?.riskLevel === 'RED' || (activeDistrict.riskScore ?? 0) >= 75
-                          ? 'EMERGENCY'
-                          : activeDistrict.decision?.riskLevel === 'ORANGE' || (activeDistrict.riskScore ?? 0) >= 50
-                          ? 'WARNING'
-                          : activeDistrict.decision?.riskLevel === 'YELLOW' || (activeDistrict.riskScore ?? 0) >= 35
-                          ? 'ELEVATED'
-                          : 'NOMINAL'} ({activeDistrict.riskScore ?? 'N/A'})
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="detail-metrics-grid">
-                    <div><span>24h Rainfall (At {activeDistrict.name}):</span> <strong>{activeDistrict.rain24h != null ? `${activeDistrict.rain24h} mm` : 'N/A'}</strong></div>
-                    <div><span>Terrain Slope:</span> <strong>{activeDistrict.slopeAngle != null ? `${activeDistrict.slopeAngle.toFixed(1)}°` : 'Unavailable'}</strong></div>
-                    <div><span>Historical GSI Events:</span> <strong>{activeDistrict.gsiEvents} (Historical Inventory)</strong></div>
-                    <div><span>Model Source:</span> <strong>{activeDistrict.modelSource && activeDistrict.modelSource !== 'uninitialized' && activeDistrict.modelSource !== 'Loading…' ? activeDistrict.modelSource : activeModelMeta ? `Random Forest v${activeModelMeta.version}` : modelReadinessState === 'LOADING' ? 'Loading…' : 'Unavailable'}</strong></div>
-                  </div>
-
-                  <div className="detail-actions">
-                    <button className="action-button primary" onClick={broadcastWarning}>
-                      {broadcastStatus === 'broadcasting' ? '🔊 Stop Advisory' : '🔊 Listen to Advisory'}
-                    </button>
-                    <button className="action-button secondary" onClick={() => setActiveTab('Explainability')}>
-                      Inspect Explainability
-                    </button>
-                    <button className="action-button secondary" onClick={() => setActiveTab('Vulnerability')}>
-                      Inspect Exposure Profile
-                    </button>
-                  </div>
-                </div>
-              )}
-            </section>
+            </div>
           </div>
         )}
 
         {/* VIEW 2: RISK MAP */}
         {activeTab === 'Risk Map' && (
-          <Suspense fallback={<SectionSkeleton title="Risk Map GIS Engine" />}>
+          <Suspense fallback={<SectionSkeleton title="Risk Map" />}>
             <RiskMap
               districts={filteredDistricts}
               corridors={corridors}
@@ -656,7 +648,7 @@ export function App() {
 
         {/* VIEW 3: FORECAST */}
         {activeTab === 'Forecast' && (
-          <Suspense fallback={<SectionSkeleton title="72H Risk Forecast" />}>
+          <Suspense fallback={<SectionSkeleton title="Risk Forecast" />}>
             <ForecastSection
               activeDistrict={activeDistrict}
               forecast={forecast}
@@ -670,7 +662,7 @@ export function App() {
 
         {/* VIEW 4: FIELD REPORTS */}
         {activeTab === 'Field Reports' && (
-          <Suspense fallback={<SectionSkeleton title="Field Reports Portal" />}>
+          <Suspense fallback={<SectionSkeleton title="Field Reports" />}>
             <FieldIntelligenceSection
               reportOpen={reportOpen}
               setReportOpen={setReportOpen}
@@ -696,23 +688,23 @@ export function App() {
           </Suspense>
         )}
 
-        {/* VIEW 5: VULNERABILITY (P7C) */}
+        {/* VIEW 5: VULNERABILITY */}
         {activeTab === 'Vulnerability' && (
           <Suspense fallback={<SectionSkeleton title="Vulnerability Profiles" />}>
             <VulnerabilitySection activeDistrict={activeDistrict} exposureRecord={exposureRecord} />
           </Suspense>
         )}
 
-        {/* VIEW 6: EXPLAINABILITY (P8) */}
+        {/* VIEW 6: EXPLAINABILITY */}
         {activeTab === 'Explainability' && (
-          <Suspense fallback={<SectionSkeleton title="Explainable AI" />}>
+          <Suspense fallback={<SectionSkeleton title="Explainability" />}>
             <ExplainabilitySection activeDistrict={activeDistrict} riskPrediction={riskPrediction} riskLoading={riskLoading} riskError={riskError} />
           </Suspense>
         )}
 
         {/* VIEW 7: SYSTEM STATUS & ADVISORY */}
         {activeTab === 'System Status' && (
-          <Suspense fallback={<SectionSkeleton title="System Status & Advisory" />}>
+          <Suspense fallback={<SectionSkeleton title="System Status" />}>
             <SystemStatusSection
               connectionState={connectionState}
               activeModelMeta={activeModelMeta}

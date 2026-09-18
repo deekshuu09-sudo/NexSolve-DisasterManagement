@@ -12,22 +12,30 @@ export type NavMenuItem = {
 
 type NavbarMenuProps = {
   items: NavMenuItem[]
+  activeTab: string
   openLabel: string | null
   onOpenChange: (label: string | null) => void
   onNavigate: (target: string) => void
 }
 
-export function NavbarMenu({ items, openLabel, onOpenChange, onNavigate }: NavbarMenuProps) {
+export function NavbarMenu({ items, activeTab, openLabel, onOpenChange, onNavigate }: NavbarMenuProps) {
   return (
     <nav className="topbar-nav" aria-label="Primary navigation">
       {items.map((item) => {
         const hasMenu = Boolean(item.menu?.length)
+        const isItemActive =
+          item.label === activeTab ||
+          (hasMenu && item.menu!.some((m) =>
+            (activeTab === 'Vulnerability' && m.target === 'vuln-step') ||
+            (activeTab === 'Explainability' && m.target === 'xai-step') ||
+            (activeTab === 'System Status' && (m.target === 'response-step' || m.target === 'status-step'))
+          ))
 
         return (
           <div className="nav-item" key={item.label}>
             <button
               type="button"
-              className={`nav-link ${openLabel === item.label ? 'active' : ''}`}
+              className={`nav-link ${isItemActive ? 'active' : ''}`}
               onClick={() => {
                 if (!hasMenu) {
                   onNavigate(item.target)
@@ -75,4 +83,3 @@ export function NavbarMenu({ items, openLabel, onOpenChange, onNavigate }: Navba
     </nav>
   )
 }
-
